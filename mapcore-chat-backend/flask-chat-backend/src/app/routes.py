@@ -30,3 +30,32 @@ def debug_rag():
         'results': results,
         'count': len(results)
     }), 200
+
+@chat_bp.route('/developer-reports', methods=['GET'])
+def get_developer_reports():
+    """Endpoint for developers to view bug reports and feature requests"""
+    report_type = request.args.get('type')  # 'bug', 'missing-feature', or None for all
+    
+    if not chat_service.rag_service:
+        return jsonify({'error': 'Service not initialized'}), 400
+    
+    reports = chat_service.get_developer_reports(report_type)
+    return jsonify({
+        'reports': reports,
+        'count': len(reports),
+        'type_filter': report_type
+    }), 200
+
+@chat_bp.route('/developer-reports/summary', methods=['GET'])
+def get_reports_summary():
+    """Get quick summary of recent reports"""
+    try:
+        summary_file = os.path.join(chat_service.reports_dir, "summary.txt")
+        if os.path.exists(summary_file):
+            with open(summary_file, 'r', encoding='utf-8') as f:
+                lines = f.readlines()[-20:]  # Last 20 entries
+            return jsonify({'summary': lines}), 200
+        else:
+            return jsonify({'summary': []}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
