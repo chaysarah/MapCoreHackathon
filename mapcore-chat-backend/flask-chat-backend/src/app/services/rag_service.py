@@ -1,7 +1,11 @@
 import os
+import json
+import pickle
+import hashlib
 import chromadb
+from chromadb.config import Settings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain_community.document_loaders import TextLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
 
@@ -9,20 +13,99 @@ class RAGService:
     def __init__(self, folder_path):
         print(f"[RAG] Initializing RAG service with folder: {folder_path}")
         self.folder_path = folder_path
+        self.db_path = os.path.join(os.path.dirname(folder_path), "chroma_db")
+        self.cache_file = os.path.join(os.path.dirname(folder_path), "rag_cache.json")
         
         if not os.path.exists(folder_path):
             print(f"[RAG] ERROR: Folder does not exist: {folder_path}")
             return
-            
-        print(f"[RAG] Creating ChromaDB client...")
-        self.client = chromadb.Client()
-        self.collection = self.client.create_collection("documents")
+        
+        # Create persistent ChromaDB client
+        print(f"[RAG] Creating persistent ChromaDB client at: {self.db_path}")
+        self.client = chromadb.PersistentClient(path=self.db_path)
         
         print(f"[RAG] Initializing Google embeddings...")
         self.embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
         
-        print(f"[RAG] Loading documents...")
-        self.load_documents()
+        # Check if we need to reload documents
+        if self._should_reload_documents():
+            print(f"[RAG] Documents changed, reloading...")
+            self._cleanup_existing_collection()
+            self.collection = self.client.create_collection("documents")
+            self.load_documents()
+            self._save_cache()
+        else:
+            print(f"[RAG] Loading existing collection...")
+            try:
+                self.collection = self.client.get_collection("documents")
+                print(f"[RAG] Loaded existing collection with {self.collection.count()} chunks")
+            except Exception:
+                print(f"[RAG] No existing collection found, creating new one...")
+                self.collection = self.client.create_collection("documents")
+                self.load_documents()
+                self._save_cache()
+    
+    def _get_folder_hash(self):
+        """Generate hash of all files in folder to detect changes"""
+        hasher = hashlib.md5()
+        
+        for root, dirs, files in os.walk(self.folder_path):
+            for file in sorted(files):  # Sort for consistent hashing
+                if file.lower().endswith((
+                    '.c', '.h', '.cpp', '.hpp', '.cc', '.cxx',
+                    '.cs', '.csx', '.cshtml', '.razor',
+                    '.js', '.jsx', '.ts', '.tsx', '.json',
+                    '.html', '.htm', '.css', '.scss', '.sass',
+                    '.xml', '.xaml', '.config', '.settings',
+                    '.txt', '.md', '.markdown', '.rst',
+                    '.csproj', '.sln', '.vcxproj', '.props', '.targets',
+                    'package.json', 'package-lock.json', '.npmrc',
+                    '.yaml', '.yml', '.ini', '.conf'
+                )):
+                    file_path = os.path.join(root, file)
+                    try:
+                        # Hash file path and modification time
+                        hasher.update(file_path.encode())
+                        hasher.update(str(os.path.getmtime(file_path)).encode())
+                    except:
+                        continue
+        
+        return hasher.hexdigest()
+    
+    def _should_reload_documents(self):
+        """Check if documents have changed since last load"""
+        current_hash = self._get_folder_hash()
+        
+        if not os.path.exists(self.cache_file):
+            return True
+        
+        try:
+            with open(self.cache_file, 'r') as f:
+                cache_data = json.load(f)
+                return cache_data.get('folder_hash') != current_hash
+        except:
+            return True
+    
+    def _save_cache(self):
+        """Save cache metadata"""
+        cache_data = {
+            'folder_hash': self._get_folder_hash(),
+            'last_updated': str(os.path.getmtime(self.folder_path)),
+            'collection_count': self.collection.count() if hasattr(self, 'collection') else 0
+        }
+        
+        with open(self.cache_file, 'w') as f:
+            json.dump(cache_data, f)
+        
+        print(f"[RAG] Cache saved with {cache_data['collection_count']} documents")
+    
+    def _cleanup_existing_collection(self):
+        """Remove existing collection if it exists"""
+        try:
+            self.client.delete_collection("documents")
+            print(f"[RAG] Cleaned up existing collection")
+        except:
+            pass
     
     def load_documents(self):
         """Load and index documents from the specified folder"""
@@ -194,7 +277,7 @@ class RAGService:
         }
         return language_map.get(ext, 'Unknown')
     
-    def search_documents(self, query, n_results=5):  # Increased results for code
+    def search_documents(self, query, n_results=5):
         """Search for relevant documents"""
         try:
             print(f"[RAG] Searching for: '{query}'")

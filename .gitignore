@@ -1,2 +1,6 @@
 /mapcore-chat-backend/flask-chat-backend/venv
 /mapcore-chat-backend/flask-chat-backend/.env
+mapcore-web/.next/*
+/mapcore-web/node_modules
+/Data
+/DataOrigin
