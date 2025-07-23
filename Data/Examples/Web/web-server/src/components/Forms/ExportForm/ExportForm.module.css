@@ -1,0 +1,45 @@
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Row {
+    margin-bottom: 15px;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+}
+
+.MapIcon {
+    width: 29px;
+    height: 27px;
+    margin-right: 10px;
+  }
+
+.LayerId {
+    width: 80%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;   
+}
+
+.CloseButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.CloseIcon {
+    background: url(../../../assets/images/close.svg) no-repeat;
+    background-position: center;    
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+}

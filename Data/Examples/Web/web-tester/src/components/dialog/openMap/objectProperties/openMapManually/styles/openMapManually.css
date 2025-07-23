@@ -1,0 +1,13 @@
+.open-map-manually__sticky-footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.open-map-manually__device-container {
+    position: relative;
+    width: calc(var(--size-factor)*43vh);
+    height: calc(var(--size-factor)*34vh);
+    overflow: auto;
+}

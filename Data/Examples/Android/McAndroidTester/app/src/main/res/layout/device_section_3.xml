@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/objects_batch_growth_ratio_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="@string/objects_batch_growth_ratio" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/objects_texture_atlas_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="@string/objects_texture_atlas_16_bit" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/objects_batch_initial_num_vertices_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="@string/objects_batch_initial_num_vertices" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/objects_batch_initial_num_indices_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="@string/objects_batch_initial_num_indices" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+        android:id="@+id/local_cache_folder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="@integer/fel_local_cache_folder"
+        app:fel_fragment_tag="@string/fragment_create_device"
+        app:fel_labelText="@string/local_cache_folder" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/max_size_in_MB_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="@string/max_size_in_MB" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/dtm_visualization_precision_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="@string/dtm_visualization_precision" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/main_monitor_index_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="@string/main_monitor_index" />
+
+</LinearLayout>

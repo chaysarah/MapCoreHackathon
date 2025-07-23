@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:id="@+id/tv_terrain_remove_terrain" android:title="Remove Terrain" android:orderInCategory="100" app:showAsAction="never"/>
+        <item android:id="@+id/tv_terrain_rename" android:title="Rename" android:orderInCategory="200" />
+        <item android:id="@+id/tv_terrain_delete_name" android:title="Delete Name" android:orderInCategory="300" />
+</menu>

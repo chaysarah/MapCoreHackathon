@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+	tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.private_properties.FontPropertyDialogFragment">
+
+    <FrameLayout
+        android:id="@+id/font_fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Font Property:" />
+
+    <Button
+        android:id="@+id/font_property_create_font"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:text="Font" />
+
+    <Button
+        android:id="@+id/font_property_delete_font"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:text="Delete" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Property Id:" />
+
+        <TextView
+            android:id="@+id/font_property_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:hint="id" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/font_property_dialog_ok_bttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="OK" />
+</LinearLayout>

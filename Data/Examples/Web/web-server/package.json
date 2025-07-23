@@ -1,0 +1,68 @@
+{
+  "name": "gis-manager-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "axios": "^0.19.0",
+    "http-proxy": "^1.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "internal-ip": "^7.0.0",
+    "locale-codes": "^1.3.1",
+    "public-ip": "^4.0.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^8.1.1",
+    "react-scripts": "^3.4.0",
+    "react-tooltip": "^4.2.21",
+    "reactjs-popup": "^2.0.5",
+    "redux": "^4.2.1",
+    "typeface-montserrat": "0.0.75",
+    "typeface-roboto": "0.0.75"
+  },
+  "scripts": {
+    "wasm-config": "cmd /c wasm_config.bat",
+    "wasm-default-config": "cmd /c wasm_config.bat auto",
+    "wasm-config-linux": "bash ./wasm_config.sh",
+    "wasm-default-config-linux": "bash ./wasm_config.sh auto",
+    "clean-cache": "if exist node_modules\\.cache ( rmdir /s /q node_modules\\.cache )",
+    "clean-cache-linux": "rm -rf node_modules/.cache",
+    "server-build-debug": "cmd /c server_build.bat Debug",
+    "server-build-release": "cmd /c server_build.bat RelWithDebInfo",
+    "server-start-debug": "cmd /c server_start.bat Debug",
+    "server-start-release": "cmd /c server_start.bat RelWithDebInfo",
+    "full-start-vs": "npm --prefix ../web-library run build-vs & node scripts/smart_install.js & cross-env BROWSER=none npm run full-start",
+    "full-start": "(start cmd /k npm run server-start-debug & timeout /t 3 /nobreak >nul & (curl -s http://localhost:6767 || exit 1) || start cmd /k npm run server-start-release) & npm start",
+    "wasm-config-vs": "start cmd /c npm run wasm-config",
+    "start-vs": "npm --prefix ../web-library run build-vs && node scripts/smart_install.js & cross-env BROWSER=none npm start",
+    "build-vs": "npm --prefix ../web-library run build-vs && node scripts/smart_install.js && npm run clean-cache && npm run build",
+    "build-vs-linux": "npm --prefix ../web-library run build-vs-linux && node scripts/smart_install.js && npm run clean-cache-linux && npm run build",
+    "link": "npm link mapcore-lib --legacy-peer-deps",
+    "start": "react-app-rewired --openssl-legacy-provider start",
+    "build": "react-app-rewired --openssl-legacy-provider build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "./",
+  "proxy": "http://127.0.0.1:6767",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "react-app-rewired": "^2.2.1",
+    "typescript": "^5.6.3"
+  }
+}

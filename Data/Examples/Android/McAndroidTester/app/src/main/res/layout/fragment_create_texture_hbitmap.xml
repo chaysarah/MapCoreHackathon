@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+	android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/hbitmap_take_ownership_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="take ownership" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+            android:id="@+id/hbitmap_bitmap_file_fc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fel_labelText="Bitmap File:"
+            app:fel_enable_file_choosing="true"/>
+
+       <com.elbit.mapcore.mcandroidtester.utils.customviews.CreateTextureBottom
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/hbitmap_ctb"
+           />
+    </LinearLayout>
+</ScrollView>

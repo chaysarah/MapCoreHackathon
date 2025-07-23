@@ -1,0 +1,1 @@
+npm install -g http-server && copy /Y "%CD%\http-server" "%USERPROFILE%\AppData\Roaming\npm\node_modules\http-server\bin\http-server"

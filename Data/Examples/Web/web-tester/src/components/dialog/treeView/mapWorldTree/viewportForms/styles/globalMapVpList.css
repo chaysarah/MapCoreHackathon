@@ -1,0 +1,21 @@
+:root {
+    --global-map-vp-list-dialog-width: 400px;
+}
+
+
+/* dialog */
+.scroll-dialog-global-map-vp-list .p-dialog-content {
+    min-width: var(--global-map-vp-list-dialog-width) !important;
+}
+
+.scroll-dialog-global-map-vp-list .p-dialog-header {
+    min-width: var(--global-map-vp-list-dialog-width) !important;
+}
+
+.scroll-dialog-global-map-vp-list .p-dialog-footer {
+    min-width: var(--global-map-vp-list-dialog-width) !important;
+}
+
+.scroll-dialog-global-map-vp-list {
+    overflow-x: auto;
+}

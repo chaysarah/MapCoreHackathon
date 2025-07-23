@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.properties_tabs.ObjectPropertiesTabsLineExpansion">
+    <Button
+        android:id="@+id/object_properties_line_expansion_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Line Expansion Changes" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/line_expansion_coord_sys_swl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Coordinate System:" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/line_expansion_type_swl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Line Expansion Type:" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/line_expansion_radius_net"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Radius:" />
+</LinearLayout>

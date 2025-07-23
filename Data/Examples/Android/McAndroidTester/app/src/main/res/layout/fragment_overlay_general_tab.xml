@@ -1,0 +1,175 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground">
+
+    <Button
+        android:id="@+id/overlay_general_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save changes" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.overlay_tabs.OverlayGeneralTabFragment">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/overlay_general_overlay_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="OverlayId" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/overlay_general_detectibility_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="detectibility" />
+
+                <Button
+                    android:id="@+id/overlay_general_detectibility_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Apply" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/overlay_general_draw_priority_etl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="detectibility"
+                    app:netl_labelText="Draw Priority" />
+
+                <Button
+                    android:id="@+id/overlay_general_draw_priority_apply_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/overlay_general_state_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/overlay_general_state_apply_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/overlay_general_visibility_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/overlay_general_visibility_apply_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Apply" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/overlay_general_effective_visibility_in_selected_vp_cb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="Effective visibility in selected viewport" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+                android:id="@+id/overlay_general_viewports_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false" />
+
+            
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overlay Manager:" />
+
+            <TextView
+                android:id="@+id/overlay_general_overlay_manager_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Collection:" />
+
+            <ListView
+                android:id="@+id/overlay_general_collection_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="User Data" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/overlay_general_user_data_et"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:inputType="textMultiLine" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Conditional Selector" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ConditionalSelectorByActionType
+                android:id="@+id/overlay_general_conditional_selectors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

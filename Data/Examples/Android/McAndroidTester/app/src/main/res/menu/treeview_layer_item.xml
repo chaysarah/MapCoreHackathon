@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Remove Layer" android:id="@+id/tv_layer_remove_layer" android:orderInCategory="100" app:showAsAction="never" />
+    <item android:title="Move To Center" android:id="@+id/tv_layer_move_to_center" android:orderInCategory="100" app:showAsAction="never" />
+    <item android:title="Rename" android:id="@+id/tv_layer_rename" android:orderInCategory="100"/>
+    <item android:title="Delete Name" android:id="@+id/tv_layer_delete_name" android:orderInCategory="100" />
+</menu>

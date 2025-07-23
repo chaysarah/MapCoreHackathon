@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.viewport_tabs.viewport_as_camera_tabs.VpAsCameraAttachmentFragment">
+
+    <Button
+        android:id="@+id/attachment_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes" />
+
+    <CheckBox
+        android:id="@+id/attachment_camera_attachment_enabled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera Attachment Enabled" />
+
+    <LinearLayout
+        android:id="@+id/attachment_camera_attachment_tree_container_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/attachment_attach_point_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Attach Point Index" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+        android:id="@+id/attachment_offset_3D"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:three_d_vector_label="offset" />
+
+    <CheckBox
+        android:id="@+id/attachment_look_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Look At" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Attach Orientation" />
+
+    <CheckBox
+        android:id="@+id/attachment_attach_orientation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attach Orientation" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/attachment_additional_yaw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Additional Yaw" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/attachment_additional_pitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Additional Pitch" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/attachment_additional_roll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Additional Roll" />
+</LinearLayout>

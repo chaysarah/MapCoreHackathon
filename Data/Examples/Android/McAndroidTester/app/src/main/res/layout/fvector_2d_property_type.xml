@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+        android:id="@+id/fvector2d_property_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDVector
+        android:id="@+id/vector2d_property_value"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Property Id:"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="id"
+            android:id="@+id/fvector2d_property_id"
+            android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.elbit.mapcore.mcandroidtester.utils.customviews.ChangingNamesDialogFragment"
+    android:background="?android:attr/windowBackground"
+	android:orientation="vertical">
+
+   <com.google.android.material.textfield.TextInputLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       >
+       <EditText android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/changing_names_et"
+           android:hint="name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/changing_names_save_bttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save changes"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

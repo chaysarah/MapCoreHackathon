@@ -1,0 +1,16 @@
+:root {
+    --select-existing-grid-dialog-width: 350px;
+}
+/* dialog */
+.scroll-dialog-select-existing-grid .p-dialog-content {
+    min-width: var(--select-existing-grid-dialog-width) !important;
+}
+.scroll-dialog-select-existing-grid .p-dialog-header {
+    min-width: var(--select-existing-grid-dialog-width) !important;
+}
+.scroll-dialog-select-existing-grid .p-dialog-footer {
+    min-width: var(--select-existing-grid-dialog-width) !important;
+}
+.scroll-dialog-select-existing-grid {
+    overflow-x: auto;
+}

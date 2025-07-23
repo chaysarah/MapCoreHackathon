@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Set Each Object Location Point" />
+
+    <ListView
+        android:id="@+id/overlay_object_changing_location_point_lv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <Button
+        android:id="@+id/overlay_object_changing_location_point_ok_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Set Each Object Private Property" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Spinner android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/overlay_object_changing_objects_spinner"
+        />
+        <Button
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="private properties form"
+            android:id="@+id/overlay_object_changing_private_properties_form_bttn"/>
+        </LinearLayout>
+    <ListView
+        android:id="@+id/overlay_object_changing_objects_lv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+    <Button
+        android:id="@+id/overlay_object_changing_objects_ok_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+</LinearLayout>

@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.properties_tabs.ObjectPropertiesTabsRectangle">
+    <Button
+        android:id="@+id/object_properties_rect_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Rectangle Changes" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Coordinate System"
+        android:id="@+id/object_properties_rectangle_coordinate_sys_swl"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Rectangle Type"
+        android:id="@+id/object_properties_rectangle_type_swl"/>
+<com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rectangle_definition"
+    app:swl_labelText="Rectangle Definition"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Radius X"
+        android:id="@+id/rect_radius_x_net"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Radius Y"
+        android:id="@+id/rect_radius_y_net"/>
+</LinearLayout>

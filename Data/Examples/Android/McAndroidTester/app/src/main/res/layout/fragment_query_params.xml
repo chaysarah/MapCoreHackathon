@@ -1,0 +1,109 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:background="?android:attr/windowBackground">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.QueryParamsFragment">
+
+        <Button
+            android:id="@+id/query_params_save_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="save changes" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="intersection target type" />
+
+        <ListView
+            android:id="@+id/query_params_intersection_target_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="item type" />
+
+        <ListView
+            android:id="@+id/query_params_item_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="item kind" />
+
+        <ListView
+            android:id="@+id/query_params_item_kind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/query_params_bounding_box_expansion_dist_netl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Bounding Box Expansion Dist:" />
+
+        <CheckBox
+            android:id="@+id/query_params_use_mesh_bounding_box_only_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Mesh Bounding Box Only" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/query_params_great_circle_precision_netl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Great Circle Precision:" />
+
+        <CheckBox
+            android:id="@+id/query_params_use_flat_earth_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Flat Earth" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/query_params_no_dtm_result_swl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="No DTM Result" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/query_params_terrain_precision_swl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="Terrain Precision" />
+
+        <CheckBox
+            android:id="@+id/query_params_add_static_object_contours_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Static Object Contours" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Overlay" />
+
+        <ListView
+            android:id="@+id/query_params_overlay_filter_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/query_params_clear_selected_viewport_bttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clear selected" />
+
+    </LinearLayout>
+</ScrollView>

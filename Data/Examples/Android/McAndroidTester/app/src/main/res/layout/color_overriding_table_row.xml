@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:nestedScrollingEnabled="true">
+
+    <TextView
+        android:id="@+id/color_overriding_ecpt_types"
+        style="@style/color_overriding_table_column"
+        android:layout_width="200dp"
+        android:hint="id" />
+    <CheckBox
+        android:id="@+id/color_overriding_enable"
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"/>
+
+    <Button
+        android:id="@+id/color_overriding_color_bttn"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/color_overriding_alpha"
+        android:textSize="12sp"
+        android:maxLines="1"
+        style="@style/color_overriding_table_column"
+        android:layout_width="50dp"
+        android:ellipsize="start" />
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_replace_rgb"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_replace_alpha"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_modulate_rgb"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_modulate_alpha"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_add_rgb"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_add_alpha"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_sub_rgb"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_sub_alpha"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_postprocess_add_rgb"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/color_overriding_postprocess_sub_rgb"/>
+
+</LinearLayout>

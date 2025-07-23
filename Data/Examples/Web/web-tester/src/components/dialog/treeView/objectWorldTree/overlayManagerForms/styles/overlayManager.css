@@ -1,0 +1,113 @@
+:root {
+    --more-details-dialog-width: 1000px;
+    --lock-scheme-dialog-width: 600px;
+}
+
+.overlay-manager__margin-right {
+    margin-right: calc(0.5vh*var(--size-factor)) !important;
+}
+
+/* General Form */
+.overlay-manager__flex-align-items-center {
+    display: flex;
+    align-items: center
+}
+
+.overlay-manager__om-operation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.overlay-manager__left-get-node {
+    padding-right: calc(0.75vh*var(--size-factor));
+}
+
+.overlay-manager__right-get-node {
+    padding-left: calc(0.75vh*var(--size-factor));
+}
+
+.overlay-manager__get-node {
+    white-space: nowrap;
+    width: 50%;
+}
+
+.overlay-manager__get-node-input-number .p-inputtext {
+    margin: calc(0.4vh*var(--size-factor)) !important;
+}
+
+.overlay-manager__get-node-input-text {
+    margin: calc(0.4vh*var(--size-factor)) !important;
+}
+
+.overlay-manager__last-overlay-operation-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.overlay-manager__last-overlay-operation-span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.overlay-manager__last-overlay-operation-label {
+    padding-left: calc(0.4vh*var(--size-factor));
+}
+
+.overlay-manager__checkbox-left-padding {
+    padding-left: calc(0.4vh*var(--size-factor));
+    margin-top: calc(0.6vh*var(--size-factor));
+}
+
+.overlay-manager__small-list-box-text .p-listbox-item {
+    font-size: calc(var(--size-factor) * 1.1vh) !important;
+    font-weight: bold;
+}
+
+/* sizeFactor */
+.overlay-manager__text-center-column .p-editable-column {
+    text-align: center !important;
+}
+
+.overlay-manager__tables-button-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(1vh*var(--size-factor));
+}
+
+
+/* moreDetails */
+.overlay-manager__scroll-dialog-more-details .p-dialog-content {
+    min-width: var(--more-details-dialog-width) !important;
+}
+
+.overlay-manager__scroll-dialog-more-details .p-dialog-header {
+    min-width: var(--more-details-dialog-width) !important;
+}
+
+.overlay-manager__scroll-dialog-more-details .p-dialog-footer {
+    min-width: var(--more-details-dialog-width) !important;
+}
+
+.overlay-manager__scroll-dialog-more-details {
+    overflow-x: auto;
+}
+
+/* lockScheme */
+.overlay-manager__scroll-dialog-lock-scheme .p-dialog-content {
+    min-width: var(--lock-scheme-dialog-width) !important;
+}
+
+.overlay-manager__scroll-dialog-lock-scheme .p-dialog-header {
+    min-width: var(--lock-scheme-dialog-width) !important;
+}
+
+.overlay-manager__scroll-dialog-lock-scheme .p-dialog-footer {
+    min-width: var(--lock-scheme-dialog-width) !important;
+}
+
+.overlay-manager__scroll-dialog-lock-scheme {
+    overflow-x: auto;
+}

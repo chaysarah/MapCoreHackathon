@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.objectscheme_tabs.SchemeGeneralTabFragment">
+
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scheme_properties_fragment_container"/>
+
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scheme_general_scheme_properties_id_list_bttn"
+        android:text="scheme properties id list"/>
+
+    <Button
+        android:id="@+id/scheme_general_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save changes" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="General" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_scheme_id_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Scheme ID" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_number_of_locations_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_enable_mode="false"
+                app:netl_labelText="Number of locations"
+                app:netl_numeric_keyboard="true" />
+
+            <CheckBox
+                android:id="@+id/scheme_general_terrain_items_consistency_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Terrain Items Consistency" />
+
+            <CheckBox
+                android:id="@+id/scheme_general_grouping_items_by_draw_priority_within_objects_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Grouping Items By Draw Priority Within Objects" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Location Index By ID" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_node_id_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Node ID" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/scheme_general_location_index_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_enable_mode="false"
+                    app:netl_labelText="Location Index"
+                    app:netl_numeric_keyboard="true"/>
+
+                <Button
+                    android:id="@+id/scheme_general_location_index_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="OK" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Get Node By ID Or Name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_get_node_by_id_net"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:netl_numeric_keyboard="true"
+                app:netl_labelText="ID" />
+            <Button
+                android:id="@+id/scheme_general_get_node_by_id_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Get Node" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_get_node_by_name_net"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:netl_labelText="Name"/>
+
+            <Button
+                android:id="@+id/scheme_general_get_node_by_name_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Get Node" />
+        </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_get_node_name_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_enable_mode="false"
+                app:netl_labelText="Node"
+                 />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Terrain objects consideration flags" />
+
+            <ListView
+                android:id="@+id/scheme_general_terrain_objects_consideration_flags_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Button
+                    android:id="@+id/scheme_general_terrain_objects_clear_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Clear" />
+
+                <Button
+                    android:id="@+id/scheme_general_terrain_objects_apply_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Apply" />
+
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Object Scheme Operations" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Object Rotation Item" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/scheme_general_scheme_rotation_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="" />
+
+            <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scheme_general_scheme_set_rotation_items"
+                android:text="Set Object Rotation Item"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Object Screen Arrangement Item" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/scheme_general_scheme_screen_arrangement_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="" />
+
+            <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scheme_general_scheme_set_screen_arrangement_items"
+                android:text="Set Object Screen Arrangement Item"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Edit Mode Default Item" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/scheme_general_scheme_edit_mode_default_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="" />
+
+            <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scheme_general_scheme_set_edit_mode_default_items"
+                android:text="Set Edit Mode Default Item"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="User Data"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/scheme_general_user_data_et"/>
+
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Get Property Type" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_property_id_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Property Id"
+                app:netl_numeric_keyboard="true"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_property_type_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Property Type" />
+
+
+                <CheckBox
+                    android:id="@+id/scheme_general_no_fail_on_not_exist_cb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="No fail on not exist" />
+
+                <Button
+                    android:id="@+id/scheme_general_get_property_type_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Get Property Type" />
+
+            <CheckBox
+                android:id="@+id/scheme_general_ignore_updating_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                android:text="Ignore Updating Non Existent Property" />
+
+            <Button
+                android:id="@+id/scheme_general_ignore_updating_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:visibility="gone"
+                android:text="OK" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="State Operations" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_state_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="State"
+                app:netl_numeric_keyboard="true"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/scheme_general_state_name_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="State Name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <Button
+                android:id="@+id/scheme_general_get_state_by_name_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Get State By Name" />
+
+            <Button
+                android:id="@+id/scheme_general_get_name_by_state_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Get Name By State" />
+
+        </LinearLayout>
+
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Set State For All Objects"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/scheme_general_state_all_objects_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="State"
+                    app:netl_numeric_keyboard="true"/>
+
+                <Button
+                    android:id="@+id/scheme_general_state_all_objects_apply_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Apply" />
+            </LinearLayout>
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+                android:id="@+id/scheme_general_state_viewports_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="State Names"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:padding="10dp">
+                <TextView android:id="@+id/state_row_str"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="State"/>
+                <TextView android:id="@+id/state_name_row_str"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:gravity="left"/>
+            </LinearLayout>
+            <ListView
+                android:id="@+id/scheme_general_state_names_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"/>
+
+            <Button
+                android:id="@+id/scheme_general_set_state_names_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Set State Names" />
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Object Modifiers State"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:padding="10dp">
+                <TextView android:id="@+id/conditional_selector_str"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="left"
+                    android:text="Conditional Selector"/>
+                <TextView android:id="@+id/action_on_result_str"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Action On Result"
+                    android:gravity="center"/>
+                <TextView android:id="@+id/state_str"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="State"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <ListView
+                android:id="@+id/object_modifier_state_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+               >
+                <Button
+                    android:id="@+id/object_modifier_state_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Add" />
+                <Button
+                    android:id="@+id/object_modifier_state_edit_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Edit" />
+                <Button
+                    android:id="@+id/object_modifier_state_insert_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Insert" />
+                <Button
+                    android:id="@+id/object_modifier_state_remove_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Remove" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/object_modifier_state_clear_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Clear"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/object_modifier_state_apply_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical"
+                    android:text="Apply"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

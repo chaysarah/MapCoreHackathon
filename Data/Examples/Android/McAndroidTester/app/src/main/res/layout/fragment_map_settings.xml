@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.map.fragments.MapSettingsFragment"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="open viewport"
+        android:id="@+id/open_vp_bttn"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="viewport ID "
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/view_port_id_et"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:scrollbars="vertical"
+            android:enabled="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <RadioGroup
+        android:id="@+id/sl_map_type_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="viewport type:" />
+        <RadioButton
+            android:id="@+id/sl_vp_2D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="2D" />
+        <RadioButton
+            android:id="@+id/sl_vp_3D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3D" />
+        <RadioButton
+            android:id="@+id/sl_vp_2D_3D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2D/3D" />
+    </RadioGroup>
+</LinearLayout>

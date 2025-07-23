@@ -1,0 +1,21 @@
+:root {
+    --scheme-obj-list-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-scheme-obj-list .p-dialog-content {
+    min-width: var(--scheme-obj-list-dialog-width) !important;
+}
+
+.scroll-dialog-scheme-obj-list .p-dialog-header {
+    min-width: var(--scheme-obj-list-dialog-width) !important;
+}
+
+.scroll-dialog-scheme-obj-list .p-dialog-footer {
+    min-width: var(--scheme-obj-list-dialog-width) !important;
+}
+
+.scroll-dialog-scheme-obj-list {
+    overflow-x: auto;
+}

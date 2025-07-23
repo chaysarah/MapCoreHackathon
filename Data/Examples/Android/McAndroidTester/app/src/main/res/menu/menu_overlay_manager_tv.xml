@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_terrain_layers"
+        android:title="Terrain-Layers" />
+    <item
+        android:id="@+id/nav_viewport_terrains"
+        android:title="Viewport-Terrains" />
+    <item
+        android:id="@+id/nav_object_world"
+        android:title="Object World" />
+    <item
+        android:id="@+id/nav_map_container"
+        android:title="Viewports"> <menu></menu></item>
+
+    <item
+        android:title="New Object">
+            <menu>
+                <item
+                    android:id="@+id/nav_new_object_based_on_existing_scheme"
+                    android:title="Based on existing scheme" />
+                <item
+                    android:id="@+id/nav_new_object_with_new_scheme_containing_one_location"
+                    android:title="Scheme with one location" />
+                <item
+                    android:id="@+id/nav_new_object_with_new_scheme_containing_one_location_and_one_item"
+                    android:title="Scheme with one location and item" />
+            </menu>
+    </item>
+    <item
+        android:id="@+id/nav_om_tv_new_overlay_manager"
+        android:title="New Overlay Manager" />
+</menu>

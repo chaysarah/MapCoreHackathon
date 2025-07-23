@@ -1,0 +1,144 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.properties_tabs.ObjectPropertiesTabsSightPresentationFragment">
+
+    <Button
+        android:id="@+id/sight_presentation_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Sight Presentation Changes" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+<com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:section_separator_text="sight presentation type"/>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/sight_presentation_type_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Sight presentation type" />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Sight Observer Height"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/sight_presentation_sight_observer_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Height"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <CheckBox
+                android:id="@+id/sight_observer_height_absolute_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Is Height Absolute"
+                android:checked="false" />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Sight Observed Height"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/sight_presentation_sight_observed_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sight Observed Height"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <CheckBox
+                android:id="@+id/sight_observed_height_absolute_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Is Height Absolute" />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Sight Observer Min Pitch"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/sight_presentation_sight_observer_min_pitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Observer Min Pitch"
+                    android:inputType="numberSigned" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Sight Observer Max Pitch"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/sight_presentation_sight_observer_max_pitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Observer Max Pitch"
+                    android:inputType="numberSigned" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Sight Query Precision"/>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/sight_presentation_sight_query_precision_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Sight Query Precision" />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Sight Color"/>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/sight_presentation_sight_color_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Sight Color" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+                android:id="@+id/sight_presentation_sight_color_sc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:color_picker_alpha_visibility="true"
+
+                />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Sight Num Ellipse Rays"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/sight_presentation_sight_num_ellipse_rays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sight Num Ellipse Rays"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,20 @@
+:root {
+    --render-screen-to-buf-img-dialog: 600px;
+}
+
+/* moreDetails */
+.scroll-dialog-render-screen-to-buf-img .p-dialog-content {
+    min-width: var(--render-screen-to-buf-img-dialog) !important;
+}
+
+.scroll-dialog-render-screen-to-buf-img .p-dialog-header {
+    min-width: var(--render-screen-to-buf-img-dialog) !important;
+}
+
+.scroll-dialog-render-screen-to-buf-img .p-dialog-footer {
+    min-width: var(--render-screen-to-buf-img-dialog) !important;
+}
+
+.scroll-dialog-render-screen-to-buf-img {
+    overflow-x: auto;
+}

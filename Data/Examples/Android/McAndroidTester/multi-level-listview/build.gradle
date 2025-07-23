@@ -1,0 +1,27 @@
+plugins {
+    id 'com.android.library'
+    // other plugins
+}
+
+android {
+    ndkVersion rootProject.ext.ndkVersion
+
+    namespace 'pl.openrnd.multilevellistview'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+
+    // Set Java 11 compatibility
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+}
+
+//dependencies {
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+//}

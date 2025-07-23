@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/fragment_grid_coordinate_sys"
+    android:visibility="gone"
+
+    >
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/rt90_datum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/datum" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/datum_projection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/datum_projection" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/utm_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/utm_type" />
+</LinearLayout>

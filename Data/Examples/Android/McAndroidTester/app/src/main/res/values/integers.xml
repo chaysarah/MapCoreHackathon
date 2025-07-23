@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="fel_log_dir">11</integer>
+    <integer name="fel_config_dir">12</integer>
+    <integer name="fel_local_cache_folder">31</integer>
+    <integer name="device_create_tab">0</integer>
+    <integer name="map_layer_tab">1</integer>
+    <integer name="fel_layer_file_name">155</integer>
+
+
+</resources>

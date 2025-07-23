@@ -1,0 +1,105 @@
+/* Context Menu */
+
+.ContextMenu {
+    position: fixed;
+    z-index: 10;
+
+}
+
+.menuItems {
+    padding-right: 12px;
+    padding-left: 2px;
+    height: 50px;
+    border: 1px solid #0d0d0d;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    line-height: normal;
+}
+
+.menuItems:hover{
+      background-color: #151713;
+}
+
+.ContextMenuIcon {
+    padding: 2px;
+    margin-right: 15px;
+    width: 20px;
+    height: 22px;
+}
+
+.arrowRightIcon {
+    padding: 2px;
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+}
+
+.ListWrapper {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #191919;
+    font-weight:bold;
+    z-index: 1;    
+    border-top: none;
+    border-radius: var(--button-border-radius);    
+  
+}
+
+.ListElement {
+    padding: 10px 16px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.ListElementDisabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.3;
+    padding: 10px 16px;
+    align-items: center;
+    display: flex;
+}
+
+.ListElement:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: var(--button-border-radius);
+    border-bottom-right-radius: var(--button-border-radius);
+}
+
+.ListElement:hover {
+    background-color: #2b291e;
+}
+
+.ListElement.Active {    
+    background-color: #c5c5c5;
+}
+
+.ListElementDisabled a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.ListElement a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+.ListElement.nativeLayer{
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
+    border-top: darkgray;
+    border-right: darkgray;
+    border-left: darkgray;
+}

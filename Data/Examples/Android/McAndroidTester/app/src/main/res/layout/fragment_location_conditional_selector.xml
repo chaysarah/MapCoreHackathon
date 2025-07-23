@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.map_actions.treeviews.overlay_manager_treeview.LocationConditionalSelectorFragment"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground">
+
+    <include
+        android:id="@+id/location_conditional_selector_base_layout"
+        layout="@layout/fragment_base_conditional_selector" />
+<Button android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Draw Polygon"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/location_conditional_selector_draw_polygon_bttn"/>
+    <ListView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/location_conditional_selector_polygon_points"/>
+</LinearLayout>

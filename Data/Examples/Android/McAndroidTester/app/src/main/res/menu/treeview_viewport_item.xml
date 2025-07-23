@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/tv_vp_add_terrain" android:title="Add Terrain" android:orderInCategory="100" app:showAsAction="never"/>
+    <item android:id="@+id/tv_vp_create_camera" android:title="Create Camera" android:orderInCategory="200" app:showAsAction="never"/>
+    <item android:id="@+id/tv_vp_set_grid" android:title="Set Grid" android:orderInCategory="300" app:showAsAction="never"/>
+    <item android:id="@+id/tv_vp_remove_grid" android:title="Remove Grid" android:orderInCategory="400" app:showAsAction="never"/>
+    <item android:id="@+id/tv_vp_set_height_lines" android:title="Set Height Lines" android:orderInCategory="500" app:showAsAction="never"/>
+    <item android:id="@+id/tv_vp_remove_height_lines" android:title="Remove Height Lines" android:orderInCategory="600" app:showAsAction="never"/>
+    <item android:id="@+id/tv_vp_rename" android:title="Rename" android:orderInCategory="700" app:showAsAction="never"/>
+    <item android:id="@+id/tv_vp_delete_name" android:title="Delete Name" android:orderInCategory="800" app:showAsAction="never"/>
+</menu>

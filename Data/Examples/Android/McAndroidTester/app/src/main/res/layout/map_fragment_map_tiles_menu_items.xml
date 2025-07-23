@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/map_tiles_d"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="Box Draw Mode"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/map_tiles_b"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/map_tiles_d"
+        android:text="Overlay Objects Box Draw Mode"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/map_tiles_w"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/map_tiles_b"
+        android:text="Wireframe Mode"
+        android:textColor="@android:color/white"
+         />
+
+    <TextView
+        android:id="@+id/map_tiles_s"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/map_tiles_w"
+        android:text="Save Intersection Tile"
+        android:textColor="@android:color/white"
+        />
+    <TextView
+        android:id="@+id/map_tiles_stat"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/map_tiles_w"
+        android:text="Viewport Statistic"
+        android:textColor="@android:color/white"
+        />
+</LinearLayout>

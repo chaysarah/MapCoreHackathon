@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="native_raster_1">Native Raster 1:</string>
+    <string name="native_raster_2">Native Raster 2:</string>
+    <string name="native_raster_3">Native Raster 3:</string>
+    <string name="native_vector_1">Native Vector 1:</string>
+    <string name="native_vector_2">Native Vector 2:</string>
+    <string name="native_vector_3">Native Vector 3:</string>
+    <string name="native_dtm">Native DTM:</string>
+    <string name="native_static_object">Native Static:</string>
+    <string name="native_heat_map">Native Heat Map:</string>
+    <string name="raw_raster">Raw Raster</string>
+    <string name="raw_dtm">Raw DTM</string>
+    <string name="raw_vector">Raw Vector</string>
+    <string name="enhance_border_overlap">Enhance Border Overlap</string>
+    <string name="show_geo_in_metric_proportion">Show Geo In Metric Proportion</string>
+    <string name="max_num_open_files">Max Num Open Files</string>
+    <string name="terrain_precision_factor">Terrain Precision factor</string>
+    <string name="max_scale">Max Scale</string>
+    <string name="native_vector_3d_extrusion">Native Vector 3d Extrusion</string>
+    <string name="native_3d_model">Native 3d Model</string>
+
+</resources>

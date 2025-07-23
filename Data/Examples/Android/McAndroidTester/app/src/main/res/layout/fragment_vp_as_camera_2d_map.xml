@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.viewport_tabs.viewport_as_camera_tabs.VpAsCamera2DMapFragment">
+
+    <Button
+        android:id="@+id/map_2D_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Scroll Camera" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/map_2D_delta_x"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:netl_labelText="DeltaX" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/map_2D_delta_y"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:netl_labelText="DeltaY" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

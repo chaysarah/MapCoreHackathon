@@ -1,0 +1,42 @@
+
+plugins {
+            id 'com.android.library'
+            // other plugins
+        }
+dependencies {
+    implementation "androidx.annotation:annotation:${rootProject.ext.annotationsVersion}"
+}
+
+
+android {
+    namespace 'com.elbit.mapcore7'
+    ndkVersion rootProject.ext.ndkVersion
+
+    compileSdk rootProject.ext.compileSdkVersion
+    //buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+
+    packagingOptions {
+        resources {
+            excludes += ['LICENSE.txt']
+        }
+    }
+
+    // Set Java 11 compatibility
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << "-Xlint:deprecation"
+}
+// Used to push in maven
+/*
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'*/

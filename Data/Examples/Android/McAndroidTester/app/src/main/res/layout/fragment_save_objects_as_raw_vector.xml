@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+	android:layout_width="270dp"
+    android:layout_height="match_parent"
+	android:background="?android:attr/windowBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+    	android:nestedScrollingEnabled="true"
+        android:id="@+id/cv_save_as_raw_vp_lv"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Camera Yaw Angle"
+            android:layout_weight="0.5"
+            android:id="@+id/save_as_raw_camera_yaw_angle_netl"/>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Camera scale:"
+            android:layout_weight="0.5"
+            android:id="@+id/save_as_raw_camera_scale_netl"/>
+       </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Layer Name"
+        android:id="@+id/save_as_raw_layer_name_netl"/>
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/save_as_raw_geometry_filter_swl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Geometry filter" />
+
+    <CheckBox
+        android:id="@+id/save_as_raw_as_memory_buffer_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="As memory buffer"/>
+
+    <Button
+        android:id="@+id/save_as_raw_ok_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+
+</LinearLayout>

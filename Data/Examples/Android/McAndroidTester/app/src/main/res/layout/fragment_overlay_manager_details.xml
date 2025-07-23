@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:fillViewport="true"
+    android:id="@+id/om_details_sv"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:nestedScrollingEnabled="true">
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Coordinate System" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.GridCoordinateSystemList
+            android:id="@+id/om_details_coordinate_system_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="false"/>
+        <!-- <ListView
+             android:id="@+id/om_details_coordinate_system_lv"
+             android:layout_width="match_parent"
+             android:layout_height="100dp" />-->
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Object Schemes" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_weight="0.9"
+            >
+
+            <ListView
+                android:id="@+id/om_details_schemes_lv"
+                android:layout_width="0dp"
+                android:layout_height="500dp"
+                android:layout_weight="0.7" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/om_details_schemes_load_from_file_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Load From File" />
+
+                <Button
+                    android:id="@+id/om_details_schemes_load_from_buffer_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Load From Buffer" />
+
+                <Button
+                    android:id="@+id/om_details_schemes_save_all_to_file_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save All To File" />
+
+                <Button
+                    android:id="@+id/om_details_schemes_save_all_to_buffer_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save All To Buffer" />
+
+                <Button
+                    android:id="@+id/om_details_schemes_save_to_file_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save To File" />
+
+                <Button
+                    android:id="@+id/om_details_schemes_save_to_buffer_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save To Buffer" />
+
+                <CheckBox
+                    android:id="@+id/om_details_schemes_continue_saving_to_this_file_cb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="continue saving to this file" />
+
+                <Button
+                    android:id="@+id/om_details_schemes_clear_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clear" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SaveParamsData
+            android:id="@+id/om_details_save_params_data"
+                android:layout_weight="0.1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Overlay Operations" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/om_details_overlay_operations_top_most_mode_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Most Mode" />
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_top_most_mode_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/om_details_overlay_operations_move_if_block_mode_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Move If Block Mode" />
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_move_if_block_mode_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/om_details_overlay_operations_blocked_transparency_mode_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blocked Transparency Mode" />
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_blocked_transparency_mode_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Cancel Scale Mode" />
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="0" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="1" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="2" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="3" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="4" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="5" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="6" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="7" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="8" />
+
+            <CheckedTextView
+                android:id="@+id/om_details_overlay_operations_cancel_scale_mode_cb9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:checked="false"
+                android:gravity="center"
+                android:text="9" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/om_details_overlay_operations_collection_mode_swl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:swl_labelText="Collection Mode" />
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_collection_mode_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:layout_weight="1"
+                android:id="@+id/om_details_overlay_operations_scale_factor_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                app:netl_labelText="Scale Factor:"
+            />
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_scale_factor_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:layout_weight="1"
+                android:id="@+id/om_details_overlay_operations_equidistant_attach_points_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                app:netl_labelText="Equidistant attach points min scale:"
+            />
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_equidistant_attach_points_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/om_details_overlay_operations_state_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="State" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/om_details_overlay_operations_state_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Viewports:"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+                android:id="@+id/om_details_overlay_operations_viewports_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Overlay Manager Operation" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/om_details_om_operations_lock_scheme_list_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Lock Scheme List" />
+
+            <Button
+                android:id="@+id/om_details_om_operations_lock_scheme_list_show_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Show" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/om_details_om_operations_lock_conditional_selector_list_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Lock Scheme List" />
+
+            <Button
+                android:id="@+id/om_details_om_operations_lock_conditional_selector_list_show_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Show" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/om_details_om_operations_screen_terrain_items_consistency_scale_steps_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Screen Terrain Items Consistency Scale Step" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/om_details_om_operations_screen_terrain_items_consistency_scale_steps_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    <ExpandableListView
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:id="@+id/om_details_viewports_objects_elv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/om_details_om_set_screen_arrangement_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set Screen Arrangements" />
+
+            <Button
+                android:id="@+id/om_details_cancel_screen_arrangement_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel Screen Arrangements" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/create_map_with_several_layers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:src="@android:drawable/ic_dialog_map" />
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/create_map_manually"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:src="@android:drawable/ic_menu_mapmode" />
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/create_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:src="@android:drawable/ic_menu_camera" />
+    <TextView
+        android:id="@+id/create_section_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_toRightOf="@id/create_device"
+        android:text="Section Map"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

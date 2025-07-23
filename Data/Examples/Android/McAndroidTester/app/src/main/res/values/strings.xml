@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <string name="fragment_create_device">android:switcher:2131558511:0</string>
+    <string name="fragment_layers">layersFragment</string>
+
+    <string name="title_activity_view_ports">ViewPortsActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_terrain">TerrainActivity</string>
+    <string name="action_settings">Settings</string>-->
+    <!--
+    <string name="section_format">Hello World from section: %1$d</string>
+-->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+-->
+
+
+    <item name="TAG_COLOR_CHANGED" type="id" />
+    <item name="TAG_NUMERIC_CHANGED" type="id" />
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <item name="TAG_BOOL_CHANGED" type="id" />
+    <item name="TAG_FVECTOR2D_CHANGED" type="id" />
+    <string name="title_activity_maps_container">Maps Container</string>
+    <string name="title_activity_overlay_manager">Overlay Manager</string>
+    <string name="title_activity_view_port_with_several_layers">View Port With Several Layers</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="number_background_threads">Number Backgruond Threads</string>
+
+
+</resources>

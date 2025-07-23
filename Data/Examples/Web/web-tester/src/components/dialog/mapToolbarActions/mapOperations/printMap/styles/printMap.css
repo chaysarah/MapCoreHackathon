@@ -1,0 +1,21 @@
+:root {
+    --print-map-dialog-width: 500px;
+}
+
+
+/* dialog */
+.scroll-dialog-19 .p-dialog-content {
+    min-width: var(--print-map-dialog-width) !important;
+}
+
+.scroll-dialog-19 .p-dialog-header {
+    min-width: var(--print-map-dialog-width) !important;
+}
+
+.scroll-dialog-19 .p-dialog-footer {
+    min-width: var(--print-map-dialog-width) !important;
+}
+
+.scroll-dialog-19 {
+    overflow-x: auto;
+}

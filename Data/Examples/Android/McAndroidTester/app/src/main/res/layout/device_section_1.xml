@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:showIn="@layout/fragment_create_device"
+    android:focusableInTouchMode="true"
+    >
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/logging_level_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/logging_level"/>
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/terrain_object_quality_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/terrain_object_quality"
+        />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/rendering_system_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/rendering_system"
+        />
+    <CheckBox
+
+        android:id="@+id/shader_based_rendering_system_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/shader_based_rendering_system"
+        />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/viewport_anti_aliasing_level_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/viewport_anti_aliasing_level"
+        />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/terrain_object_anti_aliasing_level_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/terrain_object_anti_aliasing_level"
+        />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/static_objects_visibility_query_precision_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/static_objects_visibility_query_precision"
+        />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fel_labelText="@string/log_dir"
+        android:tag="@integer/fel_log_dir"
+        android:id="@+id/log_dir"
+        />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fel_labelText="@string/config_dir"
+        android:tag="@integer/fel_config_dir"
+        android:id="@+id/config_dir"
+        />
+
+</LinearLayout>

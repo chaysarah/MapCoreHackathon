@@ -1,0 +1,146 @@
+.Wrapper {
+  /*border-bottom: 1px solid #2D2D2D;*/
+  width: 100%;
+}
+
+.Line {
+  display: flex;
+  padding-left: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--app-bg-color-alt);
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.Line.Selected {
+  background: #4e4d41;
+}
+
+.Child .Wrapper .Line {
+  border: none;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.ImageTitleWrapper {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.Title {
+  font-weight: 400;
+  font-size: 14px;
+  height: 45px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 45px;
+}
+
+.FolderIcon {
+  width: 16px;
+  height: 13px;
+  margin-right: 15px;
+}
+
+.MapIcon {
+  width: 29px;
+  height: 27px;
+  margin-right: 10px;
+}
+
+.Child {
+  padding-left: 30px;
+  width: 100%;
+  border-bottom: 1px solid var(--app-bg-color-alt);
+  cursor: pointer;
+}
+
+.Child:hover {
+  background: var(--app-bg-color-alt);
+}
+
+.List {
+  list-style: none;
+  background: #373737;
+  width: 100%;
+  /*border-top: 1px solid #2D2D2D;*/
+  /*margin-left: 30px;*/
+  /*padding-left: 30px;*/
+}
+
+.Child.Selected {
+  background: #4e4d41;
+}
+
+.ClearBtn {
+  background: none;
+  color: var(--button-clear-color);
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 11px;
+  padding-right: 20px;
+}
+
+.ChildsNum {
+  white-space: pre;
+}
+
+.ChildNodeButtonsWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ActionBtn {
+  border: none;
+  padding: 0;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.Icon {
+  /*background-size: 100% auto;*/
+  display: inline-block;
+  height: 19px;
+  width: 19px;
+}
+
+.EditIcon {
+  height: 20px;
+  width: 20px;
+  background: url('../../assets/images/edit.svg') no-repeat;
+}
+
+.RemoveIcon {
+  margin-left: 10px;
+  height: 18px;
+  width: 16px;
+  background: url('../../assets/images/delete.svg') no-repeat;
+}
+
+.ContextIcon {
+  background: url('../../assets/images/context.svg') no-repeat;
+  background-position: center;
+}
+
+/* Disable text selection */
+::selection {
+  background-color: rgb(85, 85, 207);
+  color: inherit;
+}
+
+
+
+/* Disable text selection in input and textarea fields */
+/* input::selection, textarea::selection {
+  background-color: transparent;
+  color: inherit;
+} */

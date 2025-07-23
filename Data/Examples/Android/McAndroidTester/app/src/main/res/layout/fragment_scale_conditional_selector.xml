@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.overlay_manager_treeview.ScaleConditionalSelectorFragment">
+
+    <include
+        layout="@layout/fragment_base_conditional_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/scale_conditional_selector_min_scale_net"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Min Scale" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/scale_conditional_selector_max_scale_net"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Max Scale" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="cancel scale mode:" />
+
+    <include
+        android:id="@+id/scale_conditional_selector_cancel_scale_checkboxes"
+        layout="@layout/checkboxes_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="cancel scale mode result:" />
+
+    <include
+        android:id="@+id/scale_conditional_selector_cancel_scale_result_checkboxes"
+        layout="@layout/checkboxes_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

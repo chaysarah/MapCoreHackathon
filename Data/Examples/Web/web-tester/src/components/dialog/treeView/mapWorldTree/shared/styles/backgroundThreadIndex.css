@@ -1,0 +1,20 @@
+:root {
+    --background-thread-index-dialog-width: 350px;
+}
+
+/* dialog */
+.scroll-dialog-background-thread-index .p-dialog-content {
+    min-width: var(--background-thread-index-dialog-width) !important;
+}
+
+.scroll-dialog-background-thread-index .p-dialog-header {
+    min-width: var(--background-thread-index-dialog-width) !important;
+}
+
+.scroll-dialog-background-thread-index .p-dialog-footer {
+    min-width: var(--background-thread-index-dialog-width) !important;
+}
+
+.scroll-dialog-background-thread-index {
+    overflow-x: auto;
+}

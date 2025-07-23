@@ -1,0 +1,46 @@
+.tabview-demo .tabview-header-iconi,
+.tabview-demo .tabview-header-icon span {
+    vertical-align: middle;
+}
+.tabview-demo.tabview-header-icon span {
+    margin: calc(0vh*var(--size-factor));
+}
+.tabview-demo.p-tabview p {
+    line-height: 1.5;
+    margin: 0;
+}
+.p-tabview .p-tabview-panels {
+    background: #ffffff !important;
+    padding: 0 !important;
+    border: 0 none;
+    color: #495057;
+    border-bottom-right-radius: calc(0.9vh*var(--size-factor));
+    border-bottom-left-radius: calc(0.9vh*var(--size-factor));
+}
+
+.p-tabview-nav-prev {
+    z-index: 100 !important;
+}
+
+.p-tabview-nav-next {
+    z-index: 100 !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    padding-top: calc(0.8vh*var(--size-factor)) !important;
+    padding-right: calc(0.8vh*var(--size-factor)) !important;
+    padding-bottom: calc(0.8vh*var(--size-factor)) !important;
+    padding-left: calc(0.8vh*var(--size-factor)) !important;
+}
+/* .p-tabview-nav-content {
+    z-index: 10 !important;
+} */
+.p-tabview-nav-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior: contain auto;
+    position: relative;
+    z-index: 10 !important;
+}

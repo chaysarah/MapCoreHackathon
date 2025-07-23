@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.objects.fragments.properties_tabs.ObjectPropertiesTabsEllipseFragment">
+    <Button
+        android:id="@+id/object_properties_ellipse_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Ellipse Changes" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Coordinate System"
+        android:id="@+id/object_properties_ellipse_coordinate_sys_swl"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Ellipse Type"
+        android:id="@+id/object_properties_ellipse_type_swl"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Ellipse Definition"
+        android:id="@+id/ellipse_ellipse_definition_swl"
+        />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="start Angle"
+        android:id="@+id/ellipse_start_angle_net"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="end Angle"
+        android:id="@+id/ellipse_end_angle_net"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Inner Radius Factor"
+        android:id="@+id/ellipse_inner_radius_factor_net"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/ellipse_radius_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Radius X"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/ellipse_radius_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Radius Y"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

@@ -1,0 +1,83 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.elbit.mapcore.mcandroidtester'
+    compileSdk rootProject.ext.compileSdkVersion
+    ndkPath "C:/Android/android-ndk/bin"
+    ndkVersion rootProject.ext.ndkVersion
+
+    configurations.configureEach {
+        resolutionStrategy {
+            //force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+            //force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+            //force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.elbit.mapcore.mcandroidtester"
+        minSdkVersion rootProject.ext.minSdkVersion
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        ndkVersion rootProject.ext.ndkVersion
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            //minifyEnabled false
+            ndk {
+                debugSymbolLevel 'FULL' // Options: 'NONE', 'SYMBOL_TABLE', 'FULL'
+            }
+        }
+        release {
+            //minifyEnabled false
+        }
+    }
+
+    // Set Java 11 compatibility
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    /*repositories {
+        flatDir {
+            def projectMapCoreRootPath = "${project.rootDir}/../../../../"
+            def javaMapcoreAarFilesPath = "${projectMapCoreRootPath}/Development/Jni/JavaMapCore/mapcore7/build/outputs/aar"
+            dirs javaMapcoreAarFilesPath
+        }
+    }*/
+}
+
+dependencies {
+        // Local module dependencies
+        implementation project(':print')
+        implementation project(':multi-level-listview')
+
+        // AAR dependencies
+        implementation fileTree(dir: 'libs', include: ["mapcore7-*.aar"])
+
+    // AndroidX dependencies
+        implementation('androidx.appcompat:appcompat:1.7.0') {
+            exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+            exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+        }
+        implementation('androidx.core:core:1.12.0') {
+            exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+            exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+        }
+        implementation 'com.google.android.material:material:1.12.0'
+
+        // External libraries
+        implementation 'com.google.code.gson:gson:2.10.1'
+
+        // Testing dependencies
+        testImplementation 'org.mockito:mockito-core:3.11.2'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+        androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+        androidTestImplementation 'androidx.test:rules:1.6.1'
+    }

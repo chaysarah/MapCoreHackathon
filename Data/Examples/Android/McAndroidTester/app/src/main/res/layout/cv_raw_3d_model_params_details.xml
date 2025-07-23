@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/raw_3d_model_params_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/raw_3d_model_params_save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Save" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Target Highest Resolution"
+                android:id="@+id/raw_3d_model_target_highest_resolution"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="target coordinate system" />
+
+            <FrameLayout
+                android:id="@+id/raw_3d_model_grid_coord_sys_target"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+
+            <CheckBox
+                android:id="@+id/raw_3d_model_non_default_clip_rect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clipping Rectangle (In target grid coordinate system)" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.WorldBoundingBox
+                android:id="@+id/raw_3d_model_clip_rect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/raw_3d_model_non_default_tiling_scheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non - Default Tiling Scheme" />
+
+           <com.elbit.mapcore.mcandroidtester.utils.customviews.TilingScheme
+                android:id="@+id/raw_3d_model_tiling_scheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"  />
+        </LinearLayout>
+    </LinearLayout>

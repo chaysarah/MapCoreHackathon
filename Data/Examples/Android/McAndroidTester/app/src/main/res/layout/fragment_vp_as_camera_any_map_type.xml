@@ -1,0 +1,338 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.viewport_tabs.viewport_as_camera_tabs.VpAsCameraAnyMapTypeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/any_map_type_map_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:enabled="false"
+                    android:hint="Map Type" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/any_map_type_camera_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_vector_label="Camera Position" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                >
+
+                <CheckBox
+                    android:id="@+id/any_map_type_camera_position_is_relative_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_weight="2"
+                    android:hint="Is Relative" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SampleLocationPointsBttn
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/camera_any_map_type_camera_position_sample_location_bttn"
+                    android:layout_weight="1"
+                    app:container_fragment_name="ViewPortDetailsTabsFragment"
+                app:point_in_overlay_manager_coord_sys="true"
+                app:point_z_value="1.7976931348623157E+308"
+                app:query_precision="EQP_DEFAULT"
+                app:point_coord_system="EPCS_WORLD"
+                app:sample_one_point="true"
+                app:user_control_name="@id/any_map_type_camera_position"/>
+
+                <Button
+                    android:id="@+id/any_map_type_camera_position_ok_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="OK" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/any_map_type_camera_up_vector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_vector_label="Camera Up Vector" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/any_map_type_camera_up_vector_is_relative_to_orientation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Relative To Orientation" />
+
+                <Button
+                    android:id="@+id/any_map_type_camera_up_vector_ok_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="OK" />
+            </RelativeLayout>
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDOrientation
+                android:id="@+id/any_map_type_camera_orientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_orientation_label="Camera Orientation" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/any_map_type_camera_orientation_is_relative_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Is Relative" />
+
+                <Button
+                    android:id="@+id/any_map_type_camera_orientation_ok_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="OK" />
+            </RelativeLayout>
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/any_map_type_move_relative_to_orientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_vector_label="Move Relative To Orientation" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/any_map_type_xy_direction_only_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="XY Direction Only" />
+
+                <Button
+                    android:id="@+id/any_map_type_move_relative_to_orientation_ok_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="OK" />
+            </RelativeLayout>
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Camera Scale" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/any_map_type_camera_scale_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_hint="Camera Scale" />
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/any_map_type_in_3d_enter_world_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_vector_label="In 3D Enter World Point" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/any_map_type_in_3d_enter_world_point_get_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Get" />
+
+                <Button
+                    android:id="@+id/any_map_type_in_3d_enter_world_point_OK_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="OK" />
+            </RelativeLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Screen Visible Area" />
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+                android:id="@+id/any_map_type_top_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:two_d_f_vector_label="Top Left" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+                android:id="@+id/any_map_type_bottom_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:two_d_f_vector_label="Top Left" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                    android:id="@+id/any_map_type_screen_visible_area_operation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:swl_labelText="Operation" />
+
+                <Button
+                    android:id="@+id/any_map_type_screen_visible_area_OK_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OK" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Camera World Visible Area" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/any_map_type_camera_world_visible_area_min_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_vector_label="Min Point" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/any_map_type_camera_world_visible_area_max_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_vector_label="Max Point" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/any_map_type_rectangle_Yaw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="Rectangle yaw" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/any_map_type_screen_margin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="Screen Margin" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/any_map_type_camera_world_visible_area_get_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Get" />
+
+                <Button
+                    android:id="@+id/any_map_type_camera_world_visible_area_OK_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="OK" />
+            </RelativeLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Camera Center Offset" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+                android:id="@+id/any_map_type_camera_center_offset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:two_d_f_vector_label="Offset" />
+
+            <Button
+                android:id="@+id/any_map_type_camera_center_offset_OK_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="OK" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Rotate Camera Around World Point" />
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/any_map_type_rotate_camera_around_world_pivot_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_vector_label="Pivot Point" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDOrientation
+                android:id="@+id/any_map_type_rotate_camera_around_world_delta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:three_d_orientation_label="Delta" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/any_map_type_rotate_camera_around_world_relative_to_orientation_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:hint="Relative To Orientation" />
+
+                <Button
+                    android:id="@+id/any_map_type_rotate_camera_around_world_relative_to_orientation_OK_bttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="OK" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

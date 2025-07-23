@@ -1,0 +1,166 @@
+.FileUpload {
+  /*background-color: #e8e9ec;*/
+  background-color: #fff;
+  cursor: pointer;
+  height: 60%;
+  max-height: 300px;
+  border: 2px dashed #b5b4b4;
+  border-radius: 7px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background-color 0.3s ease 0s;
+
+  min-height: 230px;
+  border: 2px dashed #9e9fa0;
+  background: transparent;
+  border-radius: 6px;
+  color: #ced4da;
+}
+
+.FileUpload:hover {
+  border-style: solid;  
+  border-width: 1px;
+}
+
+.FileInput {
+  display: none;
+}
+
+.UploadPicture {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background-image: url('../../assets/img/upload.svg');
+    background-repeat: no-repeat;
+    background-position: center;*/
+  -webkit-mask: url(../../../assets/images/upload.svg);
+  background: #b3b3b3;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.Instructions {
+  font-size: 20px;
+  color: #ced4da;
+  font-weight: 400;
+  margin-top: 25px;  
+}
+
+.Instructions.Error {  
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ff2e0d;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid;
+  display: flex;
+}
+
+.Instructions.Error span{
+  padding: 5px 15px 5px 10px;
+  max-width: 500px;
+  max-height: 40px;  
+  overflow: hidden;
+  opacity: 0;
+  animation: textwidth 0.3s linear, showtext 0.3s linear 0.3s forwards;
+}
+
+.FileUpload.FileHover {
+  background: linear-gradient(90deg, #b5b4b4 50%, transparent 50%),
+    linear-gradient(0deg, #b5b4b4 50%, transparent 50%),
+    linear-gradient(90deg, #b5b4b4 50%, transparent 50%),
+    linear-gradient(0deg, #b5b4b4 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+  background-size: 10px 2px, 2px 10px, 10px 2px, 2px 10px;
+  background-position: left top, right top, left bottom, left top;
+  border: none;
+  animation: border-dance 10s infinite linear;
+}
+
+.FileUpload.FileHover .UploadPicture {
+  display: none;
+}
+
+.FileUpload.FileHover .Instructions {
+  font-size: 32px;
+}
+
+.MaxSizeLabel {
+  color: #222;
+  padding-left: 5px;
+  font-size: 15px;
+}
+
+.InstructionsIcon {  
+  /*-webkit-mask: url(../../assets/img/error2.svg);  
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;*/
+  background: #ff2e0d;
+  height: 29px;
+  width: 49px;
+  margin-right: 5px;
+  padding: 0 15px;
+}
+
+@keyframes border-dance {
+  0% {
+    background-position: left top, right top, right bottom, left bottom;
+  }
+  100% {
+    background-position: right top, right bottom, left bottom, left top;
+  }
+}
+@keyframes textwidth {
+  0% {
+    max-width: 0px;
+  }
+  100% {
+    max-width: 500px;
+  }
+}
+@keyframes showtext {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .InstructionMessage {
+    display: block;
+    text-align: center;
+    font-size: 16px;    
+  }
+  .Instructions.Error span{
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .InstructionMessage {
+    font-size: 14px;    
+  }
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #191919; /* Blue */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

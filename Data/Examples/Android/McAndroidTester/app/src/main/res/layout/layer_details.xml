@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layer_details_layer_params_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/layer_detail_visibility_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visibility" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/layer_detail_min_scale_visibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:netl_labelText="Min Scale Visibility:"
+
+            />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/layer_detail_max_scale_visibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:netl_labelText="Max Scale Visibility:" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/layer_detail_draw_priority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:netl_labelText="Draw Priority:" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/layer_detail_transparency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:netl_labelText="Transparency:" />
+
+        <CheckBox
+            android:id="@+id/layer_detail_NearestPixelMagFilter_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nearest Pixel Mag Filter" />
+
+        <Button
+            android:id="@+id/layer_detail_ok_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="set layer params" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/layer_detail_removeLayers_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check layers to remove" />
+</LinearLayout>

@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="?android:attr/windowBackground">
+
+    <fragment android:name="com.elbit.mapcore.mcandroidtester.ui.map.fragments.GridCoordinateSysFragment"
+        android:id="@+id/create_new_om_grid_coordinate_sys_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="OK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_new_overlay_manager_ok"
+        android:layout_weight="0.7" />
+
+</LinearLayout>

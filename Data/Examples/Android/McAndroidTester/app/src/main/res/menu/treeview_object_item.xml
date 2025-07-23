@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tv_object_item_action_clone"
+        android:orderInCategory="100"
+        android:title="Clone"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/tv_object_item_action_remove"
+        android:orderInCategory="200"
+        android:title="Remove"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/tv_object_item_action_replace_overlay"
+        android:orderInCategory="300"
+        android:title="Replace Overlay"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/tv_object_item_action_replace_scheme"
+        android:orderInCategory="400"
+        android:title="Replace Scheme"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/tv_object_item_action_move_to_location"
+        android:orderInCategory="500"
+        android:title="Move To Location"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/tv_object_item_action_jump_to_scheme"
+        android:orderInCategory="600"
+        android:title="Jump To Scheme"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/tv_object_item_action_rename"
+        android:orderInCategory="700"
+        android:title="Rename"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/tv_object_item_action_delete_name"
+        android:orderInCategory="800"
+        android:title="Delete Name"
+        app:showAsAction="never"
+        />
+</menu>

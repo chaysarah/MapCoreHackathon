@@ -1,0 +1,58 @@
+:root {
+    --texture-dialog-width: 750px;
+}
+
+.texture__bottom-popup {
+    background-color: rgb(244, 244, 244);
+    border-bottom-right-radius: calc(0.9vh*var(--size-factor));
+    border-bottom-left-radius: calc(0.9vh*var(--size-factor));
+}
+
+.texture__general-container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.3vh*var(--size-factor));
+    padding: calc(1vh*var(--size-factor));
+}
+
+.texture__dropdown {
+    width: calc(14vh*var(--size-factor));
+}
+
+.texture__flex-and-row-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.texture__flex-and-row-end-pad {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: calc(0.5vh*var(--size-factor));
+}
+
+.texture__checkbox-div {
+    margin: calc(0.3vh*var(--size-factor)) !important;
+}
+
+.texture__disabled-label {
+    color: #ababab;
+}
+
+/* dialog */
+.scroll-dialog-3 .p-dialog-content {
+    width: var(--texture-dialog-width) !important;
+}
+
+.scroll-dialog-3 .p-dialog-header {
+    width: var(--texture-dialog-width) !important;
+}
+
+.scroll-dialog-3 .p-dialog-footer {
+    width: var(--texture-dialog-width) !important;
+}
+
+.scroll-dialog-3 {
+    overflow-x: auto;
+}

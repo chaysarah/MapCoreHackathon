@@ -1,0 +1,76 @@
+:root {
+    --choose-layers-dialog-width: 800px;
+    --layers-selection-tree-dialog-width: 600px;
+    --layers-selection-table-dialog-width: 600px;
+}
+
+.manual-layers__place-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 99%;
+    border-bottom: 1px solid #dee2e6;
+    ;
+}
+
+.manual-layers__tab-view {
+    margin-bottom: 1%;
+    height: calc(14vh*var(--size-factor));
+}
+
+/* dialog */
+.scroll-dialog-1 .p-dialog-content {
+    min-width: var(--choose-layers-dialog-width) !important;
+}
+
+.scroll-dialog-1 .p-dialog-header {
+    min-width: var(--choose-layers-dialog-width) !important;
+}
+
+.scroll-dialog-1 .p-dialog-footer {
+    min-width: var(--choose-layers-dialog-width) !important;
+}
+
+.scroll-dialog-1 {
+    overflow-x: auto;
+}
+
+/* layers-selection-tree */
+.scroll-dialog-layers-selection-tree .p-dialog-content {
+    min-width: var(--layers-selection-tree-dialog-width) !important;
+}
+
+.scroll-dialog-layers-selection-tree .p-dialog-header {
+    min-width: var(--layers-selection-tree-dialog-width) !important;
+}
+
+.scroll-dialog-layers-selection-tree .p-dialog-footer {
+    min-width: var(--layers-selection-tree-dialog-width) !important;
+}
+
+.scroll-dialog-layers-selection-tree {
+    overflow-x: auto;
+}
+
+/* layers-selection-table */
+.scroll-dialog-layers-selection-table .p-dialog-content {
+    min-width: var(--layers-selection-table-dialog-width) !important;
+}
+
+.scroll-dialog-layers-selection-table .p-dialog-header {
+    min-width: var(--layers-selection-table-dialog-width) !important;
+}
+
+.scroll-dialog-layers-selection-table .p-dialog-footer {
+    min-width: var(--layers-selection-table-dialog-width) !important;
+}
+
+.scroll-dialog-layers-selection-table {
+    overflow-x: auto;
+}
+
+.activeLayer {
+    border: 1px solid black;
+    padding: '10px';
+    padding: 2px;
+}

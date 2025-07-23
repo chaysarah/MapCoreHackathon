@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.properties_tabs.ObjectPropertiesTabsArcFragment">
+    <Button
+        android:id="@+id/object_properties_arc_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Arc Changes" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Coordinate System"
+        android:id="@+id/object_properties_arc_coordinate_sys_swl"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Ellipse Type"
+        android:id="@+id/object_properties_arc_ellipse_type_swl"/>
+  <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:swl_labelText="Ellipse Definition"
+      android:id="@+id/arc_ellipse_definition_swl"
+      />
+
+<com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:netl_labelText="start Angle"
+    android:id="@+id/arc_start_angle_net"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="end Angle"
+        android:id="@+id/arc_end_angle_net"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Radius X"
+        android:id="@+id/arc_radius_x_net"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Radius Y"
+        android:id="@+id/arc_radius_y_net"/>
+</LinearLayout>

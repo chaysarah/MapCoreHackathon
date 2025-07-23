@@ -1,0 +1,114 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MainBttns">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="spinnerWithLabel">
+        <item name="android:layout_gravity">center</item>
+<!--
+        <item name="android:layout_width">0dp</item>
+-->
+        <item name="android:layout_height">wrap_content</item>
+<!--
+        <item name="android:layout_weight">1</item>
+-->
+        <item name="android:textSize">15sp</item>
+
+    </style>
+
+    <style name="fileChooserEditTextLabel">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+
+    </style>
+
+    <style name="style2">
+        <item name="android:layout_gravity">top</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="section_separate">
+        <item name="android:background">@color/text_lgray</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_margin">6dp</item>
+    </style>
+
+    <style name="section_separate_1" parent="section_separate">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">100dp</item>
+
+    </style>
+
+    <style name="section_separate_2" parent="section_separate">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+
+    </style>
+
+    <style name="section_separate_txt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="private_properties_table_column">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="private_properties_table_column_header" parent="private_properties_table_column">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color_overriding_table_column">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="color_overriding_table_column_header" parent="color_overriding_table_column">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+</resources>

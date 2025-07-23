@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.viewport_tabs.ViewPortTerrainsFragment">
+<!--
+    <Button
+        android:id="@+id/view_port_terrains_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes" />-->
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Visible Terrain Layers" />
+
+    <LinearLayout
+        android:id="@+id/view_port_terrains_tree_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/view_port_terrains_draw_priority_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Draw Priority" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_weight="0.5"
+            android:id="@+id/view_port_terrains_draw_priority__ok_bttn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="OK" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/view_port_details_num_tiles_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Num Tiles" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_weight="0.5"
+            android:id="@+id/view_port_details_num_tiles_ok_bttn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="OK" />
+    </LinearLayout>
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Visible Overlays" />
+
+    <ListView
+        android:id="@+id/view_port_terrains_visible_overlays_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

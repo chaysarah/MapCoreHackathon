@@ -1,0 +1,30 @@
+:root {
+    --add-json-vp-dialog-width: 500px;
+}
+
+.add-json-vp__disabled-radio-button-label {
+    padding: calc(2vh*var(--size-factor));
+    color: rgb(148, 147, 147);
+}
+
+.add-json-vp__radio-button-label {
+    padding: calc(2vh*var(--size-factor));
+
+}
+
+/* dialog */
+.scroll-dialog-4 .p-dialog-content {
+    min-width: var(--add-json-vp-dialog-width) !important;
+}
+
+.scroll-dialog-4 .p-dialog-header {
+    min-width: var(--add-json-vp-dialog-width) !important;
+}
+
+.scroll-dialog-4 .p-dialog-footer {
+    min-width: var(--add-json-vp-dialog-width) !important;
+}
+
+.scroll-dialog-4 {
+    overflow-x: auto;
+}

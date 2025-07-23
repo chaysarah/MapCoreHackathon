@@ -1,0 +1,20 @@
+.raw-vector-params-ctrl__load-params-style {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: calc(0.15vh*var(--size-factor));
+}
+
+.raw-vector-params-ctrl__styling-params-input-divs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.raw-vector-params-ctrl__styling-params-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: calc(0.15vh*var(--size-factor));
+}

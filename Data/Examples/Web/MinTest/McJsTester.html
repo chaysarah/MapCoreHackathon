@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html>
+  <meta charset="UTF-8"> 
+  <link rel="shortcut icon" href="">
+  <body>
+      <input type="image" src="Images/tsbLineItem.Image.png" alt="Line " width="32" height="32" id="Line" />
+      <input type="image" src="Images/tsbEllipseItem.Image.png" alt="Ellipse " width="32" height="32" id="EllipseCPU" />
+      <input type="image" src="Images/tsbEllipseItemGPU.Image.png" alt="Ellipse " width="32" height="32" id="EllipseGPU" />
+      <input type="image" src="Images/tsbPolygonItem.Image.png" alt="Polygon " width="32" height="32" id="Polygon" />
+      <input type="image" src="Images/tsbArrowItem.Image.png" alt="Arrow " width="32" height="32" id="Arrow" />
+      <input type="image" src="Images/tsbTextItem.Image.png" alt="Text " width="32" height="32" id="Text" />
+      <span style="margin:0.6em"></span>
+      <input type="image" src="Images/tsbEditObject.Image.png" alt="Text " width="32" height="32" id="Edit" />
+      <input type="image" src="Images/mosaicsCreatorToolStripMenuItem.Image.png" alt="Text " width="32" height="32" id="ChangeState" />
+      <span style="margin:0.6em"></span>
+      <input type="image" src="Images/tsbObjects.Image.png" alt="Text " width="32" height="32" id="CreateObjects" />
+      <input type="image" src="Images/tsbNavigateMap.Image.png" alt="Text " width="32" height="32" id="ToggleMoveObjects" />
+      <input type="image" src="Images/tsbExitCurrentAction.Image.png" alt="Text " width="32" height="32" id="RemoveObjects" />
+      <input type="image" src="Images/tsbPathFinder.Image.png" alt="Text " width="32" height="32" id="Sketch" />
+      <input type="image" src="Images/tsbObjectAutoAnimatation.Image.png" alt="Text " width="32" height="32" id="RotateAroundCenter" />
+      <span style="margin:0.6em"></span>
+      <input type="image" src="Images/tsbZoomIn.Image.png" alt="Text " width="32" height="32" id="BrightnessPlus" />
+      <input type="image" src="Images/tsbZoomOut.Image.png" alt="Text " width="32" height="32" id="BrightnessMinus" />
+      <input type="image" src="Images/tsbPointLight.Image.png" alt="Text " width="32" height="32" id="BrightnessZero" />
+      <input type="image" src="Images/tsbMapGrid.Image.png" alt="Text " width="32" height="32" id="CreateGrid" />
+      <input type="image" src="Images/tsbMapHeightMap.Image.png" title="Dtm visualization" alt="Text " width="32" height="32" id="DtmVisualization" />
+      <input type="image" src="Images/tsbMapHeightLines.Image.png" title="Height lines" alt="Text " width="32" height="32" id="HeighLinesVisualization" />
+      <input type="image" src="Images/tsbFpsImage.png" title="Viewport Statistics" alt="Text " width="32" height="32" id="ViewportStatistics" />
+      <input type="image" src="Images/tsTransparent.png" title="Transparency Ordering On/Off" alt="Text " width="32" height="32" id="TransparencyOrderingMode" />
+      <input type="image" src="Images/tsbVisibleEqualizationHistogram.png" title="Visible Equalization Histogram"alt="Text " width="32" height="32" id="VisibleEqualizationHistogram" />
+      <input type="image" src="Images/Arrow-Left.png" alt="Text " width="32" height="32" id="PrevViewport" />
+      <input type="image" src="Images/Arrow-Right.png" alt="Text " width="32" height="32" id="NextViewport" />  
+      <br>
+      <label id="SameCanvasLabel" style="color:gray">
+          <input type="checkbox" id="SameCanvas" disabled=true>
+          Same canvas
+      </label>
+      <select id="SelectViewportConfig" disabled=true>
+          <option>2D/3D</option>
+          <option>3D/2D</option>
+          <option>2D</option>
+          <option>3D</option>
+      </select>
+      <select id="SelectTerrain" disabled=true></select>
+      <input id="RefreshMaps" type="image" src="Images/update_icon.png" title="Refresh map list" alt="Text " width="14" height="14" disabled=true />
+      <button id="OpenMaps" disabled=true>Open</button>
+      <button id="Resize">Maximize</button>
+      <button id="CloseMap" disabled=true>Close</button>
+      <button id="Wireframe">Wireframe</button>
+      <button id="TerrainBoundingBoxes">Tiles</button>
+      <button id="ResetCamera">Recenter</button>
+      <div style="line-height:30%;">
+          <br>
+      </div>
+      <label style="color:black">
+          Image-Processing
+      </label>
+      <select id="Ip_Type">
+          <option value="Type_Default">Set To Default</option>
+          <option value="Type_Layer">Layer</option>
+          <option value="Type_Viewport">Viewport</option>
+      </select>
+      <select id="Ip_FilterMode" disabled>
+          <option value="Smooth_Low">Smooth Low Filter</option>
+          <option value="Smooth_Low_Negative">Smooth Low Negative Filter</option>
+          <option value="Smooth_Mid">Smooth Mid Filter</option>
+          <option value="Smooth_Mid_Negative">Smooth Mid Negative Filter</option>
+          <option value="Smooth_High">Smooth High Filter</option>
+          <option value="Smooth_High_Negative">Smooth High Negative Filter</option>
+          <option value="Sharp_Low">Sharp Low Filter</option>
+          <option value="Sharp_Low_Negative">Sharp Low Negative Filter</option>
+          <option value="Sharp_Mid">Sharp Mid Filter</option>
+          <option value="Sharp_Mid_Negative">Sharp Mid Negative Filter</option>
+          <option value="Sharp_High">Sharp High Filter</option>
+          <option value="Sharp_High_Negative">Sharp High Negative Filter</option>
+          <option value="Custom_Mode">Custom Filter</option>
+      </select>
+      <select id="Ip_CustomMode" disabled>
+          <option value="Custom_1x1">1x1 Filter</option>
+          <option value="Custom_2x2">2x2 Filter</option>
+          <option selected value="Custom_3x3">3x3 Filter</option>
+          <option value="Custom_4x4">4x4 Filter</option>
+          <option value="Custom_5x5">5x5 Filter</option>
+          <option value="Custom_6x6">6x6 Filter</option>
+          <option value="Custom_7x7">7x7 Filter</option>
+          <option value="Custom_8x8">8x8 Filter</option>
+          <option value="Custom_9x9">9x9 Filter</option>
+      </select>
+      <div style="line-height:30%;">
+          <br>
+      </div>
+      <Canvases>
+      </Canvases>
+      <script>
+          let Controls = ["Line", "EllipseCPU", "EllipseGPU", "Polygon", "Arrow", "Text", "Edit", "ChangeState", "CreateObjects", "ToggleMoveObjects", "RemoveObjects", "Sketch",
+              "RotateAroundCenter", "BrightnessPlus", "BrightnessMinus", "BrightnessZero", "CreateGrid", "DtmVisualization", "HeighLinesVisualization", "ViewportStatistics",
+              "TransparencyOrderingMode", "PrevViewport", "NextViewport", "RefreshMaps", "OpenMaps", "Resize", "CloseMap", "Wireframe", "TerrainBoundingBoxes", "ResetCamera", "VisibleEqualizationHistogram"];
+
+          let ConfigurationFileURL = "http:McJsTester.json";
+      </script>
+
+      <script src="MapCore.js"></script> <!-- comment out for using MapCore module -->
+
+      <script type="module" src="McJsTester.mjs">
+      </script>
+  </body>
+</html>
+ 

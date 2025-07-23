@@ -1,0 +1,60 @@
+.map-window__viewport {
+  z-index: 2;
+  border: solid #9E9E9E calc(0.4vh*var(--size-factor)) !important;
+  background-color: '#dad8d8';
+  overflow: hidden;
+}
+
+.map-window__viewport-active {
+  box-shadow: 0 calc(0.6vh*var(--size-factor)) calc(1.2vh*var(--size-factor)) 0 rgba(0, 0, 0, 1.2), 0 calc(0.9vh*var(--size-factor)) calc(3vh*var(--size-factor)) 0 rgba(0, 0, 0, 0.19);
+  border: solid black calc(0.4vh*var(--size-factor)) !important;
+}
+
+.map-window__rng-min-active {
+  z-index: 3 !important;
+}
+
+.map-window__maximize {
+  border: 0;
+}
+
+canvas {
+  cursor: auto;
+}
+
+.map-window__rng-min {
+  flex: 1 1 calc(22vh*var(--size-factor));
+  /* overflow: hidden; */
+}
+
+.map-window__header {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(250, 250, 250);
+  color: #6c757d;
+}
+
+.map-window__header-maximize {
+  background-color: white;
+  /* justify-content:flex-end; */
+}
+
+.map-window__icon {
+  cursor: pointer;
+}
+
+.map-window__side-panel {
+  height: calc(0vh*var(--size-factor));
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 20;
+  left: 0;
+  background-color: #ffff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: calc(0vh*var(--size-factor));
+  border-left: solid #00000096 calc(0.4vh*var(--size-factor));
+  border-right: solid #00000096 calc(0.4vh*var(--size-factor));
+}

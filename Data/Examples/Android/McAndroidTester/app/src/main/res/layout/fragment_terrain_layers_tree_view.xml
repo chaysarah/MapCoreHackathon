@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
+    android:orientation="vertical"
+    tools:context=".ui.map_actions.treeviews.ViewportTerrainTreeViewFragment">
+
+    <LinearLayout
+        android:id="@+id/terrain_layers_tree_view_container_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+</LinearLayout>

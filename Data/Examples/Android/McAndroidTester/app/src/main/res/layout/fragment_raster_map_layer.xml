@@ -1,0 +1,16 @@
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/windowBackground">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.layers_tabs.RasterMapLayerFragment">
+<include android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    layout="@layout/layer_histogram"/>
+</LinearLayout>
+</ScrollView>

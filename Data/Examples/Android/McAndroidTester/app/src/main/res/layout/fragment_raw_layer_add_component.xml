@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/raw_layers_add_component_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add component" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/raw_layers_components_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/raw_layers_component_type_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="component Type" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/raw_layers_directory_name_fc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="field/directory name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="World Limit:" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.WorldBoundingBox
+                android:id="@+id/raw_layers_world_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

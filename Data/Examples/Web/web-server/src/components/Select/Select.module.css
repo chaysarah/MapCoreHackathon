@@ -1,0 +1,174 @@
+.Wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.Label {
+    /* display: flex; */
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.Mandatory{
+    position: relative;
+}
+.Mandatory::after {
+    content: '*';
+    color: var(--app-validation-color);
+    margin-left: 3px;
+    position: absolute;
+}
+
+.DropDownWrapper {
+    width: 100%;
+    height: 50px;
+}
+.DropDownWrapper.Small {
+    height: inherit;
+}
+
+.Dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;          
+    padding: 10px;
+    border-radius: var(--button-border-radius);    
+    /*color: var(--app-font-color);*/
+    color: var(--app-font-color);
+    transition: .2s;
+    font-weight: 400;
+    border: 1px solid var(--input-border-color);
+    font-size: 14px;  
+    outline: none;
+}
+.Dropdown.ShowError {
+    border: 1px solid var(--app-validation-color);
+}
+
+.Dropdown::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 9px;
+    background-image: url('../../assets/images/arrow.svg');
+    transition: .2s;
+    right: 15px;
+    /*top: 15px;*/
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Dropdown.Small::before {
+    right: 13px;
+    width: 12px;
+    height: 8px;
+}
+
+.Dropdown.DropDownActive, .Dropdown.DropDownActive:hover  {    
+}
+
+/*.Dropdown:hover {
+    background-color: #484848;
+    color: #e4e4e4;
+}*/
+.SelectedValue {
+    outline: none;    
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.ListWrapper {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 38px;
+    right: 0px;
+    width: 100%;
+    background-color: var( --popup-header-footer-bg-color);
+    font-weight: 400;
+    position: absolute;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+    border: 1px solid var(--input-border-color);    
+    border-radius: var(--button-border-radius);
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+.Dropdown.Small .ListWrapper {
+    border-color: #d9d9d929;
+    top: 29px;
+}
+ .ListElement {
+    padding: 10px;  
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
+
+
+.ListElement:last-child {
+    border-bottom: none;
+}
+
+.ListElement:hover {
+    background-color: rgba(180, 180, 180,0.15);
+}
+
+.ListElement.Hover {
+    background-color: rgba(180, 180, 180,0.15);
+}
+
+.ListElement a {    
+    text-decoration: none;
+    font-weight: 400;
+    color: inherit;
+}
+
+.ValidationMessage {    
+    visibility: visible;
+    color: var(--app-validation-color);
+    font-size: 12px;
+    padding-left: 2px;
+    margin-top: 3px;
+    outline: none;
+}
+
+.ValidationMessage.ShowError {    
+    visibility: visible;
+}
+
+.ValidationImg {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    top: 50%;
+    right: -28px;
+    visibility: hidden;
+    outline: none;
+}
+.ValidationImg.ShowError {    
+    visibility: visible;
+}
+.readOnly{
+    color: var(--app-font-readonly);
+}
+.InfoImage {
+    display: inline-flex;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 14px;
+    width: 14px;
+    background-size: cover;    
+    background-image: url('../../assets/images/info.svg');
+    position: relative;
+  }
+  

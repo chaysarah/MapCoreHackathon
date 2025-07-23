@@ -1,0 +1,245 @@
+/* footer */
+.form__footer-dialog {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+.form__footer-padding {
+    padding: calc(1vh*var(--size-factor));
+}
+
+/* div */
+.form__items-center {
+    align-items: center;
+}
+
+.form__items-end {
+    align-items: flex-end;
+}
+
+.form__justify-end {
+    justify-content: flex-end;
+}
+
+.form__justify-between {
+    justify-content: space-between;
+}
+
+.form__justify-center {
+    justify-content: center;
+}
+
+.form__aligm-self-center {
+    align-self: center;
+}
+
+.form__align-self-end {
+    align-self: flex-end;
+}
+
+.form__justify-space-around {
+    justify-content: space-around !important;
+}
+
+.form__flex-and-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__flex-and-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.form__flex-and-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form__column-container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.25vh*var(--size-factor));
+}
+
+.form__row-container {
+    display: flex;
+    flex-direction: row;
+    gap: calc(0.5vh*var(--size-factor));
+}
+
+.form__center-aligned-row {
+    display: flex !important;
+    align-items: center !important;
+    /* margin-bottom: 1% !important; */
+    gap: calc(0.75vh*var(--size-factor)) !important;
+}
+
+.form__center-aligned-row .p-radiobutton,
+.form__center-aligned-row .p-checkbox,
+.form__center-aligned-row .p-inputtext,
+.form__center-aligned-row label {
+    display: flex !important;
+    align-self: center !important;
+}
+
+.form__lower-margin {
+    margin-bottom: calc(0.45vh*var(--size-factor));
+}
+
+.form__grid-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8%;
+}
+
+.form__apply-buttons-container {
+    display: flex;
+    justify-content: end;
+    gap: calc(0.75vh*var(--size-factor));
+    /* margin-top: 0.75*var(--size-factor)vh; */
+}
+
+/* input options */
+.form__narrow-input .p-inputtext {
+    width: calc(var(--size-factor)*8vh) !important;
+}
+
+.form__slim-input .p-inputtext {
+    width: calc(var(--size-factor)*4vh) !important;
+}
+
+.form__medium-width-input .p-inputtext {
+    width: calc(var(--size-factor)*6vh) !important;
+}
+
+.form__large-input .p-inputtext {
+    width: calc(var(--size-factor)*10vh) !important;
+}
+
+.form__max-width-input {
+    width: 100% !important;
+}
+
+.form__path-input .p-inputtext {
+    width: 80% !important;
+}
+
+/* dropdown options */
+.form__dropdown-input .p-dropdown-item {
+    width: calc(var(--size-factor)*12vh) !important;
+}
+
+.form__dropdown-input-width {
+    width: calc(var(--size-factor)*14vh) !important;
+}
+
+/* fieldset options */
+.form__align-items-end .p-fieldset-content {
+    align-items: flex-end;
+}
+
+.form__space-between .p-fieldset-content {
+    justify-content: space-between !important;
+}
+
+.form__space-around .p-fieldset-content {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.form__flex-wrap .p-fieldset-content {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.form__column-fieldset .p-fieldset-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: calc(0.75vh*var(--size-factor)) !important;
+}
+
+.form__column-fieldset-no-gap .p-fieldset-content {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.form__disabled-fieldset .p-fieldset-content {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.form__disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.form__non-visible {
+    visibility: hidden;
+}
+
+.form__row-fieldset .p-fieldset-content {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.form__items-center .p-fieldset-content {
+    align-items: center;
+}
+
+/* radio buddon */
+.form__radio-button-label {
+    margin-left: calc(0.9vh*var(--size-factor)) !important;
+}
+
+/* tabs */
+/* Ensure the tabview container has enough space */
+/* .form__tabview-container .p-tabview {
+    padding: 0 1.5*var(--size-factor)vh;
+    position: relative;
+} */
+
+
+.form__tabview-container .p-tabview .p-tabview-nav-btn.p-link {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: calc(3.5vh*var(--size-factor)) !important;
+    height: calc(3.5vh*var(--size-factor)) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.form__tabview-container .p-tabview-nav-prev {
+    left: 0 !important;
+    margin-right: calc(3vh*var(--size-factor));
+}
+
+.form__tabview-container .p-tabview-nav-next {
+    right: 0 !important;
+    margin-left: calc(3vh*var(--size-factor));
+}
+
+/* button */
+.form__full-div-button {
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+/* confirmDialog */
+.form__confirm-dialog-content.p-dialog-content {
+    padding: 0 1.5rem 2rem 1.5rem !important;
+    border-bottom-right-radius: calc(0.9vh*var(--size-factor));
+    border-bottom-left-radius: calc(0.9vh*var(--size-factor));
+}
+
+/* checkbox */
+.form__checkbox-div {
+    margin: calc(0.3vh*var(--size-factor)) !important;
+}

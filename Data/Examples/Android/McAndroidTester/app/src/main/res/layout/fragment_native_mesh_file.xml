@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.objects.fragments.create_mesh_tabs.NativeMeshFileFragment">
+
+<com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:fel_labelText="Native mesh file"
+    android:id="@+id/native_mesh_file_chooser"
+    app:fel_enable_file_choosing="true"/>
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:id="@+id/native_mesh_use_existing"
+		android:text="use existing"/>
+
+	<Button
+		android:id="@+id/btn_create_native_mesh"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:text="Create" />
+	/>
+
+</LinearLayout>

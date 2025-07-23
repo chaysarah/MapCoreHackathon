@@ -1,0 +1,1 @@
+http-server -p 8080 --cors --header "Cross-Origin-Embedder-Policy:require-corp" --header "Cross-Origin-Opener-Policy:same-origin"

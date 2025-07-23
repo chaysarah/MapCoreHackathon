@@ -1,0 +1,22 @@
+.layout__display-selected-layers {
+    border: #dee2e6 calc(0.15vh*var(--size-factor)) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: calc(20vh*var(--size-factor));
+    width: calc(45vh*var(--size-factor));
+    overflow-y: auto;
+    margin-top: 1%;
+}
+
+.layout__button-add-layer {
+    margin-bottom: calc(1vh*var(--size-factor)) !important;
+}
+
+.layout__auto {
+    visibility: hidden;
+}
+
+.layout__standard {
+    visibility: visible;
+}

@@ -1,0 +1,77 @@
+{
+  "name": "trymc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.11",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
+    "axios": "^1.7.9",
+    "file-saver": "^2.0.5",
+    "lodash": "^4.17.21",
+    "next": "^13.1.6",
+    "primeicons": "6.0.1",
+    "primereact": "9.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-drag-resize": "^0.1.4",
+    "react-draggable": "^4.4.5",
+    "react-redux": "^8.0.5",
+    "react-rnd": "^10.4.1",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "typescript": "^4.9.4",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "wasm-config": "cmd /c wasm_config.bat",
+    "wasm-default-config": "cmd /c wasm_config.bat auto",
+    "wasm-config-linux": "bash ./wasm_config.sh",
+    "wasm-default-config-linux": "bash ./wasm_config.sh auto",
+    "wasm-config-vs": "start cmd /c npm run wasm-config",
+    "start-vs": "npm --prefix ../web-library run build-vs && node scripts/smart_install.js & cross-env BROWSER=none npm start",
+    "build-vs": "npm --prefix ../web-library run build-vs && node scripts/smart_install.js & npm run build",
+    "link": "npm link mapcore-lib --legacy-peer-deps",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired  test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@redux-devtools/core": "^3.13.1",
+    "@types/file-saver": "^2.0.7",
+    "@types/lodash": "^4.17.0",
+    "cross-env": "^7.0.3",
+    "react-app-rewired": "^2.2.1",
+    "terser-webpack-plugin": "^5.3.11"
+  }
+}

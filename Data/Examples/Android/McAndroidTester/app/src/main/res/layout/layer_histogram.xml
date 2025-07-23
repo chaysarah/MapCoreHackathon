@@ -1,0 +1,44 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp">
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Layer Histogram"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/layer_histogram_R"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="R:" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/layer_histogram_G"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="G:" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/layer_histogram_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="B:" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="calculate"
+        android:id="@+id/layer_histogram_calculate_bttn"
+        />
+</merge>

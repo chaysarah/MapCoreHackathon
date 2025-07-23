@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Abraham Merom (ELBIT SYSTEMS LTD.) -->
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Assi B. (Elbit) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="VectorLayerGraphicalSettings">
+		<xs:annotation>
+			<xs:documentation>Rules for Vector Graphical Objects in MapCore</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DataSource" type="xs:string"/>
+				<xs:element name="EquidistantMinScale" type="xs:float" minOccurs="0"/>
+				<xs:element name="MaxScaleFactor" type="xs:float" minOccurs="0"/>
+				<xs:element name="ScaleRange" type="ScaleRange" minOccurs="0"/>
+				<xs:element name="Condition" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BoolCond" type="BoolCond" minOccurs="0"/>
+							<xs:element name="ObjectDefinition" type="ObjectType"/>
+						</xs:sequence>
+						<xs:attribute name="FieldName" type="xs:string" use="optional"/>
+						<xs:attribute name="ComparisonOperator" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="EQ"/>
+									<xs:enumeration value="NE"/>
+									<xs:enumeration value="LT"/>
+									<xs:enumeration value="LE"/>
+									<xs:enumeration value="GT"/>
+									<xs:enumeration value="GE"/>
+									<xs:enumeration value="BN"/>
+									<xs:enumeration value="SS"/>
+									<xs:enumeration value="AL"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Operand" type="xs:string" use="optional"/>
+						<xs:attribute name="AdditionalOperand" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="FieldCond">
+		<xs:attribute name="FieldName" type="xs:string" use="optional"/>
+		<xs:attribute name="ComparisonOperator" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="EQ"/>
+					<xs:enumeration value="NE"/>
+					<xs:enumeration value="LT"/>
+					<xs:enumeration value="LE"/>
+					<xs:enumeration value="GT"/>
+					<xs:enumeration value="GE"/>
+					<xs:enumeration value="BN"/>
+					<xs:enumeration value="SS"/>
+					<xs:enumeration value="AL"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Operand" type="xs:string" use="optional"/>
+		<xs:attribute name="AdditionalOperand" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="BoolCond">
+		<xs:choice>
+			<xs:element name="And" type="MultiBoolSubCond"/>
+			<xs:element name="Or" type="MultiBoolSubCond"/>
+			<xs:element name="Not" type="SingleBoolSubCond"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="SingleBoolSubCond">
+		<xs:sequence>
+			<xs:element name="And" type="MultiBoolSubCond" minOccurs="0"/>
+			<xs:element name="Or" type="MultiBoolSubCond" minOccurs="0"/>
+			<xs:element name="Not" type="SingleBoolSubCond" minOccurs="0"/>
+			<xs:element name="FieldCond" type="FieldCond" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MultiBoolSubCond">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="And" type="MultiBoolSubCond" minOccurs="0"/>
+			<xs:element name="Or" type="MultiBoolSubCond" minOccurs="0"/>
+			<xs:element name="Not" type="SingleBoolSubCond" minOccurs="0"/>
+			<xs:element name="FieldCond" type="FieldCond" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Property">
+		<xs:choice>
+			<xs:element name="BoolType" type="BoolPropertyType"/>
+			<xs:element name="ByteType" type="BytePropertyType"/>
+			<xs:element name="IntType" type="IntPropertyType"/>
+			<xs:element name="UintType" type="UintPropertyType"/>
+			<xs:element name="FloatType" type="FloatPropertyType"/>
+			<xs:element name="DoubleType" type="DoublePropertyType"/>
+			<xs:element name="FVector2DType" type="FVector2DProperyType"/>
+			<xs:element name="Vector2DType" type="Vector2DPropertyType"/>
+			<xs:element name="FVector3DType" type="FVector3DPropertyType"/>
+			<xs:element name="Vector3DType" type="Vector3DPropertyType"/>
+			<xs:element name="BColorType" type="BColorPropertyType"/>
+			<xs:element name="StringType" type="StringPropertyType"/>
+			<xs:element name="TextureType" type="TexturePropertyType"/>
+			<xs:element name="FontType" type="FontPropertyType"/>
+			<xs:element name="ScaleConditionalSelectorType" type="ScaleConditionalSelectorPropertyType"/>
+		</xs:choice>
+		<xs:attribute name="PropertyName" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ObjectType">
+		<xs:sequence>
+			<xs:element name="ScaleRange" type="ScaleRange" minOccurs="0"/>
+			<xs:element name="LabelScaleRange" type="ScaleRange" minOccurs="0"/>
+			<xs:element name="Property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="SchemeFile" type="xs:string" use="required"/>
+		<xs:attribute name="KeyFieldName" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="ScaleRange">
+		<xs:attribute name="Min" type="xs:float" use="required"/>
+		<xs:attribute name="Max" type="xs:float" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="BoolPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:boolean"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="BytePropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:byte"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="IntPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:int"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="UintPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:unsignedInt"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="FloatPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:float"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="DoublePropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:double"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="BColorPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:hexBinary"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="StringPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:string"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="BoolPropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:boolean"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:boolean" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="BytePropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:byte"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:byte" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="IntPropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:int"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:int" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="UintPropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:unsignedInt"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:unsignedInt" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="FloatPropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:float"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:float" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="DoublePropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:double"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:double" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="FVector2DProperyType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="X" type="FloatPropertyComponent"/>
+				<xs:element name="Y" type="FloatPropertyComponent"/>
+			</xs:sequence>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="X" type="xs:float" use="required"/>
+								<xs:attribute name="Y" type="xs:float" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Vector2DPropertyType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="X" type="DoublePropertyComponent"/>
+				<xs:element name="Y" type="DoublePropertyComponent"/>
+			</xs:sequence>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="X" type="xs:double" use="required"/>
+								<xs:attribute name="Y" type="xs:double" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="FVector3DPropertyType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="X" type="FloatPropertyComponent"/>
+				<xs:element name="Y" type="FloatPropertyComponent"/>
+				<xs:element name="Z" type="FloatPropertyComponent"/>
+			</xs:sequence>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="X" type="xs:float" use="required"/>
+								<xs:attribute name="Y" type="xs:float" use="required"/>
+								<xs:attribute name="Z" type="xs:float" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Vector3DPropertyType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="X" type="DoublePropertyComponent"/>
+				<xs:element name="Y" type="DoublePropertyComponent"/>
+				<xs:element name="Z" type="DoublePropertyComponent"/>
+			</xs:sequence>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="X" type="xs:double" use="required"/>
+								<xs:attribute name="Y" type="xs:double" use="required"/>
+								<xs:attribute name="Z" type="xs:double" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="BColorPropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:hexBinary"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:hexBinary" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="StringPropertyType">
+		<xs:choice>
+			<xs:element name="Value" type="xs:string"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Value" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="TexturePropertyType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="ImageFileName" type="StringPropertyComponent"/>
+				<xs:element name="TransparentColor" type="BColorPropertyComponent"/>
+				<xs:element name="IsTransparentColorEnabled" type="BoolPropertyComponent"/>
+				<xs:element name="IgnoreTransparentMargin" type="BoolPropertyComponent"/>
+			</xs:sequence>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="ImageFileName" type="xs:string" use="required"/>
+								<xs:attribute name="TransparentColor" type="xs:hexBinary" use="required"/>
+								<xs:attribute name="IsTransparentColorEnabled" type="xs:boolean" use="required"/>
+								<xs:attribute name="IgnoreTransparentMargin" type="xs:boolean" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="LongPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value" type="xs:long"/>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="CharSetPropertyComponent">
+		<xs:choice>
+			<xs:element name="Value">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ANSI_CHARSET"/>
+						<xs:enumeration value="BALTIC_CHARSET"/>
+						<xs:enumeration value="CHINESEBIG5_CHARSET"/>
+						<xs:enumeration value="DEFAULT_CHARSET"/>
+						<xs:enumeration value="EASTEUROPE_CHARSET"/>
+						<xs:enumeration value="GB2312_CHARSET"/>
+						<xs:enumeration value="GREEK_CHARSET"/>
+						<xs:enumeration value="HANGUL_CHARSET"/>
+						<xs:enumeration value="MAC_CHARSET "/>
+						<xs:enumeration value="OEM_CHARSET"/>
+						<xs:enumeration value="RUSSIAN_CHARSET"/>
+						<xs:enumeration value="SHIFTJIS_CHARSET"/>
+						<xs:enumeration value="SYMBOL_CHARSET "/>
+						<xs:enumeration value="TURKISH_CHARSET "/>
+						<xs:enumeration value="JOHAB_CHARSET"/>
+						<xs:enumeration value="HEBREW_CHARSET"/>
+						<xs:enumeration value="ARABIC_CHARSET"/>
+						<xs:enumeration value="THAI_CHARSET"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FieldName" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="FontPropertyType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="Height" type="LongPropertyComponent"/>
+				<xs:element name="FaceName" type="StringPropertyComponent" minOccurs="0"/>
+				<xs:element name="CharSet" type="CharSetPropertyComponent" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Height" type="xs:long" use="required"/>
+								<xs:attribute name="FaceName" type="xs:string" use="optional"/>
+								<xs:attribute name="CharSet" type="xs:string" use="optional"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ScaleConditionalSelectorPropertyType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="Min" type="FloatPropertyComponent"/>
+				<xs:element name="Max" type="FloatPropertyComponent"/>
+				<xs:element name="CancelScaleMode" type="UintPropertyComponent" minOccurs="0"/>
+				<xs:element name="CancelScaleModeResult" type="UintPropertyComponent" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="Switch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Case" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="FieldStringValue" type="xs:string" use="required"/>
+								<xs:attribute name="Min" type="xs:float" use="required"/>
+								<xs:attribute name="Max" type="xs:float" use="required"/>
+								<xs:attribute name="CancelScaleMode" type="xs:unsignedInt" use="optional"/>
+								<xs:attribute name="CancelScaleModeResult" type="xs:unsignedInt" use="optional"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="FieldName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

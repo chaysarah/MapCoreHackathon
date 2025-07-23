@@ -1,0 +1,16 @@
+:root {
+    --select-existing-layer-dialog-width: 350px;
+}
+/* dialog */
+.scroll-dialog-select-existing-layer .p-dialog-content {
+    min-width: var(--select-existing-layer-dialog-width) !important;
+}
+.scroll-dialog-select-existing-layer .p-dialog-header {
+    min-width: var(--select-existing-layer-dialog-width) !important;
+}
+.scroll-dialog-select-existing-layer .p-dialog-footer {
+    min-width: var(--select-existing-layer-dialog-width) !important;
+}
+.scroll-dialog-select-existing-layer {
+    overflow-x: auto;
+}

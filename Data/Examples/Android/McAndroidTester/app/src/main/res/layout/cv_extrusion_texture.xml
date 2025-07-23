@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+        android:id="@+id/extrusion_texture_data_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fel_enable_file_choosing="true"
+        app:fel_labelText="Str Data Source" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+        android:id="@+id/extrusion_texture_texture_scale_2dfvector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:two_d_f_vector_label="Texture Scale" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X Placement" />
+
+    <ListView
+        android:id="@+id/extrusion_texture_uXPlacement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Y Placement" />
+
+    <ListView
+        android:id="@+id/extrusion_texture_uYPlacement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

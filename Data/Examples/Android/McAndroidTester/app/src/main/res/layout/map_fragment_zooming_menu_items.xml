@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/navigate_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:src="@drawable/img_navigate_map"/>
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/zoom_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/navigate_map"
+        android:src="@drawable/img_zoom_in" />
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/center_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/zoom_in"
+        android:src="@drawable/img_center_point" />
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/zoom_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/zoom_in"
+        android:gravity="center"
+        android:src="@drawable/img_zoom_out"/>
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/dynamic_zoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/zoom_out"
+        android:gravity="center"
+        android:src="@drawable/img_dynamic_zoom"/>
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/distance_direction_measure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dynamic_zoom"
+        android:gravity="center"
+        android:src="@drawable/img_distance_direction_measure"/>
+</LinearLayout>

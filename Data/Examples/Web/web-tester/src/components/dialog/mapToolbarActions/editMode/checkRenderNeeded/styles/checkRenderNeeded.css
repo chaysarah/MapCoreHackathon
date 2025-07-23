@@ -1,0 +1,30 @@
+:root {
+    --check-render-needed-dialog-width: 350px;
+}
+
+.check-render-needed__multi-line.p-datatable .p-datatable-tbody>tr>td {
+    white-space: pre-line;
+}
+
+.check-render-needed__table {
+    min-height: calc(20vh*var(--size-factor));
+    max-height: calc(20vh*var(--size-factor));
+}
+
+
+/* dialog */
+.scroll-dialog-14 .p-dialog-content {
+    min-width: var(--check-render-needed-dialog-width) !important;
+}
+
+.scroll-dialog-14 .p-dialog-header {
+    min-width: var(--check-render-needed-dialog-width) !important;
+}
+
+.scroll-dialog-14 .p-dialog-footer {
+    min-width: var(--check-render-needed-dialog-width) !important;
+}
+
+.scroll-dialog-14 {
+    overflow-x: auto;
+}

@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?android:attr/windowBackground"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/om_tv_fragment_container_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/om_tv_new_object_based_on_existing_scheme_bttn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:text="new object based on existing scheme" />
+
+        <ToggleButton
+            android:id="@+id/om_tv_show_coordinates_tbttn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textOff="show coordinates"
+            android:textOn="hide coordinates" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/overlay_manager_tree_view_container_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+</LinearLayout>

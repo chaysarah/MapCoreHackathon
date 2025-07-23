@@ -1,0 +1,57 @@
+:root {
+    --obj-item-select-list-dialog-width: 400px;
+}
+
+.obj-item-list__lists-container {
+    width: calc(30vh*var(--size-factor));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.obj-item-list__buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: calc(2vh*var(--size-factor));
+}
+
+.obj-item-list__margin-button {
+    margin: calc(0.5vh*var(--size-factor)) !important;
+}
+
+
+/* dialog */
+/* editObject */
+.scroll-dialog-12 .p-dialog-content {
+    min-width: var(--obj-item-select-list-dialog-width) !important;
+}
+
+.scroll-dialog-12 .p-dialog-header {
+    min-width: var(--obj-item-select-list-dialog-width) !important;
+}
+
+.scroll-dialog-12 .p-dialog-footer {
+    min-width: var(--obj-item-select-list-dialog-width) !important;
+}
+
+.scroll-dialog-12 {
+    overflow-x: auto;
+}
+
+/* initObject */
+.scroll-dialog-13 .p-dialog-content {
+    min-width: var(--obj-item-select-list-dialog-width) !important;
+}
+
+.scroll-dialog-13 .p-dialog-header {
+    min-width: var(--obj-item-select-list-dialog-width) !important;
+}
+
+.scroll-dialog-13 .p-dialog-footer {
+    min-width: var(--obj-item-select-list-dialog-width) !important;
+}
+
+.scroll-dialog-13 {
+    overflow-x: auto;
+}

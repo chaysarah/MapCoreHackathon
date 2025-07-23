@@ -1,0 +1,23 @@
+const { createProxyMiddleware } = require('http-proxy-middleware');
+const httpProxy = require('http-proxy');
+
+const wsProxy = httpProxy.createProxyServer({
+  target: "ws://127.0.0.1:6767",
+  ws: true,
+});
+
+const httpProxyMiddleware = createProxyMiddleware({
+  target: "http://127.0.0.1:6767",
+  changeOrigin: true,
+});
+
+module.exports = function (app) {
+  app.use('/ws', function (req, res) {
+    wsProxy.web(req, res);
+  });
+
+  app.use(httpProxyMiddleware);
+};
+
+
+   

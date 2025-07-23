@@ -1,0 +1,21 @@
+:root {
+    --building-history-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-building-history .p-dialog-content {
+    min-width: var(--building-history-dialog-width) !important;
+}
+
+.scroll-dialog-building-history .p-dialog-header {
+    min-width: var(--building-history-dialog-width) !important;
+}
+
+.scroll-dialog-building-history .p-dialog-footer {
+    min-width: var(--building-history-dialog-width) !important;
+}
+
+.scroll-dialog-building-history {
+    overflow-x: auto;
+}

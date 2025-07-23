@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.objects.fragments.create_texture_tabs.TextureImageFileFragment">
+
+<com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:fel_labelText="image file"
+    android:id="@+id/texture_image_file_file_chooser"
+    app:fel_enable_file_choosing="true"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.CreateTextureBottom
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/texture_image_file_ctb"/>
+
+</LinearLayout>

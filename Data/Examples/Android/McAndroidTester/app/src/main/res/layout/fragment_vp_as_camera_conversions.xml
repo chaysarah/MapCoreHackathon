@@ -1,0 +1,142 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.map_actions.treeviews.viewport_tabs.viewport_as_camera_tabs.VpAsCameraConversionsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Coordinate Conversions And Footprint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                android:id="@+id/camera_conversions_world"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:three_d_vector_label="World" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SampleLocationPointsBttn
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/camera_conversions_world_sample_location_bttn"/>
+       <!--     <com.elbit.mapcore.mcandroidtester.utils.customviews.SampleLocationPointsBttn
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/camera_conversions_world_sample_location_bttn"
+                app:container_fragment_name="ViewPortDetailsTabsFragment"
+                app:point_in_overlay_manager_coord_sys="true"
+                app:point_z_value="1.7976931348623157E+308"
+                app:query_precision="EQP_DEFAULT"
+                app:point_coord_system="EPCS_WORLD"
+                app:sample_one_point="true"
+                app:user_control_name="@id/camera_conversions_world"/>-->
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+            android:id="@+id/camera_conversions_screen"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            app:three_d_vector_label="Screen" />
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SampleLocationPointsBttn
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/camera_conversions_screen_sample_location_bttn" />
+<!--        <com.elbit.mapcore.mcandroidtester.utils.customviews.SampleLocationPointsBttn
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/camera_conversions_screen_sample_location_bttn"
+            app:container_fragment_name="ViewPortDetailsTabsFragment"
+            app:point_in_overlay_manager_coord_sys="true"
+            app:point_z_value="1.7976931348623157E+308"
+            app:query_precision="EQP_DEFAULT"
+            app:point_coord_system="EPCS_SCREEN"
+            app:sample_one_point="true"
+            app:user_control_name="@id/camera_conversions_screen"/>-->
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/camera_conversions_world_to_screen_bttn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="World To Screen" />
+
+        </LinearLayout>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+            android:id="@+id/camera_conversions_plane_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:three_d_vector_label="Plane Normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/camera_conversions_is_intersection_cb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="Is Intersection Found" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/camera_conversions_plane_location_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:netl_labelText="Plane Location"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/camera_conversions_screen_to_world_on_plane_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Screen To World On Plane" />
+
+            <Button
+                android:id="@+id/camera_conversions_screen_to_world_on_terrain_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Screen To World On Terrain" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+.Wrapper:last-child {
+    margin-bottom: 20px;
+}
+
+.InfoWrapper {
+    font-size: 14px;
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.Row {
+    margin-top: 20px;        
+}
+
+.Icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+    opacity: 0.7;
+}

@@ -1,0 +1,16 @@
+:root {
+    --image-dialog-width: 450px;
+}
+/* dialog */
+.scroll-dialog-image .p-dialog-content {
+    min-width: var(--image-dialog-width) !important;
+}
+.scroll-dialog-image .p-dialog-header {
+    min-width: var(--image-dialog-width) !important;
+}
+.scroll-dialog-image .p-dialog-footer {
+    min-width: var(--image-dialog-width) !important;
+}
+.scroll-dialog-image {
+    overflow-x: auto;
+}

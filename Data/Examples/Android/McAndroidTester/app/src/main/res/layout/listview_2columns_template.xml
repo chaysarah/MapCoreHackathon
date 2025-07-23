@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:weightSum="2">
+    <TextView
+        android:padding="1dp"
+        android:id="@+id/FIRST_COLUMN"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:padding="1dp"
+        android:id="@+id/SECOND_COLUMN"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tv_standaloneitem_item_action_connect"
+        android:orderInCategory="100"
+        android:title="Connect"
+        app:showAsAction="never"
+        android:visible="false"/>
+    <item
+        android:id="@+id/tv_standaloneitem_item_action_disconnectandkeep"
+        android:orderInCategory="200"
+        android:title="Disconnect And Keep"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/tv_standaloneitem_item_action_disconnect"
+        android:orderInCategory="300"
+        android:title="Disconnect"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/tv_standaloneitem_item_action_clone"
+        android:orderInCategory="400"
+        android:title="Clone"
+        app:showAsAction="never"/>
+    <item
+        android:title="Rename"
+        android:id="@+id/tv_standaloneitem_rename"
+        android:orderInCategory="500"/>
+    <item
+        android:title="Delete Name"
+        android:id="@+id/tv_standaloneitem_delete_name"
+        android:orderInCategory="600"/>
+</menu>

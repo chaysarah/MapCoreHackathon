@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <fragment
+        android:id="@+id/GridCoordinateSysFragment"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        class="com.elbit.mapcore.mcandroidtester.ui.map.fragments.GridCoordinateSysFragment"
+        tools:layout="@layout/fragment_grid_coordinate_sys">
+    </fragment>
+    <fragment
+        android:id="@+id/TerrainsFragment"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        class="com.elbit.mapcore.mcandroidtester.ui.map.fragments.TerrainsFragment"
+        tools:layout="@layout/fragment_terrains">
+    </fragment>
+    <fragment
+        android:id="@+id/MapSettingsFragment"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        class="com.elbit.mapcore.mcandroidtester.ui.map.fragments.MapSettingsFragment"
+        tools:layout="@layout/fragment_terrains">
+    </fragment>
+</LinearLayout>

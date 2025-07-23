@@ -1,0 +1,111 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.create_text_tabs.TextMappingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/text_add_mapping_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="unClicked"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/text_update_mapping_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:tag="unClicked"
+                android:text="Update" />
+
+            <Button
+                android:id="@+id/text_delete_mapping_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:tag="unClicked"
+                android:text="Delete" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/text_mapping_details_views_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/text_windows_font_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Font Name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/text_mapping_android_font_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Android Font" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/text_mapping_italic_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Italic" />
+
+                <CheckBox
+                    android:id="@+id/text_mapping_bold_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bold" />
+
+                <CheckBox
+                    android:id="@+id/text_mapping_underline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Underline" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/text_mapping_save_to_file_bttn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Mapping To File" />
+        </LinearLayout>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Mapping List" />
+
+        <ListView
+            android:id="@+id/text_mapping_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

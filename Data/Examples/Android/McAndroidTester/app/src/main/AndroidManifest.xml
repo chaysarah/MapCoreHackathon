@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name=".utils.BaseApplication"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".ui.MainActivity"
+
+            android:windowSoftInputMode="adjustPan"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+
+            android:windowSoftInputMode="adjustPan"
+            android:name=".ui.device.activities.DeviceTabsActivity"
+            android:label="@string/title_activity_device_tabs"
+            android:theme="@style/AppTheme" />
+        <activity
+
+            android:windowSoftInputMode="adjustPan"
+            android:name=".ui.map.activities.MapTabsActivity"
+            android:label="@string/title_activity_create_map"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:windowSoftInputMode="adjustPan"
+            android:name=".ui.map.activities.TerrainActivity"
+            android:label="@string/title_activity_terrain"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.map.activities.OverlayManagerActivity"
+            />
+        <activity
+            android:name=".ui.map.activities.ViewPortWithSeveralLayersActivity"
+            android:label="@string/title_activity_view_port_with_several_layers"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.map.activities.LayersActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"
+            android:name=".ui.map.activities.MapsContainerActivity"
+            android:label="@string/title_activity_maps_container"
+            android:theme="@style/AppTheme" >
+        </activity
+            >
+    </application>
+
+</manifest>

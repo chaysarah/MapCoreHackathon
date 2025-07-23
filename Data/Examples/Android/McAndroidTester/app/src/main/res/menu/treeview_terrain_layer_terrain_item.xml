@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tv_terrain_layer_terrain_add_layer"
+        android:orderInCategory="100"
+        android:title="Add Layer"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/tv_terrain_layer_terrain_delete_terrain"
+        android:orderInCategory="200"
+        android:title="Delete Terrain"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/tv_terrain_layer_terrain_remove_layer"
+        android:orderInCategory="300"
+        android:title="Remove Layer"
+        app:showAsAction="never"/>
+
+    <item
+        android:title="Rename"
+        android:id="@+id/tv_terrain_layer_terrain_rename"
+        android:orderInCategory="500"/>
+    <item
+        android:title="Delete Name"
+        android:id="@+id/tv_terrain_layer_terrain_delete_name"
+        android:orderInCategory="600"/>
+
+</menu>

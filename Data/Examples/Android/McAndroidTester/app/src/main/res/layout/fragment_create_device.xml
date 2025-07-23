@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/fcd_container"
+   android:background="?android:attr/windowBackground" >
+    <Button
+        android:id="@+id/create_device_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_device"
+        android:layout_gravity="center_horizontal"
+        android:onClick="createDevice"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".device.CreateDeviceFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingBottom="50dp"
+            android:scrollbars="vertical">
+
+            <include
+                layout="@layout/device_section_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/device_section_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/device_section_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

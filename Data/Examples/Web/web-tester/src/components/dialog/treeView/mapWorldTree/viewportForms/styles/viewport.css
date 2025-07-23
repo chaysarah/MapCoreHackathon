@@ -1,0 +1,7 @@
+.viewport__color-table-row-height {
+    height: calc(2vh*var(--size-factor)) !important;
+}
+
+.viewport__coord-conversion-label {
+    width: calc(8vh*1.5*var(--size-factor));
+}

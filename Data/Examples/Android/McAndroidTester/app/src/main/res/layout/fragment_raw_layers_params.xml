@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map.fragments.RawLayersParamsFragment">
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Raw Layers Params" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/raw_raster_componenet_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/raw_layers_first_pyramid_resolution_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="First Pyramid resolution" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/raw_layers_max_num_open_files_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Max Num Open Files" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/raw_layers_pyramid_resolution_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pyramid Resolution (separated by comma)" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/raw_layers_max_scale_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Max Scale"
+                app:netl_hint="MAX"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/raw_layers_highest_resolution_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Highest Resolution"
+                app:netl_hint="0"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/raw_layers_transparent_color_precision_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="transparent Color precision" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max World Limit:" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.WorldBoundingBox
+                android:id="@+id/raw_layers_max_world_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+                android:id="@+id/raw_layers_transparent_color_sc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:color_picker_label_text="Transparent Color" />
+
+            <CheckBox
+                android:id="@+id/raw_layers_image_coord_sys_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Image Coordinate System" />
+
+            <CheckBox
+                android:id="@+id/raw_layers_enhance_border_overlap_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enhance Border Overlap" />
+
+            <CheckBox
+                android:id="@+id/raw_layers_resolve_overlap_conflicts_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resolve Overlap Conflicts" />
+
+            <CheckBox
+                android:id="@+id/raw_layers_ignore_raster_palette_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ignore Raster Palette" />
+
+            <CheckBox
+                android:id="@+id/raw_layers_fill_empty_tiles_by_lower_resolution_tiles_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fill Empty Tiles By Lower Resolution Tiles" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Coordinate System"/>
+            <FrameLayout
+                android:id="@+id/rae_layers_grid_coord_sys_container_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

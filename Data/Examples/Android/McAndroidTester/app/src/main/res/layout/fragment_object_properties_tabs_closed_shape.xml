@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.properties_tabs.ObjectPropertiesTabsClosedShapeFragment">
+
+    <FrameLayout
+        android:id="@+id/closed_shape_texture_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/object_properties_tabs_closed_shape_save_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Closed Shape Changes" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+                    android:id="@+id/closed_shape_fill_color_sc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:color_picker_label_text="Fill color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Fill Texture:" />
+
+                    <Button
+                        android:id="@+id/obj_properties_closed_shape_texture_bttn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Texture" />
+
+                    <CheckBox
+                        android:id="@+id/obj_properties_closed_shape_texture_none_rb"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+                </LinearLayout>
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+                    android:id="@+id/closed_shape_fill_texture_scale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:two_d_f_vector_label="Fill Texture Scale" />
+
+            </LinearLayout>
+        </ScrollView>
+
+</LinearLayout>
+
+

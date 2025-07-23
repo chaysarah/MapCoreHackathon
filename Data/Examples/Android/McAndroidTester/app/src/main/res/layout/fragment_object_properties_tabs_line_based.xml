@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/obj_properties_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+    <Button
+        android:id="@+id/obj_properties_line_based_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Line Based Changes" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/obj_properties_line_based_line_shape_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Shape Type" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/obj_properties_line_based_line_width_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Line Width" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/obj_properties_line_based_line_style_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="Line Style:" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/obj_properties_line_based_fill_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="Fill Style" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+            android:id="@+id/obj_properties_line_based_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:color_picker_label_text="Line Color:" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Line Texture:" />
+
+            <Button
+                android:id="@+id/obj_properties_line_based_texture_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Texture" />
+
+            <CheckBox
+                android:id="@+id/obj_properties_line_based_texture_none_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="None" />
+        </LinearLayout>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/obj_properties_line_based_line_smoothing_level_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Line Smoothing Level" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/obj_properties_line_based_texture_scale_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Texture Scale" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/obj_properties_line_based_great_circle_precision_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Great Circle Precision" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+            android:id="@+id/obj_properties_line_outline_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:color_picker_label_text="Outline Color:" />
+
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/obj_properties_line_based_outline_width_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:netl_labelText="Outline Width" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/obj_properties_line_based_sides_fill_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Sides Fill Style" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+                android:id="@+id/obj_properties_line_based_sides_fill_color_sc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:color_picker_label_text="Sides Fill color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sides Fill Texture:" />
+
+                <Button
+                    android:id="@+id/obj_properties_line_based_sides_texture_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Texture" />
+
+                <CheckBox
+                    android:id="@+id/obj_properties_line_based_sides_texture_none_rb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="None" />
+            </LinearLayout>
+
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+                android:id="@+id/line_based_sides_fill_texture_scale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:two_d_f_vector_label="Sides Fill Texture Scale" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/line_based_vertical_height_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="vertical height" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

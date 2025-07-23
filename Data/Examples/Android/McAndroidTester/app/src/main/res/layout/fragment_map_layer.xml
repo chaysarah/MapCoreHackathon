@@ -1,0 +1,97 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?android:attr/windowBackground">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.layers_tabs.MapLayerFragment">
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="General Details"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/map_layer_layer_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Layer ID" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/map_layer_layer_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Layer Type" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="World Bounding Box"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.WorldBoundingBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/map_layer_world_bounding_box"
+        app:world_bounding_box_enable="false"/>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Grid Coordinate System"/>
+    <ListView
+        android:id="@+id/map_layer_coord_sys_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Local Cache Params"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            >
+
+            <EditText
+                android:id="@+id/map_layer_local_cach_sub_folders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Local Cache Sub Folder" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/map_layer_remove_layer_from_cache_bttn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Remove Layer From Cache" />
+    </LinearLayout>
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/map_layer_bg_thread_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Background Thread Index" />
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="Layer Visibility"/>
+    <ExpandableListView
+        android:id="@+id/map_layer_viewport_terrains_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

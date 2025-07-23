@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpinnerWithLabel">
+        <attr name="spinnerValues" format="reference" />
+        <attr name="swl_labelText" format="string" />
+        <attr name="swl_enable" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="FileChooserEditTextLabel">
+        <attr name="fel_labelText" format="string" />
+        <attr name="fel_tab_index" format="integer" />
+        <attr name="fel_fragment_tag" format="string" />
+        <attr name="fel_enable_file_choosing" format="boolean" />
+
+
+    </declare-styleable>
+    <declare-styleable name="NumericEditText">
+        <attr name="net_labelText" format="string" />
+        <attr name="net_hint" format="string" />
+        <attr name="net_numeric_keyboard" format="boolean" />
+        <attr name="net_enable_mode" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="NumericEditTextLabel">
+        <attr name="netl_labelText" format="string" />
+        <attr name="netl_hint" format="string" />
+        <attr name="netl_numeric_keyboard" format="boolean" />
+        <attr name="netl_enable_mode" format="boolean" />
+
+    </declare-styleable>
+    <declare-styleable name="SectionSeparator">
+        <attr name="section_separator_text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ThreeDVector">
+        <attr name="three_d_vector_label" format="string" />
+        <attr name="three_d_vector_x_hint" format="string" />
+        <attr name="three_d_vector_y_hint" format="string" />
+        <attr name="three_d_vector_z_hint" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ThreeDOrientation">
+        <attr name="three_d_orientation_label" format="string" />
+        <attr name="three_d_orientation_raw_hint" format="string" />
+        <attr name="three_d_orientation_pitch_hint" format="string" />
+        <attr name="three_d_orientation_roll_hint" format="string" />
+    </declare-styleable>
+    <declare-styleable name="TwoDFVector">
+        <attr name="two_d_f_vector_label" format="string" />
+    </declare-styleable>
+    <declare-styleable name="TwoDVector">
+        <attr name="two_d_vector_label" format="string" />
+    </declare-styleable>
+    <declare-styleable name="SelectColor">
+        <attr name="color_picker_bttn_text" format="string" />
+        <attr name="color_picker_label_text" format="string" />
+        <attr name="color_picker_alpha_visibility" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="WorldBoundingBox">
+        <attr name="world_bounding_box_enable" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="SampleLocationPointsBttn">
+        <attr name="container_fragment_name" format="string" />
+        <attr name="query_precision" format="enum" >
+            <enum name="EQP_DEFAULT" value="0" />
+            <enum name="EQP_DEFAULT_PLUS_LOWEST" value="1" />
+            <enum name="EQP_HIGHEST" value="2" />
+            <enum name="EQP_HIGH" value="3" />
+            <enum name="EQP_MEDIUM" value="4" />
+            <enum name="EQP_LOW" value="5" />
+            <enum name="EQP_LOWEST" value="6" />
+            <enum name="EQP_ADAPTIVE" value="7" />
+        </attr>
+        <attr name="point_in_overlay_manager_coord_sys" format="boolean" />
+        <attr name="point_z_value" format="string" />
+        <attr name="point_coord_system" format="enum" >
+            <enum name="EPCS_IMAGE" value="0" />
+            <enum name="EPCS_WORLD" value="1" />
+            <enum name="EPCS_SCREEN" value="2" />
+        </attr>
+        <attr name="list_view_id_to_update" format="reference"  />
+        <attr name="sample_one_point" format="boolean" />
+        <attr name="user_control_name" format="reference" />
+
+
+
+    </declare-styleable>
+</resources>

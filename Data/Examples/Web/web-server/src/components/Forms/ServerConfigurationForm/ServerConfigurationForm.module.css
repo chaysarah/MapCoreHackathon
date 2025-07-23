@@ -1,0 +1,46 @@
+.Wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.Split {
+    width: 240px;
+}
+.Row {
+    height: 80px;
+}
+
+.Icon {
+    height: 15px;
+    width: 15px;
+}
+
+.EnableEdit{
+    width: 100%;
+    text-align: right;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.EnableEditText{
+    font-size: 14px;
+    color: white;
+    margin-left: 5px;
+    /* text-decoration: none; */
+}
+
+.SSLInfoLink{
+    pointer-events: none;
+    font-size: 14px;
+    color: rgb(167, 167, 167);
+    margin-left: 5px;
+    /* text-decoration: none; */
+}
+
+.Label {
+    /* display: flex; */
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 10px;
+}

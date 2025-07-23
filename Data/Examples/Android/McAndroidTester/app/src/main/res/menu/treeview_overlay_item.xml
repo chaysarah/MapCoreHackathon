@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Remove Overlay" android:id="@+id/tv_overlay_remove_overlay"/>
+    <item android:title="Remove All Objects" android:id="@+id/tv_overlay_remove_all_objects"/>
+    <item android:title="Set Active" android:id="@+id/tv_overlay_set_active"/>
+    <item android:title="Rename" android:id="@+id/tv_overlay_rename"/>
+    <item android:title="Delete Name" android:id="@+id/tv_overlay_delete_name"/>
+</menu>

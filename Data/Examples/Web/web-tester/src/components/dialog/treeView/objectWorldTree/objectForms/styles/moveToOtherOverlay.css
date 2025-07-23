@@ -1,0 +1,21 @@
+:root {
+    --move-to-other-overlay-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-move-to-other-overlay .p-dialog-content {
+    min-width: var(--move-to-other-overlay-dialog-width) !important;
+}
+
+.scroll-dialog-move-to-other-overlay .p-dialog-header {
+    min-width: var(--move-to-other-overlay-dialog-width) !important;
+}
+
+.scroll-dialog-move-to-other-overlay .p-dialog-footer {
+    min-width: var(--move-to-other-overlay-dialog-width) !important;
+}
+
+.scroll-dialog-move-to-other-overlay {
+    overflow-x: auto;
+}

@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
+	android:orientation="vertical">
+
+    <include
+        android:id="@+id/blocked_conditional_selector_base_layout"
+        layout="@layout/fragment_base_conditional_selector" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/boolean_conditional_selector_operation_swl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Operation" />
+
+    <ListView
+        android:id="@+id/boolean_conditional_selector_cond_selectors_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>

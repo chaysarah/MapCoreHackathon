@@ -1,0 +1,7 @@
+.map-layout__wrapper {
+    width: 100%;
+    height: calc(100% - calc(17vh*var(--size-factor)));
+    position: absolute;
+    z-index: 0;
+    background-color: #efefef;
+}

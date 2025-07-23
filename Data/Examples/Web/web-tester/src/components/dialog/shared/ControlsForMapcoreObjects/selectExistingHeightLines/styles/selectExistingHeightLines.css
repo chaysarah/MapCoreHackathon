@@ -1,0 +1,16 @@
+:root {
+    --select-existing-height-lines-dialog-width: 350px;
+}
+/* dialog */
+.scroll-dialog-select-existing-height-lines .p-dialog-content {
+    min-width: var(--select-existing-height-lines-dialog-width) !important;
+}
+.scroll-dialog-select-existing-height-lines .p-dialog-header {
+    min-width: var(--select-existing-height-lines-dialog-width) !important;
+}
+.scroll-dialog-select-existing-height-lines .p-dialog-footer {
+    min-width: var(--select-existing-height-lines-dialog-width) !important;
+}
+.scroll-dialog-select-existing-height-lines {
+    overflow-x: auto;
+}

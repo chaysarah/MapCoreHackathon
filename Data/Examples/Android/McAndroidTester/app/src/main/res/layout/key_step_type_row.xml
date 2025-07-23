@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="6">
+
+    <TextView
+        android:id="@+id/key_step_type_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="bottom"/>
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditText
+        android:id="@+id/key_step_type_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:net_numeric_keyboard="true"
+        android:layout_weight="1" />
+
+</LinearLayout>

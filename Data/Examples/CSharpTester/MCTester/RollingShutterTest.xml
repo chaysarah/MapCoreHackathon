@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Abraham Merom (ELBIT SYSTEMS LTD.) -->
+<cRollingShutterData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SurfaceWidth>0</SurfaceWidth>
+	<SurfaceHeight>0</SurfaceHeight>
+	<RollingShutterLocations>
+		<DNSRollingShutterLocation>
+			<Position>
+				<x>697251</x>
+				<y>3481941</y>
+				<z>3000</z>
+			</Position>
+			<fYaw>2</fYaw>
+			<fPitch>-10</fPitch>
+			<fRoll>0</fRoll>
+			<uRow>0</uRow>
+		</DNSRollingShutterLocation>
+		<DNSRollingShutterLocation>
+			<Position>
+				<x>697251</x>
+				<y>3481941</y>
+				<z>3000</z>
+			</Position>
+			<fYaw>5</fYaw>
+			<fPitch>-11</fPitch>
+			<fRoll>0</fRoll>
+			<uRow>50</uRow>
+		</DNSRollingShutterLocation>
+		<DNSRollingShutterLocation>
+			<Position>
+				<x>697251</x>
+				<y>3481941</y>
+				<z>3000</z>
+			</Position>
+			<fYaw>9</fYaw>
+			<fPitch>-11</fPitch>
+			<fRoll>3</fRoll>
+			<uRow>100</uRow>
+		</DNSRollingShutterLocation>
+	</RollingShutterLocations>
+	<NumPixelsPerStrip>3</NumPixelsPerStrip>	
+</cRollingShutterData>

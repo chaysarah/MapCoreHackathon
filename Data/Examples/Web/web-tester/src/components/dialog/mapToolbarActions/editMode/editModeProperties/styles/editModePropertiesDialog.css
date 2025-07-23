@@ -1,0 +1,81 @@
+:root {
+    --em-props-dialog-width: 1000px;
+}
+
+.em-props__horizontal-fieldsets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.em-props__input-label {
+    width: 50%;
+    display: inline-flex;
+}
+
+.em-props__checkbox-label {
+    margin: calc(0.3vh*var(--size-factor)) !important;
+    padding: calc(0.6vh*var(--size-factor)) !important;
+}
+
+.em-props__input-field {
+    flex: 1;
+    padding: calc(0vh*var(--size-factor)) !important;
+}
+
+.em-props__input-field .p-inputtext {
+    padding: calc(0vh*var(--size-factor)) !important;
+}
+
+.em-props__left-offset .p-inputtext {
+    width: calc(15vh*var(--size-factor));
+    text-align: left;
+    padding-left: 10% !important;
+}
+
+.em-props__left-offset .p-inputnumber-input {
+    width: calc(7.5vh*var(--size-factor));
+    text-align: left;
+    padding-left: 10% !important;
+}
+
+.em-props__offset {
+    margin-left: calc(1.5vh*var(--size-factor)) !important;
+}
+
+.em-props__form-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.em-props__column-footer {
+    flex-direction: column !important;
+}
+
+.em-props__align-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+}
+
+.em-props__radio-button .p-hidden-accessible {
+    position: inherit;
+}
+
+/* dialog */
+.scroll-dialog-11 .p-dialog-content {
+    min-width: var(--em-props-dialog-width) !important;
+}
+
+.scroll-dialog-11 .p-dialog-header {
+    min-width: var(--em-props-dialog-width) !important;
+}
+
+.scroll-dialog-11 .p-dialog-footer {
+    min-width: var(--em-props-dialog-width) !important;
+}
+
+.scroll-dialog-11 {
+    overflow-x: auto;
+}

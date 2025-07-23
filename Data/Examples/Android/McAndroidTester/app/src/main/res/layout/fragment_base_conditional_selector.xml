@@ -1,0 +1,34 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.overlay_manager_treeview.BaseConditionalSelectorFragment"
+    android:background="?android:attr/windowBackground"
+	android:orientation="vertical">
+
+    <Button
+        android:id="@+id/conditional_selector_save_changes_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save changes" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:section_separator_text="conditional selector parameters" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/conditional_selector_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="ID" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/conditional_selector_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Type ID"
+        app:swl_enable="false"/>
+
+</merge>

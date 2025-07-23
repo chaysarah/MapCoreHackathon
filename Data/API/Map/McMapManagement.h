@@ -1,0 +1,18 @@
+#pragma once
+
+#include "Map/IMcMapLayer.h"
+#include "Map/IMcRasterMapLayer.h"
+#include "Map/IMcDtmMapLayer.h"
+#include "Map/IMcVectorMapLayer.h"
+#include "Map/IMcHeatMapLayer.h"
+#include "Map/IMcCodeMapLayer.h"
+#include "Map/IMcStaticObjectsMapLayer.h"
+#include "Map/IMcMapTerrain.h"
+#include "Map/IMcMapDevice.h"
+#include "Map/IMcMapViewport.h"
+#include "Map/IMcSectionMapViewport.h"
+#include "Map/IMcMapGrid.h"
+#include "Map/IMcMapHeightLines.h"
+#include "Map/IMcMapEnvironment.h"
+#include "Map/IMcPathCalculations.h"
+#include "Map/IMcPathFinder.h"

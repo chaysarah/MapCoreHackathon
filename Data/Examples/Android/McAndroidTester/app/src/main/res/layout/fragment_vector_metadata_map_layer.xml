@@ -1,0 +1,211 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.layers_tabs.VectorMetadataMapLayerFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Vector Items Count" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:layout_weight="3"
+                    android:id="@+id/vector_map_layer_vector_items_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    app:netl_labelText="vector items count" />
+                <Button
+                    android:id="@+id/vector_map_layer_get_vector_items_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="Get"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Vector Item Field Values" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:layout_weight="1"
+                    android:id="@+id/vector_map_layer_vector_item_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    app:netl_labelText="Vector Item Id" />
+                <Button
+                    android:id="@+id/vector_map_layer_get_value_as_int_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="get value as int"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:layout_weight="1"
+                    android:id="@+id/vector_map_layer_field_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    app:netl_labelText="Field Id" />
+                <Button
+                    android:id="@+id/vector_map_layer_get_value_as_double_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="get value as double"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/vector_map_layer_get_value_async_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Is Async"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/vector_map_layer_get_value_as_string_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="get value as string"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:layout_weight="1"
+                    android:id="@+id/vector_map_layer_vector_item_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    app:netl_labelText="Vector Item Value" />
+                <Button
+                    android:id="@+id/vector_map_layer_get_value_as_wstring_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="get value as wstring"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Field Unique Values" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:layout_weight="1"
+                    android:id="@+id/vector_map_layer_unique_field_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    app:netl_labelText="Field Id" />
+                <CheckBox
+                    android:id="@+id/vector_map_layer_unique_async_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Is Async"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ListView
+                    android:id="@+id/vector_map_layer_unique_lv"
+                    android:layout_width="0dp"
+                    android:layout_height="490dp"
+                    android:layout_weight="0.5" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/vector_map_layer_get_unique_value_as_int_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get unique value as int" />
+
+                    <Button
+                        android:id="@+id/vector_map_layer_get_unique_value_as_double_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get unique value as double" />
+
+                    <Button
+                        android:id="@+id/vector_map_layer_get_unique_value_as_string_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get unique value as string" />
+
+                    <Button
+                        android:id="@+id/vector_map_layer_get_unique_value_as_wstring_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get unique value as wstring" />
+                 
+                    <Button
+                        android:id="@+id/vector_map_layer_unique_list_clear_bttn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Clear" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

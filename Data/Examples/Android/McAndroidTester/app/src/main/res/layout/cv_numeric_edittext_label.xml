@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/cv_netl_label">
+         <com.google.android.material.textfield.TextInputEditText
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/cv_netl_edittext"
+             android:layout_weight="1"
+             android:scrollbars="vertical" />
+        <!--<com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditText
+                 android:id="@+id/cv_numeric_edittext_label_edittext"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 />-->
+        </com.google.android.material.textfield.TextInputLayout>
+        </merge>

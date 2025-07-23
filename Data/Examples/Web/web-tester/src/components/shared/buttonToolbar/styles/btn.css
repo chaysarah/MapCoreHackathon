@@ -1,0 +1,14 @@
+.btn__button-toolbar {
+    padding: 0 !important;
+    margin: calc(0.3vh*var(--size-factor)) !important;
+    padding: calc(0.3vh*var(--size-factor)) !important;
+}
+
+.btn__button-toolbar:hover {
+    background-color: #ceddf5a6 !important;
+}
+
+.btn__img-icon {
+    width: calc(3.5vh*var(--size-factor));
+    height: calc(3.5vh*var(--size-factor));
+}

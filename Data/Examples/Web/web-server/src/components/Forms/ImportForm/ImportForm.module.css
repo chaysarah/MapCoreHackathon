@@ -1,0 +1,12 @@
+.Wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Split {
+    width: 240px;
+}
+
+.Row {
+    margin-bottom: 15px;
+}

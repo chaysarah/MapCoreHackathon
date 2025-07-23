@@ -1,0 +1,21 @@
+:root {
+    --base-conditional-selector-dialog-width: 400px;
+}
+
+
+/* dialog */
+.scroll-dialog-base-conditional-selector .p-dialog-content {
+    min-width: var(--base-conditional-selector-dialog-width) !important;
+}
+
+.scroll-dialog-base-conditional-selector .p-dialog-header {
+    min-width: var(--base-conditional-selector-dialog-width) !important;
+}
+
+.scroll-dialog-base-conditional-selector .p-dialog-footer {
+    min-width: var(--base-conditional-selector-dialog-width) !important;
+}
+
+.scroll-dialog-base-conditional-selector {
+    overflow-x: auto;
+}

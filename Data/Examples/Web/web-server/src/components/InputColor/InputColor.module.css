@@ -1,0 +1,198 @@
+.Row {
+    display: flex;
+    flex-direction: column;
+}
+
+.Label {
+    display: flex;
+    align-items: flex-end;
+    /* width: 30%; */
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 10px;
+    justify-content: space-around;
+}
+
+.MainLabel {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+}
+
+.Mandatory::after {
+    content: '*';
+    color: var(--app-validation-color);
+    margin-left: 3px;
+}
+
+.InputWrapper {
+    width: 100%;
+    height: 50px;
+}
+
+.InnerInputWrapper {
+    display: flex;
+    position: relative;
+    padding: 5px;
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--button-border-radius);
+}
+
+.titleWrapper {
+    display: flex;
+}
+
+.Input {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--button-border-radius);
+    outline: none;
+    color: var(--app-font-color);
+    font-weight: 400;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 95%;
+}
+
+.Input.ShowError {
+    border: 1px solid var(--app-validation-color);
+}
+
+.Input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.ValidationMessage {
+    visibility: visible;
+    color: var(--app-validation-color);
+    font-size: 12px;
+    padding-left: 2px;
+    margin-top: 3px;
+    white-space: nowrap;
+}
+
+.ValidationMessage.ShowError {
+    visibility: visible;
+}
+
+.ValidationImg {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    top: 50%;
+    right: -28px;
+    visibility: hidden;
+}
+
+.ValidationImg.ShowError {
+    visibility: visible;
+}
+
+.readOnly {
+    color: var(--app-font-readonly);
+}
+
+.readOnlyBorder {
+    border: 1px solid var(--app-font-readonly) !important;
+}
+
+.InfoImage {
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 14px;
+    width: 14px;
+    background-size: cover;
+    background-image: url('../../assets/images/info.svg');
+    position: relative;
+}
+
+.arrowRight {
+    margin-left: -20px;
+}
+
+.enableEditText {
+    font-size: 14px;
+    color: white;
+    margin-left: -220px;
+}
+
+/* checkbox style */
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 8px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--button-border-radius);
+}
+
+/* On mouse-over, add a grey background color */
+/* .container:hover input~.checkmark {
+    background-color: gray;
+}
+
+/* When the checkbox is checked, add a blue background */
+/* .container input:checked~.checkmark {
+    background-color: gray;
+}  */
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 6px;
+    top: 1.5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 1.5px 1.5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

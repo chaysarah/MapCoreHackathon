@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">MCAndroidTester</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_open_map_container">Open Map</string>
+
+    <string name="main_bttn_create_map">Create Map</string>
+    <string name="main_bttn_open_scheme">Open Scheme</string>
+    <string name="main_bttn_open_vp_with_">Open Vp with Several Layers</string>
+    <string name="main_bttn_device">Device</string>
+    <string name="title_activity_device_tabs">Device</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="title_activity_create_map">Create Map</string>
+    <string name="create_terrains_title">Terrains</string>
+    <string name="terrains_coord_sys_title"> Terrains Coordinate Sys</string>
+    <string name="settings_title">Settings</string>
+    <string name="layers_title">Layers</string>
+    <string name="overlay_manager_title">Overlay Manager</string>
+
+    <string name="fragment_create_device">android:switcher:2131558511:0</string>
+    <string name="fragment_layers">layersFragment</string>
+
+    <string name="title_activity_view_ports">View Ports</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_terrain">Terrain</string>
+
+
+</resources>

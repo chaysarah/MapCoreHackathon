@@ -1,0 +1,60 @@
+:root {
+    --font-dialog-width: 600px;
+}
+
+.font__is-as-default-div {
+    padding: calc(0.3vh*var(--size-factor));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.font__params-input {
+    padding: calc(0.15vh*var(--size-factor));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.font__file-input {
+    display: none;
+}
+
+.font__dots-button {
+    margin-bottom: calc(0.45vh*var(--size-factor));
+    height: calc(2.5vh*var(--size-factor));
+}
+
+.font__column {
+    width: 50%;
+    min-height: calc(4.5vh*var(--size-factor));
+}
+
+.font__tab-view {
+    height: calc(6.5vh*var(--size-factor));
+}
+
+.font__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: calc(2vh*var(--size-factor));
+    padding-bottom: calc(2vh*var(--size-factor));
+}
+
+/* dialog */
+.scroll-dialog-10 .p-dialog-content {
+    min-width: var(--font-dialog-width) !important;
+}
+
+.scroll-dialog-10 .p-dialog-header {
+    min-width: var(--font-dialog-width) !important;
+}
+
+.scroll-dialog-10 .p-dialog-footer {
+    min-width: var(--font-dialog-width) !important;
+}
+
+.scroll-dialog-10 {
+    overflow-x: auto;
+}

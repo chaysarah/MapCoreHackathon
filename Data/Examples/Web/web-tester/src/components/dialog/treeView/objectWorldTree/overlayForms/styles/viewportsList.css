@@ -1,0 +1,21 @@
+:root {
+    --viewports-list-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-viewports-list .p-dialog-content {
+    min-width: var(--viewports-list-dialog-width) !important;
+}
+
+.scroll-dialog-viewports-list .p-dialog-header {
+    min-width: var(--viewports-list-dialog-width) !important;
+}
+
+.scroll-dialog-viewports-list .p-dialog-footer {
+    min-width: var(--viewports-list-dialog-width) !important;
+}
+
+.scroll-dialog-viewports-list {
+    overflow-x: auto;
+}

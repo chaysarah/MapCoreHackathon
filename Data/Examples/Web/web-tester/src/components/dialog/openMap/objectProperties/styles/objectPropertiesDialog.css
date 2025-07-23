@@ -1,0 +1,73 @@
+:root {
+    --object-properties-dialog-width: 500px;
+}
+
+.object-props__bottom-checkbox {
+    margin: calc(1.5vh*var(--size-factor)) calc(11vh*var(--size-factor));
+}
+
+.object-props__video-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.object-props__hidden-dialog {
+    visibility: hidden !important
+}
+
+.object-props__wide-label {
+    width: 28%;
+    display: inline-flex;
+}
+
+.object-props__bold-label {
+    font-weight: bold;
+}
+
+.object-props__button-margin {
+    margin-left: 0.5% !important;
+    margin-bottom: 0.5% !important;
+}
+
+.object-props__flex-and-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.object-props__general-container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.3vh*var(--size-factor));
+    padding: calc(1vh*var(--size-factor));
+}
+
+.object-props__dropdown {
+    width: calc(14vh*var(--size-factor));
+}
+
+.object-props__flex-and-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.object-props__input-width {
+    width: calc(17vh*var(--size-factor));
+}
+
+/* dialog */
+.scroll-dialog-2 .p-dialog-content {
+    width: var(--object-properties-dialog-width) !important;
+}
+
+.scroll-dialog-2 .p-dialog-header {
+    width: var(--object-properties-dialog-width) !important;
+}
+
+.scroll-dialog-2 .p-dialog-footer {
+    width: var(--object-properties-dialog-width) !important;
+}
+
+.scroll-dialog-2 {
+    overflow-x: auto;
+}

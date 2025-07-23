@@ -1,0 +1,456 @@
+15:27:11: Creating resource group General
+15:27:11: Creating resource group OgreInternal
+15:27:11: Creating resource group OgreAutodetect
+15:27:11: SceneManagerFactory for type 'DefaultSceneManager' registered.
+15:27:11: Registering ResourceManager for type Material
+15:27:11: Registering ResourceManager for type Mesh
+15:27:11: Registering ResourceManager for type Skeleton
+15:27:11: MovableObjectFactory for type 'ParticleSystem' registered.
+15:27:11: ArchiveFactory for type 'FileSystem' registered
+15:27:11: ArchiveFactory for type 'Zip' registered
+15:27:11: ArchiveFactory for type 'EmbeddedZip' registered
+15:27:11: DDS codec registering
+15:27:11: PVRTC codec registering
+15:27:11: ETC codec registering
+15:27:11: Registering ResourceManager for type HighLevelGpuProgram
+15:27:11: Registering ResourceManager for type Compositor
+15:27:11: MovableObjectFactory for type 'Entity' registered.
+15:27:11: MovableObjectFactory for type 'Light' registered.
+15:27:11: MovableObjectFactory for type 'BillboardSet' registered.
+15:27:11: MovableObjectFactory for type 'ManualObject' registered.
+15:27:11: MovableObjectFactory for type 'BillboardChain' registered.
+15:27:11: MovableObjectFactory for type 'RibbonTrail' registered.
+15:27:11: MovableObjectFactory for type 'StaticGeometry' registered.
+15:27:11: Loading library ./.\McRenderSystem_Direct3D9_D.dll
+15:27:11: Installing plugin: D3D9 RenderSystem
+15:27:11: D3D9 : Direct3D9 Rendering Subsystem created.
+15:27:12: D3D9: Driver Detection Starts
+15:27:12: D3D9: Driver Detection Ends
+15:27:12: Plugin successfully installed
+15:27:12: Loading library ./.\McRenderSystem_Direct3D11_D.dll
+15:27:12: Installing plugin: D3D11 RenderSystem
+15:27:12: D3D11: Direct3D11 Rendering Subsystem created.
+15:27:12: D3D11: Driver Detection Starts
+15:27:12: D3D11: "Intel(R) UHD Graphics 630"
+15:27:12: D3D11: "NVIDIA RTX A2000"
+15:27:12: D3D11: "Microsoft Basic Render Driver (software)"
+15:27:12: D3D11: Driver Detection Ends
+15:27:12: Plugin successfully installed
+15:27:12: Loading library ./.\McRenderSystem_GL_D.dll
+15:27:13: Installing plugin: GL RenderSystem
+15:27:13: OpenGL Rendering Subsystem created.
+15:27:13: Plugin successfully installed
+15:27:13: Loading library ./.\McRenderSystem_GL3Plus_D.dll
+15:27:13: Installing plugin: GL 3+ RenderSystem
+15:27:13: OpenGL 3+ Rendering Subsystem created.
+15:27:13: Plugin successfully installed
+15:27:13: *-*-* OGRE Initialising
+15:27:13: *-*-* Version 1.12.13 (Rhagorthua)
+15:27:13: Installing plugin: Free Image Codec
+15:27:13: FreeImage version: 3.18.0
+15:27:13: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+15:27:13: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,psb,cut,xbm,xpm,gif,hdr,sgi,rgb,rgba,bw,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,srw,sti,x3f,webp
+15:27:13: Plugin successfully installed
+15:27:13: ArchiveFactory for type 'MapCoreFileInMemory' registered
+15:27:13: ArchiveFactory for type 'MapCoreFileDirectoryInMemory' registered
+15:27:13: Creating resource group Base
+15:27:13: Added resource location '../../Development/Test/Media/Base/environment/SkyBox' of type 'FileSystem' to resource group 'Base'
+15:27:13: Added resource location '../../Development/Test/Media/Base/Fonts' of type 'FileSystem' to resource group 'Base'
+15:27:13: Creating resource group Calelum
+15:27:13: Added resource location '../../Development/Test/Media/BaseSupport/caelum' of type 'FileSystem' to resource group 'Calelum'
+15:27:13: Creating resource group Demo_Room
+15:27:13: Added resource location '.../../Development/Test/Media/Demo_Room4' of type 'FileSystem' to resource group 'Demo_Room'
+15:27:13: Added resource location '.../../Development/Test/Media/Demo_Room4/ARAB_MERTO_FINAL' of type 'FileSystem' to resource group 'Demo_Room'
+15:27:13: Added resource location '.../../Development/Test/Media/Demo_Room4/MAPS' of type 'FileSystem' to resource group 'Demo_Room'
+15:27:13: Creating resource group EditMode
+15:27:13: Added resource location '../../Development/Test/Media/Base/EditMode' of type 'FileSystem' to resource group 'EditMode'
+15:27:13: Creating resource group Environment
+15:27:13: Added resource location '../../Development/Test/Media/Base/environment' of type 'FileSystem' to resource group 'Environment'
+15:27:13: Added resource location '../../Development/Test/Media/Base/environment/LensFlare' of type 'FileSystem' to resource group 'Environment'
+15:27:13: Creating resource group ImageProcessing
+15:27:13: Added resource location '../../Development/Test/Media/Base/ImageProcessing' of type 'FileSystem' to resource group 'ImageProcessing'
+15:27:13: Creating resource group Models
+15:27:13: Added resource location '../../Development/Test/Media/Demo/Models/apache' of type 'FileSystem' to resource group 'Models'
+15:27:13: Added resource location '../../Development/Test/Media/Demo/Models/groundForces' of type 'FileSystem' to resource group 'Models'
+15:27:13: Added resource location '../../Development/Test/Media/Demo/Models/groundForces/tankTrail' of type 'FileSystem' to resource group 'Models'
+15:27:13: Added resource location '../../Development/Test/Media/Demo/Models/groundForces/xFiles/T72' of type 'FileSystem' to resource group 'Models'
+15:27:13: Added resource location '../../Development/Test/Media/Demo/Models/merkava' of type 'FileSystem' to resource group 'Models'
+15:27:13: Creating resource group OIT
+15:27:13: Added resource location '../../Development/Test/Media/Base/OIT' of type 'FileSystem' to resource group 'OIT'
+15:27:13: Added resource location '../../Development/Test/Media/Base/OIT/GLSL' of type 'FileSystem' to resource group 'OIT'
+15:27:13: Added resource location '../../Development/Test/Media/Base/OIT/GLSL_ES' of type 'FileSystem' to resource group 'OIT'
+15:27:13: Added resource location '../../Development/Test/Media/Base/OIT/HLSL' of type 'FileSystem' to resource group 'OIT'
+15:27:13: Creating resource group Ogre
+15:27:13: Added resource location '../../Development/Test/Media/BaseSupport/Ogre' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Added resource location '../../Development/Test/Media/BaseSupport/Ogre/materials/programs' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Added resource location '../../Development/Test/Media/BaseSupport/Ogre/materials/textures' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Added resource location '../../Development/Test/Media/AdvanceSupport/ShadowVolume' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Added resource location '../../Development/Test/Media/AdvanceSupport/RTShaderLib' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Added resource location '../../Development/Test/Media/AdvanceSupport/RTShaderLib/GLSL' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Added resource location '../../Development/Test/Media/AdvanceSupport/RTShaderLib/HLSL_Cg' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Added resource location '../../Development/Test/Media/AdvanceSupport/RTShaderLib/materials' of type 'FileSystem' to resource group 'Ogre'
+15:27:13: Creating resource group zATerrain
+15:27:13: Added resource location '../../Development/Test/Media/Base/terrain' of type 'FileSystem' to resource group 'zATerrain'
+15:27:13: Added resource location '../../Development/Test/Media/Samples/Compositors/PerPixelDepth' of type 'FileSystem' to resource group 'zATerrain'
+15:27:13: D3D9 : RenderSystem Option: FSAA = 0
+15:27:13: D3D9 : RenderSystem Option: Stereo Mode = None
+15:27:13: D3D9 : RenderSystem Option: Fixed Pipeline Enabled = Yes
+15:27:13: D3D9 : RenderSystem Option: Floating-point mode = Consistent
+15:27:13: D3D9 : RenderSystem Option: Create Multi Threaded Device = No
+15:27:13: D3D9 : RenderSystem Option: Multi device memory hint = Use minimum system memory
+15:27:13: D3D9 : RenderSystem Option: Allow DirectX9Ex = No
+15:27:13: CPU Identifier & Features
+15:27:13: -------------------------
+15:27:13:  *   CPU ID: GenuineIntel: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz
+15:27:13:  *          SSE: yes
+15:27:13:  *         SSE2: yes
+15:27:13:  *         SSE3: yes
+15:27:13:  *        SSE41: yes
+15:27:13:  *        SSE42: yes
+15:27:13:  *          MMX: yes
+15:27:13:  *       MMXEXT: yes
+15:27:13:  *        3DNOW: no
+15:27:13:  *     3DNOWEXT: no
+15:27:13:  *         CMOV: yes
+15:27:13:  *          TSC: yes
+15:27:13:  *INVARIANT TSC: yes
+15:27:13:  *          FPU: yes
+15:27:13:  *          PRO: yes
+15:27:13:  *           HT: no
+15:27:13: -------------------------
+15:27:13: D3D9 : Subsystem Initialising
+15:27:13: Registering ResourceManager for type Texture
+15:27:13: Registering ResourceManager for type GpuProgram
+15:27:13: ***************************************
+15:27:13: *** D3D9 : Subsystem Initialised OK ***
+15:27:13: ***************************************
+15:27:13: OverlayElementFactory for type Panel registered.
+15:27:13: OverlayElementFactory for type BorderPanel registered.
+15:27:13: OverlayElementFactory for type TextArea registered.
+15:27:13: Registering ResourceManager for type Font
+15:27:13: Registering ResourceManager for type StaticFont
+15:27:13: Registering ResourceManager for type DynamicFont
+15:27:13: MovableObjectFactory for type 'CBatchRenderable' registered.
+15:27:13: MovableObjectFactory for type 'CBatchRenderable2D' registered.
+15:27:13: MovableObjectFactory for type 'CMultiText' registered.
+15:27:13: SceneManagerFactory for type 'CMapViewport' registered.
+15:27:13: SceneManagerFactory for type 'CHeatMapViewport' registered.
+15:27:13: SceneManagerFactory for type 'CSceneManagerRTT' registered.
+15:27:13: RenderSystem::_createRenderWindow "globalDummyWin2994833401240025183_0", 4x4 windowed  miscParams: FSAA=0 FSAAHint= border=none colourDepth=32 hidden=true left=439 top=54 useNVPerfHUD=false vsync=true 
+15:27:13: D3D9 : Created D3D9 Rendering Window 'globalDummyWin2994833401240025183_0' : 4x4, 32bpp
+15:27:13: D3D9DepthBuffer Depth buffer bits:32
+15:27:13: D3D9: Vertex texture format supported - PF_L8
+15:27:13: D3D9: Vertex texture format supported - PF_L16
+15:27:13: D3D9: Vertex texture format supported - PF_A8
+15:27:13: D3D9: Vertex texture format supported - PF_BYTE_LA
+15:27:13: D3D9: Vertex texture format supported - PF_R5G6B5
+15:27:13: D3D9: Vertex texture format supported - PF_A4R4G4B4
+15:27:13: D3D9: Vertex texture format supported - PF_A1R5G5B5
+15:27:13: D3D9: Vertex texture format supported - PF_A8R8G8B8
+15:27:13: D3D9: Vertex texture format supported - PF_A8B8G8R8
+15:27:13: D3D9: Vertex texture format supported - PF_A2R10G10B10
+15:27:13: D3D9: Vertex texture format supported - PF_A2B10G10R10
+15:27:13: D3D9: Vertex texture format supported - PF_DXT1
+15:27:13: D3D9: Vertex texture format supported - PF_DXT2
+15:27:13: D3D9: Vertex texture format supported - PF_DXT3
+15:27:13: D3D9: Vertex texture format supported - PF_DXT4
+15:27:13: D3D9: Vertex texture format supported - PF_DXT5
+15:27:13: D3D9: Vertex texture format supported - PF_FLOAT16_RGBA
+15:27:13: D3D9: Vertex texture format supported - PF_FLOAT32_RGBA
+15:27:13: D3D9: Vertex texture format supported - PF_X8R8G8B8
+15:27:13: D3D9: Vertex texture format supported - PF_SHORT_RGBA
+15:27:13: D3D9: Vertex texture format supported - PF_FLOAT16_R
+15:27:13: D3D9: Vertex texture format supported - PF_FLOAT32_R
+15:27:13: D3D9: Vertex texture format supported - PF_SHORT_GR
+15:27:13: D3D9: Vertex texture format supported - PF_FLOAT16_GR
+15:27:13: D3D9: Vertex texture format supported - PF_FLOAT32_GR
+15:27:13: RenderSystem capabilities
+15:27:13: -------------------------
+15:27:13: RenderSystem Name: Direct3D9 Rendering Subsystem
+15:27:13: GPU Vendor: intel
+15:27:13: Device Name: Monitor-1-Intel(R) UHD Graphics 630
+15:27:13: Driver Version: 27.20.100.8190
+15:27:13:  * Fixed function pipeline: yes
+15:27:13:  * 32-bit index buffers: yes
+15:27:13:  * Hardware stencil buffer: yes
+15:27:13:    - Stencil depth: 8
+15:27:13:    - Two sided stencil support: yes
+15:27:13:    - Wrap stencil values: yes
+15:27:13:  * Vertex programs: yes
+15:27:13:    - Number of floating-point constants: 256
+15:27:13:    - Number of integer constants: 16
+15:27:13:    - Number of boolean constants: 16
+15:27:13:  * Fragment programs: yes
+15:27:13:    - Number of floating-point constants: 224
+15:27:13:    - Number of integer constants: 16
+15:27:13:    - Number of boolean constants: 16
+15:27:13:  * Geometry programs: no
+15:27:13:  * Tessellation Hull programs: no
+15:27:13:  * Tessellation Domain programs: no
+15:27:13:  * Compute programs: no
+15:27:13:  * Supported Shader Profiles: hlsl ps_1_1 ps_1_2 ps_1_3 ps_1_4 ps_2_0 ps_2_a ps_2_b ps_3_0 vs_1_1 vs_2_0 vs_2_a vs_3_0
+15:27:13:  * Read-back compiled shader: yes
+15:27:13:  * Number of vertex attributes: 14
+15:27:13:  * Textures
+15:27:13:    - Number of texture units: 8
+15:27:13:    - Floating point: yes
+15:27:13:    - Non-power-of-two: yes
+15:27:13:    - 1D textures: yes
+15:27:13:    - 2D array textures: no
+15:27:13:    - 3D textures: yes
+15:27:13:    - Anisotropic filtering: yes
+15:27:13:  * Texture Compression: yes
+15:27:13:    - DXT: yes
+15:27:13:    - VTC: no
+15:27:13:    - PVRTC: no
+15:27:13:    - ATC: no
+15:27:13:    - ETC1: no
+15:27:13:    - ETC2: no
+15:27:13:    - BC4/BC5: no
+15:27:13:    - BC6H/BC7: no
+15:27:13:    - ASTC: no
+15:27:13:    - Automatic mipmap generation: no
+15:27:13:  * Vertex Buffers
+15:27:13:    - VET_UBYTE4 element type: yes
+15:27:13:    - Render to Vertex Buffer: no
+15:27:13:    - Instance Data: yes
+15:27:13:    - Primitive Restart: no
+15:27:13:  * Vertex texture fetch: yes
+15:27:13:    - Max vertex textures: 4
+15:27:13:    - Vertex textures shared: no
+15:27:13:  * Read/Write Buffers: no
+15:27:13:  * Hardware Occlusion Query: yes
+15:27:13:  * User clip planes: yes
+15:27:13:  * Infinite far plane projection: yes
+15:27:13:  * Depth clamping: no
+15:27:13:  * Hardware render-to-texture: yes
+15:27:13:    - Multiple Render Targets: 4
+15:27:13:    - With different bit depths: yes
+15:27:13:  * Point Sprites: yes
+15:27:13:    - Extended parameters: yes
+15:27:13:    - Max Size: 256
+15:27:13:  * Wide Lines: no
+15:27:13:  * Hardware Gamma: no
+15:27:13:  * DirectX per stage constants: yes
+15:27:13:  * W-Buffer supported: no
+15:27:13:  * Quad Buffer: no
+15:27:13: DefaultWorkQueue('Root') initialising on thread 7ad0.
+15:27:13: DefaultWorkQueue('Root')::WorkerFunc - thread 19a8 starting.
+15:27:13: DefaultWorkQueue('Root')::WorkerFunc - thread 7948 starting.
+15:27:13: Particle Renderer Type 'billboard' registered
+15:27:29: RenderSystem::_createRenderWindow "MapCore 2", 384x379 windowed  miscParams: FSAA=0 FSAAHint= colourDepth=32 externalWindowHandle=529066 stereoMode=None useNVPerfHUD=false vsync=true 
+15:27:29: D3D9 : Created D3D9 Rendering Window 'MapCore 2' : 384x379, 32bpp
+15:27:29: D3D9DepthBuffer Depth buffer bits:32
+15:27:29: D3D9DepthBuffer Depth buffer bits:32
+15:27:29: D3D9: Vertex texture format supported - PF_L8
+15:27:29: D3D9: Vertex texture format supported - PF_L16
+15:27:29: D3D9: Vertex texture format supported - PF_A8
+15:27:29: D3D9: Vertex texture format supported - PF_BYTE_LA
+15:27:29: D3D9: Vertex texture format supported - PF_R5G6B5
+15:27:29: D3D9: Vertex texture format supported - PF_A4R4G4B4
+15:27:29: D3D9: Vertex texture format supported - PF_A1R5G5B5
+15:27:29: D3D9: Vertex texture format supported - PF_A8R8G8B8
+15:27:29: D3D9: Vertex texture format supported - PF_A8B8G8R8
+15:27:29: D3D9: Vertex texture format supported - PF_A2R10G10B10
+15:27:29: D3D9: Vertex texture format supported - PF_A2B10G10R10
+15:27:29: D3D9: Vertex texture format supported - PF_DXT1
+15:27:29: D3D9: Vertex texture format supported - PF_DXT2
+15:27:29: D3D9: Vertex texture format supported - PF_DXT3
+15:27:29: D3D9: Vertex texture format supported - PF_DXT4
+15:27:29: D3D9: Vertex texture format supported - PF_DXT5
+15:27:29: D3D9: Vertex texture format supported - PF_FLOAT16_RGBA
+15:27:29: D3D9: Vertex texture format supported - PF_FLOAT32_RGBA
+15:27:29: D3D9: Vertex texture format supported - PF_X8R8G8B8
+15:27:29: D3D9: Vertex texture format supported - PF_SHORT_RGBA
+15:27:29: D3D9: Vertex texture format supported - PF_FLOAT16_R
+15:27:29: D3D9: Vertex texture format supported - PF_FLOAT32_R
+15:27:29: D3D9: Vertex texture format supported - PF_SHORT_GR
+15:27:29: D3D9: Vertex texture format supported - PF_FLOAT16_GR
+15:27:29: D3D9: Vertex texture format supported - PF_FLOAT32_GR
+15:27:29: Initialising resource group Base
+15:27:29: Parsing scripts for resource group Base
+15:27:29: Parsing script fxplugin_demo_sky.material
+15:27:29: Warning: ScriptCompiler - deprecated symbol in fxplugin_demo_sky.material(11): separateUV is no longer supported.
+15:27:29: Warning: ScriptCompiler - deprecated symbol in fxplugin_demo_sky.material(29): separateUV is no longer supported.
+15:27:29: Parsing script blue_highway_ext.fontdef
+15:27:29: Parsing script blue_highway_ext.fontdef
+15:27:29: Parsing script blue_highway_ext.fontdef
+15:27:29: Finished parsing scripts for resource group Base
+15:27:29: Creating resources for group Base
+15:27:29: All done
+15:27:29: Initialising resource group Calelum
+15:27:29: Parsing scripts for resource group Calelum
+15:27:29: Parsing script GroundFog.program
+15:27:29: Parsing script Haze.program
+15:27:29: Parsing script GroundFog.material
+15:27:29: Parsing script LayeredClouds.material
+15:27:29: Parsing script Terrain.material
+15:27:29: Finished parsing scripts for resource group Calelum
+15:27:29: Creating resources for group Calelum
+15:27:29: All done
+15:27:29: Initialising resource group Demo_Room
+15:27:29: Parsing scripts for resource group Demo_Room
+15:27:29: Finished parsing scripts for resource group Demo_Room
+15:27:29: Creating resources for group Demo_Room
+15:27:29: All done
+15:27:29: Initialising resource group EditMode
+15:27:29: Parsing scripts for resource group EditMode
+15:27:29: Parsing script GISMO.material
+15:27:29: Finished parsing scripts for resource group EditMode
+15:27:29: Creating resources for group EditMode
+15:27:29: All done
+15:27:29: Initialising resource group Environment
+15:27:29: Parsing scripts for resource group Environment
+15:27:29: Parsing script fxplugin_lens_flare_ps.program
+15:27:29: Parsing script EnvironmentEffects.material
+15:27:29: Parsing script fxplugin_lens_flare.material
+15:27:29: Finished parsing scripts for resource group Environment
+15:27:29: Creating resources for group Environment
+15:27:29: All done
+15:27:29: Initialising resource group General
+15:27:29: Parsing scripts for resource group General
+15:27:29: Finished parsing scripts for resource group General
+15:27:29: Creating resources for group General
+15:27:29: All done
+15:27:29: Initialising resource group ImageProcessing
+15:27:29: Parsing scripts for resource group ImageProcessing
+15:27:29: Parsing script FSFilter.program
+15:27:30: Parsing script layerFilter.program
+15:27:31: Parsing script SimpleTexture.program
+15:27:31: Parsing script FSFilter.material
+15:27:31: Parsing script SimpleTexture.material
+15:27:31: Parsing script FSFilter.compositor
+15:27:31: Finished parsing scripts for resource group ImageProcessing
+15:27:31: Creating resources for group ImageProcessing
+15:27:31: All done
+15:27:31: Initialising resource group Models
+15:27:31: Parsing scripts for resource group Models
+15:27:31: Parsing script apachelow.material
+15:27:31: Parsing script apachemedium.material
+15:27:31: Parsing script apache_high.material
+15:27:31: Parsing script bm21_h.material
+15:27:31: Parsing script bmp1_h.material
+15:27:31: Parsing script humer_h.material
+15:27:31: Parsing script m109_h.material
+15:27:31: Parsing script m113a2_h.material
+15:27:31: Parsing script m1a1_h.material
+15:27:31: Parsing script m60a3_h.material
+15:27:31: Parsing script merkava-III_h.material
+15:27:31: Parsing script mlrs_h.material
+15:27:31: Parsing script oshkosh-empty_h.material
+15:27:31: Parsing script oshkosh_h.material
+15:27:31: Parsing script oshkosh_onside_h.material
+15:27:31: Parsing script t34_h.material
+15:27:31: Parsing script T54A_h.material
+15:27:31: Parsing script T55AM_h.material
+15:27:31: Parsing script t72-2_h.material
+15:27:31: Parsing script t72bm_h.material
+15:27:32: Parsing script t72_h.material
+15:27:32: Parsing script t80uk-tank_od.material
+15:27:32: Parsing script tagash_h.material
+15:27:32: Parsing script topaz_h.material
+15:27:32: Parsing script zil157_h.material
+15:27:32: Parsing script zil157_onside_h.material
+15:27:32: Parsing script zsu-23_h.material
+15:27:32: Parsing script tankTrail.material
+15:27:32: Parsing script merkavahigh.material
+15:27:32: Parsing script merkavalow.material
+15:27:32: Parsing script merkavamedium.material
+15:27:32: Parsing script tankTrail.particle
+15:27:32: Finished parsing scripts for resource group Models
+15:27:32: Creating resources for group Models
+15:27:32: All done
+15:27:32: Initialising resource group OIT
+15:27:32: Parsing scripts for resource group OIT
+15:27:32: Parsing script Buffer_Debug_Composite.program
+15:27:32: Parsing script MRT_Clear.program
+15:27:32: Parsing script MRT_Clear_Debug.program
+15:27:32: Parsing script OIT_Composite.program
+15:27:32: Parsing script OIT_Opaque.program
+15:27:32: Parsing script Text_OIT.program
+15:27:32: Parsing script Transparent_Composite.program
+15:27:32: Parsing script Buffer_Debug_Composite.material
+15:27:32: Parsing script MRT_Clear.material
+15:27:32: Parsing script MRT_Clear_Debug.material
+15:27:32: Parsing script OIT_Composite.material
+15:27:32: Parsing script OIT_Opaque.material
+15:27:32: Parsing script RTSS.material
+15:27:32: Parsing script Transparent_Composite.material
+15:27:32: Parsing script OIT.compositor
+15:27:32: Parsing script RTSS.compositor
+15:27:32: Finished parsing scripts for resource group OIT
+15:27:32: Creating resources for group OIT
+15:27:32: All done
+15:27:32: Initialising resource group Ogre
+15:27:32: Parsing scripts for resource group Ogre
+15:27:32: Parsing script ShadowVolumeExtude.program
+15:27:32: Parsing script MapCore.material
+15:27:32: Parsing script normal.material
+15:27:32: Parsing script DualQuaternionSkinning_Shadow.material
+15:27:32: Parsing script HardwareSkinningShadow.material
+15:27:32: Parsing script RTShaderSystem.material
+15:27:32: Parsing script TriplanarTexturing.material
+15:27:32: Parsing script MapCoreOverlay.fontdef
+15:27:32: Parsing script Ogre.fontdef
+15:27:32: Parsing script MapCoreOverlay.fontdef
+15:27:32: Parsing script Ogre.fontdef
+15:27:32: Parsing script MapCoreOverlay.fontdef
+15:27:32: Parsing script Ogre.fontdef
+15:27:32: Parsing script MapCoreDebugPanel.overlay
+15:27:32: Finished parsing scripts for resource group Ogre
+15:27:32: Creating resources for group Ogre
+15:27:32: All done
+15:27:32: Initialising resource group OgreAutodetect
+15:27:32: Parsing scripts for resource group OgreAutodetect
+15:27:32: Finished parsing scripts for resource group OgreAutodetect
+15:27:32: Creating resources for group OgreAutodetect
+15:27:32: All done
+15:27:32: Initialising resource group OgreInternal
+15:27:32: Parsing scripts for resource group OgreInternal
+15:27:32: Finished parsing scripts for resource group OgreInternal
+15:27:32: Creating resources for group OgreInternal
+15:27:32: All done
+15:27:32: Initialising resource group zATerrain
+15:27:32: Parsing scripts for resource group zATerrain
+15:27:32: Parsing script heightLines.program
+15:27:33: Parsing script heightShade.program
+15:27:33: Parsing script NormalMap.program
+15:27:33: Parsing script projector.program
+15:27:33: Parsing script SightArea.program
+15:27:33: Parsing script Text.program
+15:27:33: Parsing script depthProj.program
+15:27:33: Parsing script depthProjU.program
+15:27:33: Parsing script combineMat.material
+15:27:33: Parsing script heightCurv.material
+15:27:33: Parsing script heightFloat.material
+15:27:33: Parsing script heightLines.material
+15:27:33: Parsing script heightShade.material
+15:27:33: Parsing script nBlur.material
+15:27:33: Parsing script NormalMap.material
+15:27:33: Parsing script NormalMapTextured.material
+15:27:33: Parsing script PostProcessRenderTarget.material
+15:27:34: Parsing script SightArea.material
+15:27:34: Parsing script TerrainCompositor.material
+15:27:34: Parsing script TerrainTile.material
+15:27:34: Parsing script depthFloat.material
+15:27:34: Parsing script depthProjCompositorMaterial.material
+15:27:34: Parsing script depthRgba.material
+15:27:34: Parsing script heightRgba.material
+15:27:34: Parsing script RollingShutter_depth.material
+15:27:34: Parsing script RollingShutter_test.material
+15:27:34: Parsing script zRgba.material
+15:27:34: Parsing script heightCurv.compositor
+15:27:34: Parsing script heightLines.compositor
+15:27:34: Parsing script sight.compositor
+15:27:34: Parsing script terrain.compositor
+15:27:34: Parsing script depthProj.compositor
+15:27:34: Parsing script heightRgba.compositor
+15:27:34: Parsing script Rolling_Shutter.compositor
+15:27:34: Error: ScriptCompiler - reference to a non existing object in Rolling_Shutter.compositor(40): RollingShutter_test
+15:27:34: Error: ScriptCompiler - reference to a non existing object in Rolling_Shutter.compositor(86): RollingShutter_test_float
+15:27:34: Finished parsing scripts for resource group zATerrain
+15:27:34: Creating resources for group zATerrain
+15:27:34: All done
+15:27:34: CSceneManager::createCamera:MapCore_Camera_1
+15:27:34: Creating viewport on target 'MapCore 2', rendering from camera 'MapCore_Camera_1', relative dimensions 8192L: 0 T: 0 W: 1 H: 1 Z-order: 0
+15:27:34: Viewport for camera 'MapCore_Camera_1', actual dimensions 8192L: 0 T: 0 W: 384 H: 379

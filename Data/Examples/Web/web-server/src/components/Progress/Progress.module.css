@@ -1,0 +1,132 @@
+.Wrapper {
+    margin: 0;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.Title {
+    font-size: 15px;
+    width: 35%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ProgressWrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+.Progress {
+    width: 100%;
+    display: flex;
+    height: 5px;
+    overflow: hidden;
+    background-color: #ff03;
+    border-radius: .25rem;
+    margin-top: 3px;
+}
+
+.AsyncProgress {
+    width: 100%;
+    display: flex;
+    height: 5px;
+    overflow: hidden;
+    background-color: #00ffea2d;
+    border-radius: .25rem;
+    margin-top: 3px;
+}
+
+.Progress.Error {
+    background-color: #ff284633;
+}
+
+.PercentValue {
+    font-size: 12px;
+    transition: .6s ease;
+    position: relative;
+}
+
+.PercentValue.Error {
+    color: var(--app-validation-color);
+    padding-left: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.PercentInitValue {
+    display: inline-block;
+    transform: translateX(-100%);
+    white-space: nowrap;
+}
+
+.PercentInitValue.Half {
+    transform: translateX(-50%);
+}
+
+.PercentInitValue.Zero {
+    transform: none;
+}
+
+.PercentInitValue.Error {
+    transform: none;
+}
+
+.AsyncBar {
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--app-system-cyan);
+    transition: width .6s ease;
+}
+.AsyncBar.Error {
+    background-color: var(--app-validation-color);
+}
+.AsyncBar.Success {
+    background-color: var(--app-success-color);
+}
+
+
+.Bar {
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--app-main-yellow);
+    transition: width .6s ease;
+}
+.Bar.Error {
+    background-color: var(--app-validation-color);
+}
+.Bar.Success {
+    background-color: var(--app-success-color);
+}
+
+.ErrorIcon {
+    height: 14px;
+    width: 14px;
+    background: url('../../assets/images/error.svg') no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;    
+    visibility: hidden;
+    transition: .6s;
+}
+
+.ErrorIcon.Error {
+    visibility: visible;
+}
+/*validation-bg-color: #624545*/

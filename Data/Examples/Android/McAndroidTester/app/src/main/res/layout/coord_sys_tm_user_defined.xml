@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:showIn="@layout/fragment_grid_coordinate_sys"
+    android:visibility="gone"
+    >
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+    <EditText
+        android:id="@+id/central_meridian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/central_meridian"
+        android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+        <EditText
+            android:id="@+id/false_easting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/false_easting"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+        <EditText
+            android:id="@+id/false_northing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/false_northing"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+        <EditText
+            android:id="@+id/latitude_of_grid_origin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/latitude_of_grid_origin"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+        <EditText
+            android:id="@+id/scale_factor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/scale_factor"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+        <EditText
+            android:id="@+id/zone_width"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/zone_width"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/zone_width"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

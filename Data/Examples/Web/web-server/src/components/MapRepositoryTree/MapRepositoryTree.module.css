@@ -1,0 +1,63 @@
+.Wrapper {
+    height: 100%;
+    overflow: auto;
+    background-color: var(--app-bg-color);
+    border-right: 1px solid #676767;
+    border: 1px solid var(--app-bg-color-alt);
+    user-select: none;
+}
+
+.HeaderWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--app-bg-color-alt);
+    padding: 15px 10px 15px 20px
+}
+
+.Header {
+    font-size: 18px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Buttons {
+    display: flex;
+}
+
+.ActionBtn {
+    width: 19px;
+    height: 19px;
+    border: none;
+    padding: 0;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.Icon {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+.RefreshIcon {
+    background: url('../../assets/images/refresh.svg') no-repeat;
+}
+
+.ContextIcon {
+    background: url('../../assets/images/context.svg') no-repeat;
+    background-position: center;
+}
+
+.DownloadIcon {
+    background: url('../../assets/images/download1.svg') no-repeat;
+}
+
+.Error {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}

@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.create_texture_tabs.TextureFromListFragment">
+<ListView android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/texture_from_list_existing_texture_list"/>
+<com.elbit.mapcore.mcandroidtester.utils.customviews.CreateTextureBottom
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/texture_from_list_ctb"/>
+
+</LinearLayout>

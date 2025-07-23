@@ -1,0 +1,27 @@
+:root {
+    --coordinate-system-dialog-width: 600px;
+}
+
+.coordinate-system__coord-sys-params {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: calc(0.4vh*var(--size-factor));
+}
+
+/* dialog */
+.scroll-dialog-coordinate-system .p-dialog-content {
+    min-width: var(--coordinate-system-dialog-width) !important;
+}
+
+.scroll-dialog-coordinate-system .p-dialog-header {
+    min-width: var(--coordinate-system-dialog-width) !important;
+}
+
+.scroll-dialog-coordinate-system .p-dialog-footer {
+    min-width: var(--coordinate-system-dialog-width) !important;
+}
+
+.scroll-dialog-coordinate-system {
+    overflow-x: auto;
+}

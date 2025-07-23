@@ -1,0 +1,164 @@
+:root {
+    --scan-geometry-dialog-width: 350px;
+    --scan-result-dialog-width: 1000px;
+    --scan-properties-dialog-width: 500px;
+    --sq-params: 600px;
+    --scan-item-details: 600px;
+}
+
+/* Forms */
+.scan__scan-geometry-form {
+    height: calc(35vh*var(--size-factor));
+    width: calc(22vh*1.5*var(--size-factor));
+}
+
+.scan__sq-params-form {
+    height: calc(45vh*var(--size-factor));
+    width: calc(25vh*1.5*var(--size-factor));
+}
+
+.scan__scan-result-form {
+    max-height: calc(40vh*var(--size-factor));
+    width: calc(90vh*1.5*var(--size-factor));
+}
+
+.scan__edit-color-properties {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: calc(0.1vh*var(--size-factor));
+}
+
+.scan__color-picker {
+    opacity: 1;
+}
+
+.scan__color-picker--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.scan__edit-object-height-properties {
+    width: 30%;
+}
+
+.scan__coordinate-label {
+    margin-left: calc(1.2vh*var(--size-factor)) !important;
+    margin-right: calc(0.6vh*var(--size-factor)) !important;
+}
+
+.scan__divide-segments {
+    margin-top: calc(3vh*var(--size-factor));
+}
+
+.scan__wide-button {
+    display: flex;
+    justify-content: center;
+}
+
+.scan__button-segment {
+    display: flex;
+    flex-direction: column;
+    margin-left: calc(0.75vh*var(--size-factor));
+    margin-right: calc(0.75vh*var(--size-factor));
+}
+
+.scan__icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: calc(0.5vh*var(--size-factor));
+}
+
+.scan__icon-img {
+    height: calc(3.3vh*var(--size-factor));
+    width: calc(3.3vh*var(--size-factor));
+}
+
+
+/* dialog */
+/* scanGeometry */
+.scroll-dialog-9 .p-dialog-content {
+    min-width: var(--scan-geometry-dialog-width) !important;
+}
+
+.scroll-dialog-9 .p-dialog-header {
+    min-width: var(--scan-geometry-dialog-width) !important;
+}
+
+.scroll-dialog-9 .p-dialog-footer {
+    min-width: var(--scan-geometry-dialog-width) !important;
+}
+
+.scroll-dialog-9 {
+    overflow-x: auto;
+}
+
+/* scanResult */
+.scroll-dialog-6 .p-dialog-content {
+    min-width: var(--scan-result-dialog-width) !important;
+}
+
+.scroll-dialog-6 .p-dialog-header {
+    min-width: var(--scan-result-dialog-width) !important;
+}
+
+.scroll-dialog-6 .p-dialog-footer {
+    min-width: var(--scan-result-dialog-width) !important;
+}
+
+.scroll-dialog-6 {
+    overflow-x: auto;
+}
+
+/* scanProperties */
+.scroll-dialog-5 .p-dialog-content {
+    min-width: var(--scan-properties-dialog-width) !important;
+}
+
+.scroll-dialog-5 .p-dialog-header {
+    min-width: var(--scan-properties-dialog-width) !important;
+}
+
+.scroll-dialog-5 .p-dialog-footer {
+    min-width: var(--scan-properties-dialog-width) !important;
+}
+
+.scroll-dialog-5 {
+    overflow-x: auto;
+}
+
+/* scanSQParams */
+.scroll-dialog-sq-params .p-dialog-content {
+    min-width: var(--sq-params-dialog-width) !important;
+}
+
+.scroll-dialog-sq-params .p-dialog-header {
+    min-width: var(--sq-params-dialog-width) !important;
+}
+
+.scroll-dialog-sq-params .p-dialog-footer {
+    min-width: var(--sq-params-dialog-width) !important;
+}
+
+.scroll-dialog-sq-params {
+    overflow-x: auto;
+}
+
+/* ScanItemDetailsLayer */
+.scroll-dialog-scan-item-details .p-dialog-content {
+    min-width: var(--scan-item-details-dialog-width) !important;
+}
+
+.scroll-dialog-sq-scan-item-details .p-dialog-header {
+    min-width: var(--scan-item-details-dialog-width) !important;
+}
+
+.scroll-dialog-sq-scan-item-details .p-dialog-footer {
+    min-width: var(--scan-item-details-dialog-width) !important;
+}
+
+.scroll-dialog-sq-scan-item-details {
+    overflow-x: auto;
+}

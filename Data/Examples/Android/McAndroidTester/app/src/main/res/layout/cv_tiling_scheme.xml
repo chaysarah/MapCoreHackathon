@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/tiling_scheme_type_swl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="Tiling Scheme Type:" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDVector
+        android:id="@+id/tiling_scheme_tiling_origin_2dvector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:two_d_vector_label="Tiling Origin:" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_weight="1"
+        android:id="@+id/tiling_scheme_largest_tile_size_in_map_units"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:netl_labelText="Largest Tile Size In Map Units:"
+        />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_weight="1"
+        android:id="@+id/tiling_scheme_largest_tiles_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="Num Largest Tiles X:"
+        />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_weight="1"
+        android:id="@+id/tiling_scheme_largest_tiles_y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="Num Largest Tiles Y:"
+        />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_weight="1"
+        android:id="@+id/tiling_scheme_tile_size_in_pixels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="Tile Size In Pixels:"
+        />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:layout_weight="1"
+        android:id="@+id/tiling_scheme_raster_tile_margin_in_pixels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:netl_labelText="Raster Tile Margin In Pixels:"
+        />
+</LinearLayout>

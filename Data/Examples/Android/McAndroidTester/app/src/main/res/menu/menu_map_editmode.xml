@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+   >
+    <item
+        android:id="@+id/cnt_mnu_editmode_finish"
+        android:title="Finish"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+    <item
+        android:id="@+id/cnt_mnu_editmode_cancel"
+        android:title="Cancel"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+    <item
+        android:id="@+id/cnt_mnu_editmode_delete_vertex"
+        android:title="Delete"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+</menu>

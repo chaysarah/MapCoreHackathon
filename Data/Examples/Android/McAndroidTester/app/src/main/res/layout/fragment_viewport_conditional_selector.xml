@@ -1,0 +1,55 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.map_actions.treeviews.overlay_manager_treeview.ViewportConditionalSelectorFragment">
+
+        <include
+            android:id="@+id/viewport_conditional_selector_base_layout"
+            layout="@layout/fragment_base_conditional_selector" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="viewport types" />
+
+        <ListView
+            android:id="@+id/viewport_conditional_selector_viewport_type_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="coordinate systems" />
+
+        <ListView
+            android:id="@+id/viewport_conditional_selector_viewport_coord_sys_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/viewport_conditional_selector_viewport_ids"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="viewport IDs (separated by space)" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/viewport_conditional_selector_viewport_ids_inclusive_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IDs inclusive" />
+    </LinearLayout>
+</ScrollView>

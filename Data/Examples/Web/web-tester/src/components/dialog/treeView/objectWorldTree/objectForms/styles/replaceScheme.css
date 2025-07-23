@@ -1,0 +1,21 @@
+:root {
+    --replace-scheme-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-replace-scheme .p-dialog-content {
+    min-width: var(--replace-scheme-dialog-width) !important;
+}
+
+.scroll-dialog-replace-scheme .p-dialog-header {
+    min-width: var(--replace-scheme-dialog-width) !important;
+}
+
+.scroll-dialog-replace-scheme .p-dialog-footer {
+    min-width: var(--replace-scheme-dialog-width) !important;
+}
+
+.scroll-dialog-replace-scheme {
+    overflow-x: auto;
+}

@@ -1,0 +1,4 @@
+{
+    "MapCoreLayerServerURL":"http://localhost:6767/map/opr",
+	"memUsageLoggingFrequency":0
+}  

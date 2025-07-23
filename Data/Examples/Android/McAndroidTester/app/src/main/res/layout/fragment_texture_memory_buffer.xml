@@ -1,0 +1,150 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.create_texture_tabs.TextureMemoryBufferFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Buffer" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+            android:id="@+id/texture_memory_buffer_bmp_file_chooser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fel_labelText="BMP File"
+            app:fel_enable_file_choosing="true"/>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/texture_memory_buffer_bmp_original_format_swl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="BMP Original Format" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Source" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:focusable="false"
+                android:id="@+id/texture_memory_buffer_src_pixel_format_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Src pixel Format" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/texture_memory_buffer_src_width_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Src Width" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/texture_memory_buffer_src_height_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Src Height" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Texture" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/texture_memory_buffer_texture_usage_swl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="Texture Usage" />
+
+        <CheckBox
+            android:id="@+id/texture_memory_buffer_auto_mipmap_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auto Mipmap" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:focusable="false"
+                android:id="@+id/texture_memory_buffer_pixel_format_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="pixel Format" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/texture_memory_buffer_width_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Width" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/texture_memory_buffer_height_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Height" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.CreateTextureBottom
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/texture_memory_buffer_ctb"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+:root {
+    --save-load-ctrl-dialog-width: 350px;
+}
+
+/* dialog */
+.scroll-dialog-save-load-ctrl .p-dialog-content {
+    min-width: var(--save-load-ctrl-dialog-width) !important;
+}
+
+.scroll-dialog-save-load-ctrl .p-dialog-header {
+    min-width: var(--save-load-ctrl-dialog-width) !important;
+}
+
+.scroll-dialog-save-load-ctrl .p-dialog-footer {
+    min-width: var(--save-load-ctrl-dialog-width) !important;
+}
+
+.scroll-dialog-save-load-ctrl {
+    overflow-x: auto;
+}

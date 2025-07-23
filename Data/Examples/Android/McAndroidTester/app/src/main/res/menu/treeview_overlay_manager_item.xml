@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Create Collection" android:id="@+id/tv_om_create_collection"/>
+    <item android:title="Create Overlay" android:id="@+id/tv_om_create_overlay"/>
+    <item android:title="Create Conditional Selector">
+        <menu>
+            <item
+                android:id="@+id/tv_om_conditional_selector_blocked_conditional_selector"
+                android:title="Blocked Conditional Selector" />
+            <item
+                android:id="@+id/tv_om_conditional_selector_boolean_conditional_selector"
+                android:title="Boolean Conditional Selector" />
+                />
+            <item
+                android:id="@+id/tv_om_conditional_selector_scale_conditional_selector"
+                android:title="Scale Conditional Selector" />
+            <item
+                android:id="@+id/tv_om_conditional_selector_object_state_conditional_selector"
+                android:title="Object State Conditional Selector" />
+            />
+            <item
+                android:id="@+id/tv_om_conditional_selector_viewport_conditional_selector"
+                android:title="Viewport Conditional Selector" />
+            <item
+                android:id="@+id/tv_om_conditional_selector_location_conditional_selector"
+                android:title="Location Conditional Selector" />
+        </menu>
+    </item>
+    <item android:title="Create Object Scheme" android:id="@+id/tv_om_object_scheme">
+        <menu>
+            <item
+                android:id="@+id/tv_om_new_object_scheme_with_one_location"
+                android:title="With One Location" />
+            <item
+                android:id="@+id/tv_om_new_object_scheme_with_one_location_and_one_item"
+                android:title="With One Location And One Item" />
+            />
+        </menu>
+    </item>
+    <item android:title="Remove Overlay Manager" android:id="@+id/tv_om_remove_overlay_manager"/>
+    <item android:title="Rename" android:id="@+id/tv_om_rename"/>
+    <item android:title="Delete Name" android:id="@+id/tv_om_delete_name"/>
+</menu>

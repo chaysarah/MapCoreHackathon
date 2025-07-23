@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.collection_tabs.CollectionGeneralTabFragment">
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Visibility"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/collection_default_visibility_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Default Visibility"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="left"/>
+            <Button
+                android:id="@+id/collection_default_visibility_apply_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:layout_gravity="right"
+                />
+
+        </LinearLayout>
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+            android:id="@+id/collection_vp_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="false"/>
+
+
+    </LinearLayout>
+</LinearLayout>

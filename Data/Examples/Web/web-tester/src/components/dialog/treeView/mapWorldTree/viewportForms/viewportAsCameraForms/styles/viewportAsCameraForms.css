@@ -1,0 +1,23 @@
+.vp-as-camera__wide-s-span {
+    width: calc(10vh*var(--size-factor));
+}
+
+.vp-as-camera__wide-m-span {
+    width: calc(15vh*var(--size-factor));
+}
+
+.vp-as-camera__wide-l-span {
+    width: calc(25vh*var(--size-factor));
+}
+
+.vp-as-camera__wide-xl-span {
+    width: calc(30vh*var(--size-factor));
+}
+
+.vp-as-camera__dropdown {
+    width: calc(20vh*var(--size-factor));
+}
+
+.vp-as-camera__r-padding-span {
+    padding-right: calc(1vh*var(--size-factor));
+}

@@ -1,0 +1,21 @@
+:root {
+    --save-to-file-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-save-to-file .p-dialog-content {
+    min-width: var(--save-to-file-dialog-width) !important;
+}
+
+.scroll-dialog-save-to-file .p-dialog-header {
+    min-width: var(--save-to-file-dialog-width) !important;
+}
+
+.scroll-dialog-save-to-file .p-dialog-footer {
+    min-width: var(--save-to-file-dialog-width) !important;
+}
+
+.scroll-dialog-save-to-file {
+    overflow-x: auto;
+}

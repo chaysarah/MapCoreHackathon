@@ -1,0 +1,21 @@
+
+:root {
+    --select-existing-item-dialog-width: 350px;
+}
+
+/* moreDetails */
+.scroll-dialog-select-existing-item .p-dialog-content {
+    min-width: var(--select-existing-item-dialog-width) !important;
+}
+
+.scroll-dialog-select-existing-item .p-dialog-header {
+    min-width: var(--select-existing-item-dialog-width) !important;
+}
+
+.scroll-dialog-select-existing-item .p-dialog-footer {
+    min-width: var(--select-existing-item-dialog-width) !important;
+}
+
+.scroll-dialog-select-existing-item {
+    overflow-x: auto;
+}

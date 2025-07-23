@@ -1,0 +1,112 @@
+.PreviewActions{
+    width: 63%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 80px;
+    border-left: 1px solid var(--app-bg-color);
+
+}
+.ActionWrapper {
+    padding: 10px;
+    padding-left: 17px;
+    padding-right: 17px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.ActionWrapper.Visible {
+    display: flex;
+}
+.CloseBtn{
+    margin: 5px;
+    cursor: pointer;
+}
+.CloseWrapper{
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+.CloseIcon{
+    width: 13px;
+    height: 13px;
+}
+.ActionsWrapper{
+    display: flex;
+    width: 350px;
+    margin-left: 20px;
+}
+.Action {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--app-font-color);
+    position: relative;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+ .Description{
+    -webkit-mask-image: url(../../assets/images/description.svg);
+    width: 28px;
+}
+ .threeD{
+    -webkit-mask-image: url(../../assets/images/cube.svg);
+    width: 28px;
+}
+.Map{    
+    -webkit-mask-image: url(../../assets/images/map2.svg);
+}
+.SHOW_DTM_MAP {
+    width: 34px;
+    -webkit-mask-image: url(../../assets/images/mountain.svg);
+}
+
+/*.Data{
+    background-image: url(../../assets/images/table.png);
+}
+.Data.Active{
+    background-image: url(../../assets/images/table_mouseOver.png);
+}*/
+.Action.Active{
+    background-color: #f6ea74;
+    opacity: 1;
+}
+
+
+.Action:hover {
+
+}
+
+.Action.Enable{
+    cursor: pointer;
+}
+
+.Desc {
+    font-size: 12px;
+}
+
+.Active +.Desc {
+    color: #f6ea74;
+}
+
+.ActionDtm {
+    margin-left: 35px;
+}
+
+.ActionsRectangle{
+    border-style: solid;
+    border-color: rgb(103, 102, 102);
+    border-radius: 0.15px;
+    display: flex;
+    }
+
+
+.ActiveClick {
+    background-color: dimgrey;
+    box-shadow: 1px 1px 3px #9a9696;
+}

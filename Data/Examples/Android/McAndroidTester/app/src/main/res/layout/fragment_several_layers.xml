@@ -1,0 +1,424 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map.fragments.SeveralLayersFragment">
+
+    <Button
+        android:id="@+id/create_vp_with_several_layers_frag_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="createVpWithLayers"
+        android:text="create viewport with selected layers" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
+
+
+            <RadioGroup
+                android:id="@+id/sl_map_type_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="viewport type:" />
+                <RadioButton
+                    android:id="@+id/sl_2D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="2D" />
+                <RadioButton
+                    android:id="@+id/sl_3D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3D" />
+                <RadioButton
+                    android:id="@+id/sl_2D_3D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2D/3D" />
+            </RadioGroup>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_raster_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_raster_1"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_raster_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_raster_2" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_raster_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_raster_3" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_dtm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_dtm" />
+            <!--
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                    android:id="@+id/native_heat_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fel_labelText="@string/native_heat_map" />-->
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_vector_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_vector_1" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_vector_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_vector_2" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_vector_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_vector_3" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/raw_raster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/raw_raster" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/raw_dtm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/raw_dtm" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_vector_3d_extrusion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_vector_3d_extrusion" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/native_3d_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="@string/native_3d_model" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/raw_vector_3d_extrusion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="Raw Vector 3d Extrusion"
+                app:fel_enable_file_choosing="true" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/raw_3d_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="Raw 3d Model" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                android:id="@+id/raw_vector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_labelText="Raw Vector"
+                app:fel_enable_file_choosing="true"/>
+
+            <CheckBox
+                android:id="@+id/several_layers_is_use_callback_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Is use callback" />
+
+            <CheckBox
+                android:id="@+id/several_layers_image_coord_sys_for_raw_layers_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image Coordinate System" />
+
+            <Button
+                android:id="@+id/several_layers_raw_coord_sys_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coordinate System For Raw Layers" />
+
+            <FrameLayout
+                android:id="@+id/several_layers_container_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+
+            <Button
+                android:id="@+id/several_layers_raw_3d_extrusion_params_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parameters For Raw 3d extrusion Map Layer" />
+
+            <FrameLayout
+                android:id="@+id/several_layers_container_raw_3d_extrusion_params_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+
+            <Button
+                android:id="@+id/several_layers_raw_3d_model_params_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parameters For Raw 3d model Map Layer" />
+
+            <FrameLayout
+                android:id="@+id/several_layers_container_raw_3d_model_params_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+
+            <!--<LinearLayout
+                android:id="@+id/several_layers_container_raw_3d_model_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                android:visibility="gone"
+                android:layout_margin="0dp">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.RawStaticObjectsParamsDetails
+                    android:id="@+id/raw_static_objects_3d_model_params"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout> -->
+
+            <Button
+                android:id="@+id/several_layers_tiling_scheme_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiling Scheme For Raw Layers" />
+
+            <FrameLayout
+                android:id="@+id/several_layers_container_tiling_scheme_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+            <RadioGroup android:visibility="gone"
+                android:id="@+id/sl_viewport_space_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="viewport space:" />
+                <RadioButton
+                    android:id="@+id/sl_full_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Full Screen" />
+                <RadioButton
+                    android:id="@+id/sl_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other" />
+            </RadioGroup>
+            <LinearLayout
+                android:id="@+id/sl_canvas_1_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                android:visibility="gone"
+                android:layout_margin="0dp">
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:padding="0dp"
+                    android:layout_margin="0dp">
+                    <Button
+                        android:text="1"
+                        android:id="@+id/sl_two_canvas_vertical_1"
+                        android:layout_width="45dp"
+                        android:layout_height="120dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                    <Button
+                        android:text="2"
+                        android:id="@+id/sl_two_canvas_vertical_2"
+                        android:layout_width="45dp"
+                        android:layout_height="120dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:padding="0dp"
+                    android:layout_margin="0dp">
+                    <Button
+                        android:text="1"
+                        android:layout_width="90dp"
+                        android:id="@+id/sl_two_canvas_horizontal_1"
+                        android:layout_height="60dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                    <Button
+                        android:text="2"
+                        android:layout_width="90dp"
+                        android:id="@+id/sl_two_canvas_horizontal_2"
+                        android:layout_height="60dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:padding="0dp"
+                    android:layout_margin="0dp">
+                    <LinearLayout
+                        android:layout_width="45dp"
+                        android:layout_height="120dp"
+                        android:orientation="vertical"
+                        android:padding="0dp"
+                        android:layout_margin="0dp">
+                        <Button
+                            android:text="1"
+                            android:layout_width="45dp"
+                            android:id="@+id/sl_four_canvas_1"
+                            android:layout_height="60dp" android:padding="0dp"
+                            android:layout_margin="0dp"/>
+                        <Button
+                            android:text="2"
+                            android:id="@+id/sl_four_canvas_2"
+                            android:layout_width="45dp"
+                            android:layout_height="60dp" android:padding="0dp"
+                            android:layout_margin="0dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="45dp"
+                        android:layout_height="120dp"
+                        android:orientation="vertical"
+                        android:padding="0dp"
+                        android:layout_margin="0dp">
+                        <Button
+                            android:text="3"
+                            android:id="@+id/sl_four_canvas_3"
+                            android:layout_width="45dp"
+                            android:layout_height="60dp" android:padding="0dp"
+                            android:layout_margin="0dp"/>
+                        <Button
+                            android:text="4"
+                            android:layout_width="45dp"
+                            android:id="@+id/sl_four_canvas_4"
+                            android:layout_height="60dp" android:padding="0dp"
+                            android:layout_margin="0dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/sl_canvas_2_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                android:visibility="gone"
+                android:layout_margin="0dp">
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:padding="0dp"
+                    android:layout_margin="0dp">
+                    <Button
+                        android:text="1"
+                        android:id="@+id/sl_three_canvas_horizontal_1"
+                        android:layout_width="90dp"
+                        android:layout_height="40dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                    <Button
+                        android:text="2"
+                        android:layout_width="90dp"
+                        android:id="@+id/sl_three_canvas_horizontal_2"
+                        android:layout_height="40dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                    <Button
+                        android:text="3"
+                        android:id="@+id/sl_three_canvas_horizontal_3"
+                        android:layout_width="90dp"
+                        android:layout_height="40dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:padding="0dp"
+                    android:layout_margin="0dp">
+                    <Button
+                        android:text="1"
+                        android:layout_width="30dp"
+                        android:id="@+id/sl_three_canvas_vertical_1"
+                        android:layout_height="120dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                    <Button
+                        android:text="2"
+                        android:layout_width="30dp"
+                        android:id="@+id/sl_three_canvas_vertical_2"
+                        android:layout_height="120dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                    <Button
+                        android:text="3"
+                        android:id="@+id/sl_three_canvas_vertical_3"
+                        android:layout_width="30dp"
+                        android:layout_height="120dp" android:padding="0dp"
+                        android:layout_margin="0dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout android:visibility="gone"
+                android:id="@+id/sl_canvas_3_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDVector
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sl_top_left_corner_point"
+                    app:two_d_vector_label="Top Left Corner"/>
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDVector
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sl_bottom_right_corner_point"
+                    app:two_d_vector_label="Bottom Right Corner"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

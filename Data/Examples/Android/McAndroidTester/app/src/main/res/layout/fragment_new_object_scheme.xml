@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+	tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.overlay_manager_treeview.NewObjectSchemeFragment">
+
+    <Button
+        android:id="@+id/new_object_scheme_save_changes_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save changed" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/new_object_scheme_location_coordinate_system"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Coordinate system" />
+
+            <CheckBox
+                android:id="@+id/new_object_scheme_location_relative_to_dtm_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location relative to DTM" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/new_object_scheme_terrain_objects_consideration_flags_ss"
+                app:section_separator_text="Terrain objects consideration flags" />
+
+            <ListView
+                android:id="@+id/new_object_scheme_terrain_objects_consideration_flags_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/new_object_scheme_standalone_items_ss"
+                app:section_separator_text="Items To Connect" />
+
+            <ListView
+                android:id="@+id/new_object_scheme_standalone_items_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

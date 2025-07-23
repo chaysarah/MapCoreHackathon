@@ -1,0 +1,21 @@
+:root {
+    --load-obj-from-raw-vec-data-dialog-width: 800px;
+}
+
+
+/* dialog */
+.scroll-dialog-load-obj-from-raw-vec-data .p-dialog-content {
+    min-width: var(--load-obj-from-raw-vec-data-dialog-width) !important;
+}
+
+.scroll-dialog-load-obj-from-raw-vec-data .p-dialog-header {
+    min-width: var(--load-obj-from-raw-vec-data-dialog-width) !important;
+}
+
+.scroll-dialog-load-obj-from-raw-vec-data .p-dialog-footer {
+    min-width: var(--load-obj-from-raw-vec-data-dialog-width) !important;
+}
+
+.scroll-dialog-load-obj-from-raw-vec-data {
+    overflow-x: auto;
+}

@@ -1,0 +1,21 @@
+:root {
+    --clone-object-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-clone-object .p-dialog-content {
+    min-width: var(--clone-object-dialog-width) !important;
+}
+
+.scroll-dialog-clone-object .p-dialog-header {
+    min-width: var(--clone-object-dialog-width) !important;
+}
+
+.scroll-dialog-clone-object .p-dialog-footer {
+    min-width: var(--clone-object-dialog-width) !important;
+}
+
+.scroll-dialog-clone-object {
+    overflow-x: auto;
+}

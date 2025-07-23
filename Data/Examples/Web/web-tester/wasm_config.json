@@ -1,0 +1,5 @@
+{
+    "configuration": "Emscripten32-MT-Debug",
+    "target": "MapCore_D",
+    "build": false
+}

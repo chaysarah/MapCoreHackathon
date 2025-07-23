@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="1"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.15" />
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.7">
+
+        <!-- This is the part that's 70% of the total width. I'm inserting a LinearLayout and buttons.-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/create_map_bttn"
+                style="@style/MainBttns"
+                android:text="@string/main_bttn_create_map"
+                android:onClick="openCreateMapTabs"
+                />
+            <Button
+                style="@style/MainBttns"
+                android:text="@string/main_bttn_open_scheme" />
+            <Button
+                android:onClick="createVpWithSeveralLayers"
+                android:id="@+id/create_vp_with_several_layers_bttn"
+                style="@style/MainBttns"
+                android:text="@string/main_bttn_open_vp_with_" />
+            <Button
+                android:id="@+id/device_bttn"
+                style="@style/MainBttns"
+                android:text="@string/main_bttn_device"
+                android:onClick="openDeviceTabs"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.15" />
+</LinearLayout>
+

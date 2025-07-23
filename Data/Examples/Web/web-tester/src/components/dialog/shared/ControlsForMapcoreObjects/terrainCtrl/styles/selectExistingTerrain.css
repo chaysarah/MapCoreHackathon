@@ -1,0 +1,16 @@
+:root {
+    --select-existing-terrain-dialog-width: 350px;
+}
+/* dialog */
+.scroll-dialog-select-existing-terrain .p-dialog-content {
+    min-width: var(--select-existing-terrain-dialog-width) !important;
+}
+.scroll-dialog-select-existing-terrain .p-dialog-header {
+    min-width: var(--select-existing-terrain-dialog-width) !important;
+}
+.scroll-dialog-select-existing-terrain .p-dialog-footer {
+    min-width: var(--select-existing-terrain-dialog-width) !important;
+}
+.scroll-dialog-select-existing-terrain {
+    overflow-x: auto;
+}

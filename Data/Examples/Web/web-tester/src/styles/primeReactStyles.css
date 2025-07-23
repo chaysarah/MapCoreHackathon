@@ -1,0 +1,194 @@
+:root {
+    --size-factor: 1;
+}
+
+/* general styles for all application */
+body * {
+    /* font-size: max(1.35vh, 10px) !important; */
+    font-size: calc(var(--size-factor)*1.35vh) !important;
+    font-weight: 500 !important;
+}
+
+html {
+    /* font-size: max(1.35vh, 10px) !important; */
+    font-size: calc(var(--size-factor)*1.35vh) !important;
+    font-weight: 500 !important;
+}
+
+/* general styles for some prime react elements */
+.p-inputtext {
+    padding: calc(0.25vh*var(--size-factor)) calc(0.8vh*var(--size-factor)) !important;
+    /* height: max(2.5vh, 16px); */
+    height: calc(var(--size-factor)*2.5vh);
+    /*not important on purpose*/
+    width: calc(var(--size-factor)*14vh);
+    /*not important on purpose*/
+}
+
+/* specific styles for specific element */
+
+/* dialog */
+.p-dialog .p-dialog-footer {
+    padding: calc(0vh*var(--size-factor)) !important;
+}
+
+.p-dialog .p-dialog-content {
+    padding: 0 calc(1.5vh*var(--size-factor)) 0 calc(1.5vh*var(--size-factor));
+}
+
+/* tree */
+.p-tree .p-tree-container .p-treenode .p-treenode-content {
+    padding: calc(0.03vh*var(--size-factor)) !important;
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content .p-tree-toggler {
+    height: calc(1.2vh*var(--size-factor));
+}
+
+/* button */
+.p-button {
+    padding: calc(0.2vh*var(--size-factor)) calc(0.75vh*var(--size-factor)) !important;
+    color: #6366F1 !important;
+    background: none !important;
+    margin-bottom: calc(0.25vh*var(--size-factor)) !important;
+    margin-top: calc(0.25vh*var(--size-factor)) !important;
+    overflow: unset !important;
+}
+
+/* contextMenu */
+.p-contextmenu .p-menuitem-link {
+    padding: calc(0.5vh*var(--size-factor)) calc(0.7vh*var(--size-factor)) !important;
+}
+
+/* listBox */
+.p-listbox .p-listbox-list .p-listbox-item {
+    padding: calc(0.1vh*var(--size-factor)) calc(0.3vh*var(--size-factor)) !important;
+}
+
+.p-listbox .p-listbox-list {
+    padding: calc(0.1vh*var(--size-factor)) calc(0vh*var(--size-factor)) !important;
+}
+
+/* checkBox */
+.p-checkbox {
+    width: calc(2.2vh*var(--size-factor)) !important;
+    height: calc(2.2vh*var(--size-factor)) !important;
+}
+
+.p-checkbox .p-checkbox-box {
+    width: calc(2.2vh*var(--size-factor)) !important;
+    height: calc(2.2vh*var(--size-factor)) !important;
+    border-radius: calc(0.6vh*var(--size-factor));
+}
+
+/* fieldSet */
+.p-fieldset-legend {
+    padding: calc(0.1vh*var(--size-factor)) !important;
+    background: none !important;
+    border: none !important;
+}
+
+.p-fieldset-content {
+    display: flex !important;
+    padding: calc(0vh*var(--size-factor)) !important;
+}
+
+/* dropDown */
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: calc(0.1vh*var(--size-factor)) calc(0.3vh*var(--size-factor)) !important;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+    padding: calc(0.1vh*var(--size-factor)) calc(0vh*var(--size-factor)) !important;
+}
+
+.p-dropdown .p-dropdown-label {
+    text-align: center !important;
+}
+
+/* tooltip */
+.p-tooltip .p-tooltip-text {
+    padding: calc(0.1vh*var(--size-factor)) calc(0.1vh*var(--size-factor)) !important;
+}
+
+/* divider */
+.p-divider {
+    margin: 0 !important;
+}
+
+.p-divider.p-divider-horizontal {
+    height: calc(1vh*var(--size-factor));
+}
+
+/* menuBar */
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link {
+    padding: calc(0.1vh*var(--size-factor)) calc(0.5vh*var(--size-factor)) !important;
+}
+
+.p-menubar .p-menuitem-link {
+    padding: calc(0.2vh*var(--size-factor)) calc(0.4vh*var(--size-factor)) !important;
+}
+
+/* dataTable */
+.p-datatable.p-datatable-sm .p-datatable-tbody>tr>td {
+    padding: calc(0.25vh*var(--size-factor)) !important;
+}
+
+.p-datatable.p-datatable-sm .p-datatable-thead>tr>th {
+    padding: calc(0vh*var(--size-factor)) calc(0.5vh*var(--size-factor)) calc(0vh*var(--size-factor)) calc(0.5vh*var(--size-factor));
+}
+
+/* multiSelect */
+.p-multiselect .p-multiselect-label {
+    padding: calc(0.03vh*var(--size-factor)) calc(0.225vh*var(--size-factor)) !important;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+    padding: calc(0.075vh*var(--size-factor)) calc(0.225vh*var(--size-factor)) !important;
+}
+
+.p-multiselect-panel .p-multiselect-items {
+    padding: calc(0.075vh*var(--size-factor)) calc(0vh*var(--size-factor)) !important;
+}
+
+.p-multiselect-panel .p-multiselect-header {
+    padding: calc(0.075vh*var(--size-factor)) calc(0vh*var(--size-factor)) !important;
+}
+
+/* colorPicker */
+.p-colorpicker-overlay .p-inputtext {
+    width: calc(var(--size-factor)*1.5vh);
+}
+
+/* pick list */
+.p-picklist .p-picklist-header {
+    padding: calc(0.1vh*var(--size-factor)) !important;
+}
+
+.p-picklist .p-picklist-list .p-picklist-item {
+    padding: calc(0.1vh*var(--size-factor)) calc(0.3vh*var(--size-factor)) !important;
+}
+
+.p-picklist .p-picklist-list {
+    padding: calc(0.1vh*var(--size-factor)) calc(0vh*var(--size-factor)) !important;
+}
+
+/* radio-button */
+.p-radiobutton {
+    width: calc(2.7vh*var(--size-factor)) !important;
+    height: calc(2.7vh*var(--size-factor)) !important;
+}
+
+.p-radiobutton .p-radiobutton-box {
+    width: calc(2.5vh*var(--size-factor)) !important;
+    height: calc(2.5vh*var(--size-factor)) !important;
+}
+
+.p-radiobutton-box.p-highlight .p-radiobutton-icon {
+    visibility: inherit;
+}
+
+/*Select Button*/
+.p-selectbutton .p-button.p-highlight {
+    box-shadow: 0 0 0 1.5px #ffffff, 0 0 0 3px #b1b3f8, 0 0.75px 1.5px 0 black;
+}

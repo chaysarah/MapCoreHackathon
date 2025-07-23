@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.create_mesh_tabs.MeshFromListFragment">
+
+	<ListView android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/mesh_from_list_existing_mesh_list"/>
+
+	<Button
+		android:id="@+id/btn_select_mesh_from_list"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:text="Select Mesh" />
+</LinearLayout>

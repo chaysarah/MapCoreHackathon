@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.ScanFragment">
+
+    <Button
+        android:id="@+id/scan_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save changes" />
+
+    <RadioGroup
+        android:id="@+id/scan_type_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/scan_type_poly_scan_rb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Poly Scan"
+            android:checked="true"/>
+
+
+        <RadioButton
+            android:id="@+id/scan_type_rect_scan_rb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rect Scan" />
+
+        <RadioButton
+            android:id="@+id/scan_type_point_scan_rb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Point Scan" />
+
+        <RadioButton
+            android:id="@+id/scan_type_manual_point_scan_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Manual Point Scan" />
+
+    </RadioGroup>
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+        android:id="@+id/scan_manual_point_scan_3d_vector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/scan_coord_sys_swl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="coordinate_system" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/scan_sqparams_bttn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SQParams" />
+
+        <TextView
+            android:id="@+id/scan_sqparams_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="indefinite" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/scan_completely_inside_only_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Return Completely Inside Only" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+        android:id="@+id/scan_tolerance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:netl_labelText="Tolerance" />
+
+</LinearLayout>

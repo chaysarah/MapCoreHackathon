@@ -1,0 +1,178 @@
+.App {
+  height: 100vh;
+}
+
+.AppHeader {
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--app-font-color);
+  background-color: var(--app-bg-color);
+}
+
+.ActionsBar {
+  background-color: var(--app-bg-color-alt);
+  padding: 20px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  justify-content: space-between;
+}
+
+.SearchLabel {
+  position: relative;
+  display: flex;
+  width: 35%;
+}
+
+.SearchInput {
+  background: var(--app-bg-color);
+  outline: none;
+  border: none;
+  width: 100%;
+  color: var(--app-font-color);
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.SearchInput::placeholder {
+  color: var(--app-font-color);
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.SearchIcon {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 7px;
+  bottom: 10px;
+}
+
+.ActionButtons {
+  display: flex;
+}
+
+.HeaderElementWrapper {
+  height: 100%;
+}
+
+.HeaderElementWrapper:first-child {
+  margin-right: 10px;
+}
+
+.ExportBtn {
+  font-size: 16px;
+  width: 175px;
+  background-color: var(--app-main-yellow);
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: var(--button-border-radius);
+  font-weight: 400;
+  color: #000000;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: .3s ease;
+}
+
+.ExportBtn.Disabled {
+  background-color: #635e2e;
+  pointer-events: none;
+  cursor: unset;
+}
+
+.ExportBtn:hover {
+  background-color: #ADA344;
+}
+
+.MainContentWrapper {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 130px);
+  padding: 20px 20px;
+  background-color: var(--app-bg-color);
+  justify-content: space-between;
+}
+
+.Split {
+  height: 100%;
+}
+
+.Split.Left {
+  width: 35%;
+}
+
+.Split.Right {
+  width: 63%;
+}
+
+.FileInput {
+  display: none;
+}
+
+.RightHeader {
+  display: flex;
+}
+
+.LangSelect {
+  width: 70px;
+  margin-top: 3px;
+}
+
+.BoldHeader {
+  font-weight: bold;
+}
+
+.Log {
+  position: absolute;
+  bottom: 23px;
+  right: 24px;
+  height: 200px;
+  width: 61.3%;
+  background-color: var(--app-bg-color-alt);
+  /* text-align: center;  */
+  padding: 10px;
+  /* overflow: auto; */
+}
+
+.LogMessages {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 160px;
+  width: 100%;
+  background-color: var(--app-bg-color-alt);
+  padding: 20px;
+  padding-top: 2px;
+  overflow: auto;
+}
+
+.LogMessages::-webkit-scrollbar-thumb {
+  background-color: #676767;
+}
+
+.LogHeader {
+  text-align: center;
+  border-bottom: 2px solid #676767;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  justify-content: flex-start;
+}
+
+.LogContext {
+  color: white;
+  font-size: 0.8em;
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

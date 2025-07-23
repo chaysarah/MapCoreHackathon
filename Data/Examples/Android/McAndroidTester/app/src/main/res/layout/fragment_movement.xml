@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/movement_lowering_camera_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:text="Lower"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:padding="2dp"/>
+
+        <ImageButton
+            android:id="@+id/movement_forward_camera_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:src="@drawable/img_arrow_up"
+            />
+
+        <Button
+            android:id="@+id/movement_raising_camera_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:text="Raise"
+            android:textAllCaps="false"
+            android:padding="2dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/movement_move_left_btn"
+            style="@style/style2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:src="@drawable/img_arrow_right"/>
+
+        <ImageButton
+            android:id="@+id/movement_rotate_align_btn"
+            style="@style/style2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:src="@drawable/img_refresh"/>
+
+
+        <ImageButton
+            android:id="@+id/movement_move_right_btn"
+            style="@style/style2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:src="@drawable/img_arrow_left"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/movement_rotate_left_btn"
+            style="@style/style2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:src="@drawable/img_undo"/>
+
+        <ImageButton
+            android:id="@+id/movement_backward_camera_btn"
+            style="@style/style2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:src="@drawable/img_arrow_down"/>
+
+        <ImageButton
+            android:id="@+id/movement_rotate_right_btn"
+            style="@style/style2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:src="@drawable/img_redo"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText android:id="@+id/movement_move_factor_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Move Factor"
+            android:textAlignment="center"
+            android:inputType="number"/>
+        <EditText android:id="@+id/movement_rotate_factor_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rotate Factor"
+            android:textAlignment="center"
+            android:inputType="numberDecimal"/>
+
+    </LinearLayout>
+</LinearLayout>

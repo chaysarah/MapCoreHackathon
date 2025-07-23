@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:hint="Sub Items Data IDs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sub_item_arr_property_sub_items_data_ids"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:hint="Sub Items Data indexes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sub_item_arr_property_sub_items_data_start_indexes"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Property Id:"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="id"
+            android:id="@+id/sub_item_arr_property_id"
+            android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+</LinearLayout>

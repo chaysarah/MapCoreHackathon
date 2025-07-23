@@ -1,0 +1,21 @@
+:root {
+    --tiling-scheme-params-dialog-width: 300px;
+}
+
+
+/* dialog */
+.scroll-dialog-tiling-scheme-params .p-dialog-content {
+    min-width: var(--tiling-scheme-params-dialog-width) !important;
+}
+
+.scroll-dialog-tiling-scheme-params .p-dialog-header {
+    min-width: var(--tiling-scheme-params-dialog-width) !important;
+}
+
+.scroll-dialog-tiling-scheme-params .p-dialog-footer {
+    min-width: var(--tiling-scheme-params-dialog-width) !important;
+}
+
+.scroll-dialog-tiling-scheme-params {
+    overflow-x: auto;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true"
+    android:background="?android:attr/windowBackground"
+	android:orientation="vertical">
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.RawStaticObjectsParamsDetails
+        android:id="@+id/raw_static_objects_params"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.RawVector3DExtrusionParamsDetails
+            android:id="@+id/raw_vector_3d_extrusion_params"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+</LinearLayout>

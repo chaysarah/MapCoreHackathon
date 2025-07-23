@@ -1,0 +1,849 @@
+MapCore7 12.2.0:
+
+- Breaking change in Web: IMcMapDevice::EOptionalComponentFlags: EOCF_GEOID_MAGNETIC removed along with MapCoreGeoidMagnetic.zip embedded into *.wasm and no longer optional
+- Breaking change: IMcSymbolicItem: vector offset/rotation based on EST_ATTACH_POINT_SEGMENTS now considers EAPT_SCREEN_XXX_MOST attach point types, too
+- Breaking change: IMcLineBasedItem: ELineTextureFlipMode and Set/GetLineTextureFlipMode() renamed to EPointOrderReverseMode and Set/GetPointOrderReverseMode(), 
+  flipping line texture replaced by reversing item's points (followed by reversing line's non-symmetric texture and order of item's children attach points)
+- Breaking change: IMcTexture and its descendants: optional single pair of color substitution replaced by array of pairs
+- Breaking change: IMcRaw3DModelMapLayer::Create() and IMcMapProduction::S3DModelConvertParams: default of bOrthometricHeights changed to false
+- Breaking change: IMcVector3DExtrusionMapLayer: SObjectColor, Set/GetObjectsColor[s](), RemoveAllObjectsColors() moved to IMcStaticObjectsMapLayer
+- Breaking change: IMcImage's API rewritten to be used for IMcFont's special characters
+- IMcMemoryBufferTexture: new type of creating and updating added based on user-defined color rows/columns
+- IMcGeometricCalculations::EG2DPolyPoleOfInaccessibility() and IMcSymbolicItem::EAPT_POLE_OF_INACCESSIBILITY attach point type added to calculate and use polygon point 
+  suitable for labeling by text/icon inside the polygon
+- IMcOverlayManager: optional pMapViewport added to Set/GetScreenTerrainItemsConsistencyScaleSteps()
+- IMcGlobalMap: optional pLocalMap added to Set/GetLocalMapFootprintItem(); GetLocalMapFootprintScreenPositions() added
+- IMcGlobalMap::GetLocalMapFootprintScreenPositions() and IMcEditMode::GetIconsScreenPositions() added
+- IMcMapDevice::Get3DModelSmartRealityData(): bOrthometricHeights added
+- IMcMapLayer::SSmartRealityBuildingHistory: BoundingBox/pCoordinateSystem/aBuildingSurfaces added;
+- IMcMapLayer: user-defined serialization of read-callback is now supported by adding IReadCallback::GetSaveBufferSize()/SaveToBuffer() and pReadCallbackFactory to 
+  IMcMapLayer/IMcMapTerrain::Load()
+- IMcFont: image-based special characters added (optional bUseSpecialCharsColors not yet supported)
+- SMcVariantID: Set/Get128bitAsUUIDString() added
+- SMcFileSource: optional strFormatExtension added in case of in-memory buffer of image file
+- MapCore's Map Layer Server: names of layers and groups can now include characters other than english letters and digits
+- MapCore's Map Layer Server: single-threaded MapCore Web used now for preview to avoid cross-origin isolation restrictions
+
+MapCore7 12.1.4:
+- IMcTextItem::EBackgroundShape: EBS_RECTANGLE_ROUNDED_CORNERS added
+
+MapCore7 12.1.0:
+- IMcSpatialQueries: optional apQuerySecondaryDtmLayers added to Create() with secondary DTM layers for spatial queries; 
+  getter GetQuerySecondaryDtmLayers() moved from IMcMapViewport to IMcSpatialQueries
+- IMcMapLayer::SRawParams::bPostProcessSourceData and IReadCallback::OnPostProcessSourceData() added to to post-process rendered tiles' buffers of raw raster map layer 
+  (including 16-bit-channel images that can be conveerted to 8-bit by the user-defined callback)
+- IMcPrintMap::PrintRect2DToRawRasterData(): optional bPrintGeoInMetricProportion added to print geographic-coordinate-system viewport as is (in degrees) even if it is 
+  visualized in metric proportion
+
+MapCore7 12.0.0:
+- Breaking change: MapCore version number now uses 3 parts (12.0.0, etc.) without the "7" prefix (part of the product name "MapCore7")
+- Breaking change: IMcRaw3DModelMapLayer::Create()'s version for unindexed layer: pTilingScheme removed as irrelevant, optional PositionOffset added
+- Breaking change: IMcMapDevice::SInitParams: uNumBackgroundThreads's default changed to UINT_MAX (means 
+  the number of hardware thread contexts available minus 1)
+- Breaking change in Web: MapCore Web is now multi-threaded; to use it in browsers your server should make a page cross-origin 
+  isolated by serving the page with the following headers (adding those headers to response headers of every file sent): 
+  "Cross-Origin-Embedder-Policy: require-corp" and "Cross-Origin-Opener-Policy: same-origin" (see https://web.dev/articles/coop-coep); 
+  note that once you do this, your page will not be able to load cross-origin content unless the resource explicitly allows it via a 
+  Cross-Origin-Resource-Policy header (see https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy) or 
+  CORS headers (Access-Control-Allow-* and so forth); single-threaded version is still released as well in deprecated status
+- IMcGridGeneric::GetSupportedSRIDs() added to retrieve the supported spatial reference IDs along with their names
+- IMcMapLayer::SServerLayerInfo: strLayerType is now used in CSW service as well with the values "RAW_3D_MODEL" and "WMTS_SERVER_URL"
+- IMcMapTerrain: optional bDisplayItemsAttachedTo3DModelWithoutDtm added to Create() to enable displaying attached to terrain objects on 3DModel layers, 
+  even without a DTM layer in the same terrain; getter IMcMapTerrain::GetDisplayItemsAttachedTo3DModelWithoutDtm() added
+- IMcMapViewport: optional apQuerySecondaryDtmLayers added to Create() with secondary DTM layers for spatial queries; 
+  getter GetQuerySecondaryDtmLayers() added
+- IMcMapDevice: Get3DModelSmartRealityData() added to retrieve data (currently building history only) from Smart Reality server
+- IMcMapDevice::ERenderingSystem: ERS_DIRECT_3D_11, ERS_OPEN_GL_3PLUS, ERS_OPEN_GLES added
+- MCTester should now run with the working directory been set to the directory above Bin (where *.cfg files are located)
+
+MapCore 7.11.11.0:
+- Important in Web: WebAssembly's memory can now grow up to 4GB instead of 2GB; the user can call IMcMapDevice.SetHeapSize(MapCore.UINT_MAX) 
+  to allocate the maximum possible heap size in the beginning to prevent heap resizing and copying in the future
+- Breaking changes in Web: there are no .data files, only .js and .wasm (or .jsm and .wasm for usage as ES6 module); MapCore initialization is now 
+  performed by calling asynchronous function (returning a Promise) McStartMapCore() instead of SetStartCallbackFunction(), optional components are now 
+  fetched by asynchronous function (returning a Promise) IMcMapDevice.FetchOptionalComponents(), see Getting Started.doc in the documentation and 
+  McJsTester example for details; global-scope MapCoreError exception renamed to CMcError in namespace MapCore
+- Breaking change: IMcSymbolicItem::GetAllCalculatedPoints(): in case of manual geometry item, the returned points are the points in the order of 
+  the item's connection indices
+- Breaking change: .NET warpper: DNSEllipseArc is now a class with a constructor instead of a struct
+- Breaking change: WMTS map layer: now always works asynchronously and can support servers with MapCore-incompatible tiling schemes 
+  (when SWMTSParams::bUseServerTilingScheme is false, user-specified tiling scheme's tiles are built on-the-fly from those of the server)
+- Breaking change: IMcObject::Set/GetEnumProperty() and IMcObjectScheme::Set/GetEnumPropertyDefault(): the value type is now UINT instead of BYTE 
+  to be used to set/get all enum properties including those longer than BYTE; IMcProperty::EPropertyType::EPT_ENUM property type is now used in all 
+  setters and getters of property types instead of EPT_BYTE and EPT_UINT
+- Breaking change: IMcObjectSchemeNode::GetGeometryCoordinateSystem(): optional pObject parameter added that should not be NULL unless 
+  attach point types of this node and of the nodes it depends on are shared properties
+- IMcSymbolicItem::EAttachPointType: EAPT_BOUNDING_BOX_POINT can now be used with any parent type, EAPT_INDEX_CALC_POINTS - with any symbolic-item parent
+- IMcSymbolicItem: attach point type, offset orientation, vectoroffset calc, vector rotation, draw priority, coplanar 3D priority can now be private 
+  properties; Set/GetTransparency() property added
+- IMcProperty::EPropertyType: EPT_SBYTE and EPT_ENUM property types added
+- SMcVariantLogFont: bIsEmbedded added to embed the contents of the font file into scheme/object file so that exactly the same the font is used on 
+  any platform even if it is not installed there
+- IMcMapDevice::ERenderingSystem: ERS_OPEN_GLES added
+- IMcMapDevice::GetWebServerLayers(): WMS and CSW service support added; appropriate fields were added yo IMcMapLayer::STileMatrixSet/SServerLayerInfo
+- IMcRaw3DModelMapLayer: Create()'s new version added to create the layer without indexing
+- Raw raster/DTM map layers: IMcMapLayer::SRawParams::bAddLevelsOfDetailIfAbsent/pLodProgressCallback added
+- IMcRawVectorMapLayer::SInternalStylingParams::strSldFile renamed to strStylingFile to add support for LYRX-format styling
+- Vector map layer XML: ECO_SUB_STRING comparison operator ECO_SQL added to evaluate SQL query
+- IMcMapProduction: strLocaleStr parameter added to Save/LoadVectorLayerGraphicalSettings()
+- Raw layers and native layer production: source coordinate system is optional if raw data contains coordinate system information
+- IMcImageCalc: CalcRPC() returned to API
+- IMcUserDefinedImageCalc: SetFrameDimensions()  and optional ICallback::ImageToCoord() added
+- IMcMapViewport: Set/Get3DModelVisibilityMaxScale() and SCreateData::bExternalGLStateChanges added
+- Vector map layer: special ID added for multi-contour polygon's sub-items: MC_EXTRA_CONTOUR_VECTOR_ITEM_ID
+- IMcGeometricCalculations: EG2DPolyGonsUnion() added
+- IMcRawRasterMapLayer::Set/GetColorChannels() added
+- IMcRawMaterialMapLayer and IMcRawTraversabilityMapLayer added
+- Web version: IMcMapDevice: FetchOptionalComponents(), GetMemorySize(), SetHeapSize() added
+- MapCore's Map Layer Server: log files saved from last 10 sessions (in C:\ProgramData\Elbit on Windows, in McMapLayersServerConfig.xml's directory on Linux)
+- MapCore's Map Layer Server: export/import added of multiple layers in .mcpkg file
+- MapCore's Map Layer Server: during silent import, original *.json file is now renamed to *.json.imported or *.json.failed (depending on import result); 
+  during silent indexing of vector layer, original *.json file is now renamed to *.json.indexed or *.json.failed (depending on indexing result)
+- MapCore's Map Layer Server: advanced options added to importing (either via GUI or silent) and editing raw layers
+- MapCore's Map Layer Server: during layer deletion (either via GUI or silent) the user can now decide whether to delete the layer's data and/or raw vector-3d-extrusion layer 
+  connected to DTM layer being deleted
+- MapCore's Map Layer Server: GUI refactored and improved (e.g. multiselection option and log window added, all native layer types are now imported by the same menu item)
+ 
+MapCore 7.11.10.0:
+- Breaking change: IMcPictureItem: IsSizeFactor() getter replaced by Set/GetIsSizeFactor() that can now define a private property
+- Breaking change: MapCore's Map Layer Server: layer's configuration moved into a separate file McLayersDataConfig.xml in the data root folder
+  (or in a user-defined folder if an additional command-line argument is specified); the server automatically splits the old-version XML into 2 
+  separate files on its first run
+- Breaking change: IMcImageCalc: CalcRPC() removed from API
+- Breaking change: IMcMapViewport: SCreateData::fTerrainPrecisionFactor replaced by fTerrainResolutionFactor with different meaning
+- Breakinh changes .NET wrapper: several classes replaced by structs; several properties XXX replaced by GetXXX() functions; out XXX? prameters 
+  replaced by DNMcNullableOut<XXX> in IDNMcSpatialQueries.GetTerrainHeight()/GetRayIntersection()
+- MapCore's Map Layer Server: raw raster/DTM layer's advanced options added (e.g. FillEmptyTilesByLowerResolutionTiles)
+- MapCore's Map Layer Server: GDB vector layers are now supported
+- MapCore's Map Layer Server: native layers converted with IMcGridCoordSystemGeographic/IMcGridUTM are now supported (no need to re-convert with IMcGridGeneric)
+- MapCore's Map Layer Server: the server removes map layers from the configuration file if their files are not found, in this case the backup 
+  of the configuration file is created 
+- MapCore's Map Layer Server vector layers: sub-layer name and layer geometry are no longer added to layer title, instead they are stored in 
+  ClientMetadata (in McSubLayerName and McSubLayerGeometry variables accordingly)
+- IMcPolygonItem: multi-contour polygons with holes are now supported (sub-items with special ID should be used, see SMcSubItemData for details)
+- IMcMapGrid::Create(): bUseBasicItemPropertiesOnly flag added to allow using all the properties of line/text items
+- IMcMapGrid: IMcGridGEOREF (World Geographic Reference System) is now supported
+- IMcMapLayer::Set/GetNumTilesInNativeServerRequest() added to set the number of tiles to be requested together from MapCore's Map Layer Server
+- IMcRawVectorMapLayer::SInternalStylingParams::strSldFile added to use vector layer's styling prepared by the user in SLD format
+- IMcNativeServerMaterialMapLayer added
+- IMcMapProduction: SXmlVectorLayerGraphicalSettings::bMultiCondition added to support multi-condition XMLs; ECO_ELSE comparison operator added; 
+  SXmlObjectNode::bAutoUnifyLabels added to unify texts with the same strings
+- IMcMapViewport: Set/GetTerrainMaxNumTileRequestsPerRender() and Set/GetTerrainMaxNumPendingTileRequests() added
+- IMcMapViewport::EObjectDelayType: EODT_VIEWPORT_DEFRAG_OBJECT_BATCHES added
+- IMcMapViewport: PrintScreenToRawRasterData() and PrintRect2DToRawRasterData() added to print map's rectangle to raw raster layer	
+- IMcImageFileTexture::GetImageFile(): added optional pstrImageFormatExtension
+- Grid coordinate systems: CloneAsGeneric() and CloneAsNonGeneric() added, IMcGridGeneric::GetOgcCrsCode() moved to IMcGridCoordinateSystem
+- DTM production: MAPCORE_DTM_PRODUCTION_LEGACY_PRECISION environment variable can now be defined to activate legacy precision mode
+
+MapCore 7.11.9.1:
+- MapCore's Map Layer Server: MCLAYERSERVER_EXIT_CODE environment variable can now be used to change the default exit code (0)
+- Ubuntu version: server-based map layers are now supported
+
+MapCore 7.11.9.0:
+- Breaking change: IMcMapDevice::GetWebServerLayers(): optional aRequestParams added
+- Breaking change: MapCore's Map Layer Server: relative paths in silent import are now should be relative to the server's data root folder (e.g. WWWRoot)
+- MapCore's Map Layer Server: the server's data root folder (containing data and ExternalLayers subfolders) can now be different from its web root folder 
+  (e.g. WWWRoot) if an additional command-line argument is specified or an environment variable (MCLAYERSERVER_DATA_DIRECTORY) as defined
+- IMcMapLayer::SWebMapServiceParams and IMcMapDevice::GetWebServerLayers(): optional aRequestParams added with a list of additional parameters
+
+MapCore 7.11.8.0:
+- Breaking change: IMcImageCalc-based viewports: image coordinates' Y axis is now from bottom to top starting with zero at the bottom
+- Breaking change: IMcFrameImageCalc: SCameraParams::CameraLocation replaced by CameraPosition that is now always in MapCore units 
+  (meters in metric coordinate systems, 1/100,000 degree in geographic coordinate systems)
+- Breaking change: in IMcImageCalc-based viewports the following functions of IMcMapCamera now use image coordinates instead of world coordinates: 
+  Set/GetCameraPosition(), MoveCameraRelativeToOrientation(), Set/GetCameraWorldVisibleArea(), SetCameraLookAtPoint(), WorldToScreen(), 
+  ScreenToWorldOnTerrain(), ScreenToWorldOnPlane()
+- Breaking change: IMcImageCalc-based viewports: IMcMapCamera::ImageToScreen()/ScreenToImage() and IMcMapViewport::ImageToWorld()/WorldToImage() removed, 
+  use instead IMcImageCalc's image<->world functions along with IMcMapViewport::ViewportToImageCalcWorld/ImageCalcWorldToViewport() (see below) and 
+  IMcMapCamera's world <-> screen functions
+- Breaking change: IMcOverlayManager::ConvertWorldToImage()/ConvertImageToWorld(): convert now only one point instead of an array, can return 
+  an intersection status without an error, ConvertImageToWorld() can now be asynchronous (when pAsyncQueryCallback != NULL)
+- Breaking change: IMcOverlayManager::GetScreenAttachedConsistencyScaleSteps() renamed to GetScreenTerrainItemsConsistencyScaleSteps() to conform with 
+  the appropriate setter
+- Breaking change: IMcPictureItem/IMcTextItem: picture/text coordinate system added to Create() (the appropriate getters added as well); the added 
+  parameter defines the coordinate system of the item's orientation whereas the item's sub-type defines only the size of the item, this allows 
+  defining picture/text with screen size and world orientation
+- Breaking change: IMcProperty: SPropertyID renamed to SPropertyNameIDType with strName field added; SPropertyName renamed to SPropertyNameID; 
+  strName filed added to SVariantProperty
+- Breaking change: IMcMapViewport::SetStaticObjectsVisibilityMaxScale() renamed to SetVector3DExtrusionVisibilityMaxScale() and now affects only vector-3D-extrusion map layers
+- Breaking change: IMcMapLayer::IAsyncOperationCallback::OnWebServerLayersResults(): strServiceProviderName added
+- Breaking change: IMcRaw3DModelMapLayer::Create()/BuildIndexingData()/RemoveIndexingData(): strRawDataDirectory added, strIndexingDataDirectory is now optional
+  (if not specified will be generated automatically from strRawDataDirectory); indexing parameters added to GetCreateParams()
+- IMcRawVector3DExtrusionMapLayer: optional indexing and new Create() version for indexed data added; indexing parameters added to GetCreateParams()
+- IMcObjectScheme/IMcObject: all property-access functions now receive either SPropertyNameID, name string or ID number instead of ID only to 
+  optionally access properties by name
+- IMcMapCamera: GetCameraFootprint() can now be asynchronous (when pAsyncQueryCallback != NULL); optional bYawAbsolute added to RotateCameraRelativeToOrientation()
+- IMcMapViewport::ViewportToImageCalcWorld/ImageCalcWorldToViewport() added to convert world point between viewport's coordinate systems and that of IMcImageCalc
+- IMcMapDevice::GetGpuInfo() added
+- IMcPrintMap: PrintScreen()/PrintScreenToMemory() united into PrintScreen() and PrintRect2D()/PrintRectToMemory2D() united into PrintRect2D(); 
+  all the above can now be asynchronous; CancelAsyncPrint() and IPrintCallback::OnPrintFinished() added
+- IMcImageCalc: optional peIntersectionStatus added to WorldCoordToImagePixel()/WorldCoordToImagePixelWithCache() to return an intersection status without 
+  an error; pbDTMAvailable added to ImagePixelToCoordWorldWithCache()
+- IMcOverlay::CancelAsyncSavingObjects() added
+- IMcSpatialQueries::CanPerformQuery() added to checks if spatial queries of the defined type can be performed synchronously or asynchronously
+- IMcGridConverter: bConvertHeight added to Create(), Set/GetConvertingHeight() added
+- SMcMatrix4D added; SMcQuaternion: functions updated, new functions and constants added
+- IMcImage added
+- For advanced users: IMcMapViewport::SetSpecialMaterialParams()/SetSpecialMaterialTextureName()/GetPostProcessResultingTextureName(), 
+  IMcMapCamera::GetCameraMatrix() added
+
+MapCore 7.11.7.0:
+- Important in Windows, Android and Linux: contents of Media directory were changed, update you files accordingly
+- Breaking change: IMcObject: Set/GetSuppressSightPresentationMapTilesWebRequests() renamed to Set/GetSuppressQueryPresentationMapTilesWebRequests()
+- Breaking change: IMcObject::SKeyFloatValue (used in symbology support) moved to the global scope and renamed to SMcKeyFloatValue 
+- Breaking change: IMcEditMode: Set/GetAutoSuppressSightPresentationMapTilesWebRequests() renamed to Set/GetAutoSuppressQueryPresentationMapTilesWebRequests()
+- Breaking change: IMcEditMode: most parameters of StartDistanceDirectionMeasure() moved into newly added Set/GetDistanceDirectionMeasureParams()
+- IMcEditMode::StartInitObject(): bEnableDistanceDirectionMeasureForMultiPointItem added to enable measurements of distance, height difference and 
+  direction of the last segment of line, polygon, arrow, etc.
+- IMcEditMode::ICallback: ActiveIconChanged() added
+- IMcGridGeneric/IMcMapViewport: GetCreateParams() added
+- IMcXXXMapLayer: GetCreateParams() added; GetDirectory() moved into IMcMapLayer
+- Native-server/WMTS/WCS map layers: IMcMapDevice::GetWebServerLayers() added to asynchronously retrieve the server's layers information by sending a 
+  capabilities request (coverage or capabilities for WCS) to the server and parsing the response
+- WMTS map layer: server URL no longer have to include the capabilities request: if it does not include it, MapCore will add "?SERVICE=WMTS&REQUEST=GetCapabilities"
+- IMcImageProcessing: Set/GetVisibleAreaOriginalHistogram() added to use dynamically calculated histogram based on raster layers' visible area; 
+  a color-channel parameter added to IsOriginalHistogramSet()
+- IMcCodeMapLayer: SetColorTable() can now cancel the color mapping (can be used to retrieve pixel codes by in rendering to a buffer)
+
+MapCore 7.11.6.0:
+- Important in Windows, Android and Linux: contents of Media directory were changed, update you files accordingly
+- Important in Web version: optional components' bit field added to SetStartCallbackFunction(), the appropriate components should be specified if 
+  symbology standard support and/or magnetic/geoid geographic calculation are to be used; the specified components' files should be present 
+  near *.wasm, *.data files in the server (MapCoreSymbologyApp6D.zip, MapCoreSymbology2525C.zip, MapCoreGeoidMagnetic.zip)
+- Breaking change: magnetic data should no longer be specified in IMcGeographicCalculations::Create() and IMcEditMode::Create()
+- Breaking change: IMcSpatialQueries::GetRasterLayerColorByPoint() for material map layers now returns RGBA color code and not material ID; 
+  IMcMaterialMapLayer::GetMaterialIDFromColorCode() added to convert this color to material ID
+- Breaking change: IMcRaw3DModelMapLayer: bOrthometricHeights flag moved from BuildIndexingData() to Create()
+- IMcImageProcessing: fully supported now in all platforms
+- IMcRawRasterMapLayer/IMcRawDtmMapLayer: IMcMapLayer::SRawParams::MaxWorldLimit and IMcMapLayer::SRawParams::fHighestResolution added
+- IMcRawRasterMapLayer::AddComponents() added to dynamically add source components after the layer creation
+- IMcVectorMapLayer::Set/GetVectorItemObjectState() added
+- IMcSymbolicItem/IMcPhysicalItem::Connect(): an item already connected to the same scheme is moved now together with all its hierarchy 
+  (including items that have parents outside of the hierarchy).
+- IMcArcItem/IMcEllipseItem::SetEllipseType() and IMcLineExpansionItem::SetLineExpansionType() added
+- IMcLineItem/IMcArrowItem: Set/GetShowTraversabilityPresentation(), Set/GetTraversabilityColor() added to present traversability query results by 
+  coloring parts of line/arrow in different colors; if there are several traversability layers in a viewport, the query is performed with the layer 
+  set/retrieved by newly added IMcObject::Set/GetTraversabilityPresentationMapLayer()
+- IMcObjectLocation::Set/GetMaxNumPoints() added to limit the number of location points (can define a private property)
+- IMcSymbolicItem::EAttachPointType: EAPT_INDEX_CALC_POINTS added to attach an item to arrow item's calculated points
+- IMcSymbolicItem: Set/GetBoundingBoxAttachPointType() can now define a private property
+- IMcTextItem/IMcPictureItem: the bounding rectangle alignment (in Create(), Set/GetRectAlignment()) now uses a newly added type 
+  IMcSymbolicItem::EBoundingRectanglePoint instead of IMcSymbolicItem::EBoundingBoxPointFlags and can now be a private property
+- IMcObject: objects can now be created and modified according to App6(D) and/or MIL-STD-2525(C) symbology standards; 
+  IMcOverlayManager::InitializeSymbologyStandardSupport() should be called for each standard before creating such objects; Web version only: 
+  the appropriate symbology data files MapCoreSymbologyApp6D.zip/MapCoreSymbology2525C.zip should be present near *.wasm, *.data files in the server) 
+  and the appropriate components should be specified in SetStartCallbackFunction()
+- IMcObject: Set/GetNameAndDescription() added to set the object's user-defined name ans/or description
+- IMcOverlay::EColorPropertyType: new traversability and sight-presentation colors added
+- IMcOverlay: SaveAllObjectsAsRawVectorData()/SaveObjectsAsRawVectorData() added to save objects to raw vector data files or files' memory buffers
+- IMcOverlay::LoadObjectsFromRawVectorData(): if the raw vector data includes fields named "Name" and/or "Description", the objects' names/descriptions 
+  will now be set (see IMcObject: SetNameAndDescription())
+- IMcOverlayManager::LoadObjectSchemes()/IMcOverlay::LoadObjects(): optional peStorageFormat and puVersion added to return file/buffer format and version
+- IMcGeographicCalculations: ConvertHeightFromEllipsoidToGeoid() and ConvertHeightFromGeoidToEllipsoid() added
+- IMcSpatialQueries::EPointVisibility: EPV_ASYNC_CALCULATING added to be used as a line color of sight-presentation closed shapes when 
+  the precise sight-presentation is being calculated asynchronously, the calculation has not been completed yet
+- IMcSpatialQueries::STraversabilityPoint: bTraversable replaced by eTraversability (of enum type) with the additional value of unknown traversability
+- Grid coordinate systems: IMcGridGEOREF (World Geographic Reference System) added (not yet supported in IMcMapGrid)
+- Web version: virtual file system utilities added to IMcMapDevice: GetFileSystemDirectoryContents(), GetFileSystemFileContents(), 
+  DownloadBufferAsFile() and DownloadFileSystemFile()
+
+MapCore 7.11.5.2:
+- Breaking change in Web version: IMcLineBasedItem.GetClippingItems()'s signature changed
+- IMcObject: objects can now be created and modified according to App6 (D) symbology standard; IMcOverlayManager::InitializeSymbologyStandardSupport() 
+  should be called once before creating such objects; symbology data files should be present (Windows: SymbologyStandards folder should be present in 
+  MapCore's DLL folder; Web: MapCoreSymbology.zip should be present near *.wasm, *.data files in the server)
+- IMcEditMode: StartDistanceDirectionMeasure() can now optionally use the magnetic azimuth (magnetic data must be specified in IMcEditMode::Create())
+
+MapCore 7.11.5.0:
+- Important in Windows, Android and Linux: contents of Media directory were changed, update you files accordingly
+- Breaking change in Web version: viewport anti-aliasing is no longer enabled by default; it can be enabled in device creation by setting 
+  IMcMapDevice.SInitParams.eViewportAntiAliasingLevel to any value other than IMcMapDevice.EAntiAliasingLevel.EAAL_NONE
+- Breaking change: IMcWMSRasterMapLayer/IMcWMSDtmMapLayer renamed to IMcWebServiceRasterMapLayer/IMcWebServiceDtmMapLayer respectively
+- Breaking change: IMcRaw3DModelMapLayer and IMcNative3DModelMapLayer's production now assume (in case the target coordinate system is not equal to 
+  the source coordinate system) that the heights are orthometric (above the geoid / sea level) rather than ellipsoid heights (above 
+  source coordinate system's ellipsoid) unless a new option bOrthometricHeights is set to false
+- IMcRaw3DModelMapLayer now supports 3D Tiles format (without Draco mesh compression, with JPEG textures only); raw 3D Tiles format based on glTF2 
+  (e.g. produced by Metashape software of AgiSoft) is not supported in Android
+- IMcNative3DModelMapLayer's production now supports 3D Tiles format (without Draco mesh compression, with JPEG textures only); "3DTILES:" prefix is 
+  required before the root folder (containing the main JSON file)
+- IMcMapDevice::SInitParams: uWebRequestRetryCount added to set the maximum number of retries for MapCore client's web requests
+- IMcMapDevice::SInitParams: uAsyncQueryTilesMaxActiveWebRequests added to set the  maximum number of MapCore client's active web requests for map 
+  layer tiles needed for asynchronous queries
+- IMcWebServiceRasterMapLayer/IMcWebServiceDtmMapLayer: additional Create() and GetWCSParams() added to support WCS protocol, GetWebMapServiceType() added
+- IMcCodeMaplayer, IMcTraversabilityMapLayer, IMcNativeTraversabilityMapLayer, IMcNativeServerTraversabilityMapLayer added
+- IMcSpatialQueries: GetTraversabilityAlongLine() added; can be asynchronous (via SQueryParams::pAsyncQueryCallback)
+- IMcSpatialQueries: GetDtmLayerTileGeometryByKey()/GetRasterLayerTileBitmapByKey()/GetRasterLayerColorByPoint() can now be asynchronous 
+  (via SQueryParams::pAsyncQueryCallback)
+- IMcMapLayer: SetNativeServerCredentials()/GetNativeServerCredentials() added to set the client's token and session ID to be passed to 
+  MapCore's Map Layer Server (if required by the server)
+- IMcLineBasedItem: Set/GetLineTextureFlipMode() property added to optionally flip vertically the item's texture (manually or automatically for 
+  closed shapes according to its clockwise or conter-clockwise direction)
+- IMcPictureItem: Set/GetNeverUpsideDown() property added for preventing upside-down orientation
+- IMcTextItem: SetNeverUpsideDownMode() added so that never-upside-down mode is now a changeable property that can be private
+- IMcTextItem: Set/GetMarginY() property added allowing defining Y-margins different from X-margins
+- IMcTextItem: Set/GetBackgroundShape() property added controlling text's background shape
+- IMcSymbolicItem::GetAllCalculatedPoints() and IMcObjectSchemeNode::GetCoordinates(): now always succeed in case of a valid input, but can return 
+  empty array of points if there are no valid points
+- IMcSymbolicItem/IMcPhysicalItem::Connect(): an optional error status output parameter added to get the error status without failure
+- IMcObjectScheme: Set/GetEditModeDefaultItem() added to set/get the default item to be used in EditMode's object initialization/editing operations 
+  (when pItem parameter is not specified or NULL in IMcEditMode::StartInitObject()/StartEditObject())
+- IMcVectorMapLayer: SStylingParams renamed to SInternalStylingParams
+- IMcMapProduction::S3DModelConvertParams: eOutputType, eDXTCompressMethod, bCompressTexturesToDXT, bLocalCoordsInMeters, bAddTextureMapping removed
+- Web version: SMcVariantID now supports 53-bit unsigned integers (used for vector item IDs) via the constructor and new functions: Set53Bit()/Get53Bit()
+- Web version: IMcHtmlVideoTexture now accepts as a video source not only URL string supported by HtmlVideoElement's 'src' property, but also 
+  MediaStream (or if supported by the browser: MediaSource, Blob, or File) supported by HtmlVideoElement's `srcObject` property; 
+  GetSourceName() renamed to GetVideoSource()
+
+MapCore 7.11.4.0:
+- Important in Windows, Android and Linux: contents of Media directory and resources.cfg were changed, update you files accordingly
+- Breaking change: IMcStaticObjectsMapLayer (with IMcNativeStaticObjectsMapLayer and IMcNativeServerStaticObjectsMapLayer) 
+  split into IMcRaw3DModelMapLayer (with IMcNative3DModelMapLayer and IMcNativeServer3DModelMapLayer) and IMcVector3DExtrusionMapLayer (with 
+  IMcNativeVector3DExtrusionMapLayer and IMcNativeServerVector3DExtrusionMapLayer), IMcMapProduction API updated accordingly,  
+  IMcStaticObjectsMapLayer::IsBuiltOfContoursExtrusion() replaced by IMcVector3DExtrusionMapLayer::IsExtrusionHeightChangeSupported()
+- Breaking change: the data format of IMcNative3DModelMapLayer and IMcNativeVector3DExtrusionMapLayer is different from that of 
+  IMcNativeStaticObjectsMapLayer of MapCore 7.11.3.X, but IMcMapProduction allows converting to the old format
+- Breaking change: eStorageFormat parameter removed from IMcOverlay::LoadObjects(), IMcOverlayManager::LoadObjectSchemes()
+- For Windows: GdalData and PROJ_DATA folders are already present in DLL folders and no longer should be copied from Setup directory
+- IMcOverlayManager::LoadObjectSchemes(): optional pbObjectDataDetected added to indicate that schemes were loaded from a saved object instead of a scheme
+- IMc3DModelMapLayer: SetResolvingConflictsWithDtmAndRaster() added to set the option of hiding DTM/raster layers in areas covered by 3D-model layer
+- IMcRaw3DModelMapLayer and IMcRawVector3DExtrusionMapLayer added
+- IMcMapViewport: semi-transparent object scheme items (of regular draw-priority group based on world coordinates) can now optionally be rendered with 
+  correct colors of pixels in overlapping areas; the mode can be set/retrieved by Set/GetTransparencyOrderingMode()
+- IMcObjectScheme::ESchemeComponentKind: ESCK_ENUMERATION added for saving all enumeration types by IMcObjectScheme::SaveSchemeComponentInterface()
+- IMcLineBasedItem: 3D-extrusion shape can now be used in all line-based items and not only in closed-shape items (EFillStyle, EShapeType and all the 
+  appropriate functions were moved from IMcClosedShapeItem to IMcLineBasedItem)
+- IMcVectorMapLayer: to call GetScanExtendedData(), GetVectorItemPoints(), GetFieldUniqueValuesAsXXX(), GetVectorItemFieldValueAsXXX(), Query() 
+  asynchronously the user should now pass the callback interface instead of a boolean flag
+- IMcVectorMapLayer: multiple data sources can now be used in the same raw/native layer (if SParams::strDataSource is a directory containing XML and 
+  raw data sources); MapCore's vector item ID is now built from the original item's ID and data-source's ID and is a 64-bit unsigned integer 
+  (in Web version only: a number type that can hold integers up to 53 bits, Float64Array for arrays); consequently 64-bit numbers are now used in 
+  IMcMapLayer::SVectorItemFound, IMcVectorMapLayer::GetVectorItemPoints(), IMcVectorMapLayer::GetVectorItemFieldValueAsXXX(), 
+  IMcMapLayer::IAsyncOperationCallback::OnVectorQueryResult() and IMcVectorMapLayer::Query(), IMcSpatialQueries::STargetFound::uTargetID is used as 
+  uTargetID.u64Bit for vector layers
+- IMcVectorMapLayer: GetLayerDataSources(), VectorItemIDToOriginalID(), VectorItemIDFromOriginalID(), GetValidFieldsPerDataSource() added for 
+  multi-data-source layers in order to retrieve the information about data-sources and to convert between MapCore's and the original vector item ID
+- IMcRawVectorMapLayer::SParams and IMcMapProduction::SVectorConvertParams: uMaxNumVisiblePointObjectsPerTile added to define the maximal number of 
+  objects of vector points per tile that should be visible (objects beyond this number will be hidden depending on map scale)
+- IMcRawVectorMapLayer::SParams: StylingParams::bEnabled replaced by eAutoStylingType to support S52 and custom styling; strCustomStylingFolder added
+- IMcRawVectorMapLayer::SStylingParams: pDefaultFont and fTextMaxScale added
+- IMcMapProduction: SVectorConvertParams now inherits IMcRawVectorMapLayer::SParams
+- IMcMapLayer::STilingScheme: uNumLargestTilesX/uNumLargestTilesY added
+- IMcSpatialQueries::SetTerrainQueriesNumCacheTiles(): the default was changed from 1000 to 300
+- IMcSymbolicItem::GetAllCalculatedPoints(): original points (before adding points for smoothing, great circle sampling, etc.) can now be optionally retrieved
+- IMcGeometricCalculations::EG2DPolySmoothingSample(): original points can now be optionally retrieved
+- IMcEditMode: Set/GetAutoChangeObjectOperationsParams() added to set a mode of automatically changing object operations parameters during object 
+  initialization/editing according to the parameters defined in its scheme; enabled by default
+- MCVectorEditor: tiling scheme selection and showing geographic map in metric proportions added
+- IMcMapProduction::IProgressCallback and IMcMapProduction::EProgressMessageType replaced by global IMcProgressCallback and IMcProgressCallback::EProgressMessageType
+- IMcMapProduction::ConvertXXXLayer() and IMcRaw3DModelMapLayer::BuildIndexingData(): LayerParams.xml file added containing the layer type and tiling scheme
+- Web version: MapCore's ES6-module versions added (MapCore_Module.js/.wasm/.data, etc.); see the usage example commented-out in McJsTester.js/.html
+- Web version: without ES6-module if .wasm/.data/.mem files should be loaded from different path or with different names, the following script should 
+  be added before MapCore.js (MapCoreModule is now used instead of Module): MapCoreModule = { locateFile : function(fileName, prefix) { return ...; } };
+
+MapCore 7.11.3.1:
+- IMcSpatialQueries::GetVectorTargetExtendedData() replaced by IMcVectorMapLayer::GetScanExtendedData() and can now be asynchronous
+- IMcVectorMapLayer: GetVectorItemPoints(), GetFieldUniqueValuesAsXXX(), GetVectorItemFieldValueAsXXX(), Query() can now be asynchronous
+- IMcMapLayer::GetCallback() added
+
+MapCore 7.11.3.0:
+- Important in Windows, Android and Linux: contents of Media directory and resources.cfg (in Android also sdcard/MapCore/Resources) were changed, 
+  update you files accordingly
+- Breaking change: IMcNativeStaticObjectsMapLayer::Create(): uNumLevelsToIgnore and fExtrusionHeightMaxAddition parameters added; uNumLevelsToIgnore allows 
+  optionally ignore several highest levels of detail; fExtrusionHeightMaxAddition defines (in layers built of contours' extrusion) the maximal addition 
+  to objects' extrusion heights that can be done during changing extrusion heights (see below).
+- Breaking change: IMcNativeServerRasterMapLayer/IMcNativeServerDtmMapLayer::Create(): uNumLevelsToIgnore and bEnhanceBorderOverlap parameters removed
+- Breaking change: IMcMapViewport::GetGridVisibility() now returns the visibility set by SetGridVisibility() (or true if not set) even if the viewport 
+  has no grid
+- IMcUserData: IsSavedBufferUTF8Bytes() callback added to optionally indicate that the user data is saved into an array of valid UTF8-encoded non-zero 
+  bytes and should be saved into textual files as a UTF8 string
+- IMcMapViewport: Set/GetGridAboveVectorLayers() added to define the draw priority of a grid (below or above vector layers)
+- IMcObjectScheme: Set/GetGroupingItemsByDrawPriorityWithinObjects() added to enable the mode of grouping items within their containing objects
+  (when all items belonging to the same object will be rendered in the order of their drawing priorities, but as a group above or below items of other 
+  objects, even in case of the same drawing priority of objects and their overlays)
+- IMcObjectScheme: Set/GetEditModeParams() added to store object operations' parameters for EditMode so that they can be retrieved and given to EditMode
+  before initializing/editing the object with EditMode
+- IMcEditMode: ChangeObjectOperationsParams() added to change object operations' several parameters together that can be optionally restored to their 
+  original values after one object operation; GetObjectOperationsParams() added to retrieve the current values of all such parameters
+- IMcImageCalc: ImagePixelToCoordWorld(), ImagePixelToCoordWorldWithCache(), GetHeight() can now be asynchronous (when pAsyncQueryCallback != NULL)
+- IMcFrameIC: GetCameraCornersAndCenter() can now be asynchronous (when pAsyncQueryCallback != NULL)
+- IMcStaticObjectsMapLayer: SetResolutionFactor() added to affect the selection of resolutions displayed according to each area's local scale
+- IMcStaticObjectsMapLayer: IsBuiltOfContoursExtrusion() added to check if it is built of contours' extrusion and whether it supports changing extrusion heights
+- IMcStaticObjectsMapLayer built of contours' extrusion: extrusion heights can now be changed in run-time (only in layers converted by MapCore 7.11.3.0 and newer)
+- IMcRawVectorMapLayer::SParams and IMcMapProduction::SVectorConvertParams: the following parameters were added to control the optimizations in 
+  raw vector map layers and non-lite native vector map layers: uMaxNumVerticesPerTile, uMinPixelSizeForObjectVisibility, fOptimizationMinScale
+- IMcMapProduction::GetVectorDataSourceProperties() replaced by a static function IMcRawVectorMapLayer::GetDataSourceSubLayersProperties() with 
+  optional bMultiGeometriesSuffixByName
+- IMcMapProduction::EVersionCompatibility: IMcMapProduction::EVC_7_11_2_STATIC_OBJECTS added to convert static-objects map layers that can be used 
+  in the previous MapCore versions
+- Loading object schemes is now possible from files created by saving either object schemes or objects
+- Web version: IMcImageFileTexture with SVG as a memory buffer is now supported (including loaded object schemes)
+- Web version: IMcImageFileTexture with an image file (including SVG) as a URL starting with "http:" or "https:" is now supported
+- Web version: IMcHtmlVideoTexture added for playing video via the browser's support for HtmlVideoElement
+- IMcVideoTexture: Set/GetFrameRateForRenderBasedUpdate() added (relevant for IMcDirectShowTexture with EUM_RENDER update method and for IMcHtmlVideoTexture)
+
+MapCore 7.11.2.0:
+- Breaking change: synchronous spatial queries with server-based layers in level of detail other than currently shown in the viewport are no 
+  longer supported; they should be asynchronous
+- Important in Windows, Android and Linux: contents of Media directory were changed, update you files accordingly
+- IMcMapLayer::RemoveLayerAsync()/ReplaceNativeServerLayerAsync() added for the user to response to IReadCallback::OnNativeServerLayerNotValid(); 
+  optional IMcMapLayer::IReadCallback::OnRemoved()/OnReplaced() added to notify the user that the above asynchronous operations has been completed
+- IMcMapLayer::CheckNativeServerLayerValidityAsync() added to allow checking whether MapCore's Map Layer Server has updated or deleted the layer
+- IMcMapLayer::IReadCallback's functions (except for Release()): the layer added as a first parameter
+- IMcMapLayer::SNonNativeParams: bFillEmptyTilesByLowerResolutionTiles added to support WMTS and level-of-detail-based raw raster layers with 
+  variable-resolutions
+- IMcSpatialQueries: GetBestScoutersLocationsInEllipse() can now be asynchronous (via SQueryParams::pAsyncQueryCallback)
+- WMTS map layer: the layer's bounding box is no longer clipped with that of the tile matrix set in the highest level of detail
+- IMcSymbolicItem: Set/GetPointsDuplication() and Set/GetPointsDuplicationOffsets() added to define a replacement of some points of the item by 
+  a number of duplicates (in offsets from each other)
+- IMcTextureArray added to enable displaying different textures in different appearances of multi-point picture item
+
+MapCore 7.11.1.0:
+- Breaking change: IMcMapLayer::IReadCallback::OnInitialized()/OnReadError() signatures changed; 
+  IMcMapLayer::OnNativeServerLayerNotValid() added to notify the user that native-server layer's version has been updated by 
+  MapCore's Map Layer Server or the layer has not been found by the server (deleted or never existed)
+- Breaking change: removed from API: IMcMapViewport::Set/GetLineBasedItemMinSize()/SetGetImageVirtualScaleDefinition(),  
+  IMcLinebasedItem::SetPreventHidingWhenSmall(), IMcSpatialQueries::EQP_ADAPTIVE
+- Breaking change: IMcErrors::ErrorCodeToString() signature changed; IMcErrors::ErrorCodeToString()/GetLastStorageErrorDetailedString() added to .NET
+- Map grid supports now display grids in all types of letter-based coordinate systems, not only IMcGridMGRS: IMcGridBNG, IMcGridGARS, IMcGridIrish added
+- MapCore's Map Layer Server application can now serve as both map layer server and HTTP file server
+- MapCore's Map Layer Server application can now run on Windows and Linux (64-bit Ubuntu and CentOS)
+- MapCore's Map Layer Server application loads now its configuration parameters from either JSON file or (if it does not exist) XML file
+- Windows version: Dlls needed for SVG textures are now supplied together with other DLLs and there is no need to copy them from Setup directory
+- Android version: added/updated files in sdcard/MapCore/Media/Base/terrain
+
+MapCore 7.11.0.0:
+- Breaking change: IMcGridConverter and IMcGeographicCalculations: calculations beyond grid limits (extended zones) are now allowed by default, 
+  call SetCheckGridLimits(true) to disallow
+- Breaking change: IMcGeometricCalculations::EG2DPolyGonArea() / IMcGeographicCalculations::PolygonSphericArea() now return a flag indicating 
+  whether no-self-intersection test succeeded (if didn't, the functions will not fail but the area returned will be DBL_MAX)
+- Breaking change: IMcObjectScheme/IMcObject: GetNodeByID()/GetNodeByName() now return null instead of failure in case the node doesn't exist
+- Breaking change: IMcCollection: AddObjects()/AddOverlays() now don't fail if the object/overlay is already in this collection; 
+  the same for RemoveObjectFromCollection()/RemoveOverlayFromCollection() if the object/overlay is NOT in this collection
+- Breaking change: enum properties with the same ID cannot be of different enum types
+- Breaking change: IMcRawVectorMapLayer::Create(): most parameters are now grouped into IMcRawVectorMapLayer::SParams
+- IMcRawVectorMapLayer can now support raw data's internal styling (if styling parameters are specified in Create()) by automatic creation of 
+  MapCore's object schemes based on the internal styling
+- MapCore's Map Layers Server (API and console application based on the API) added to stream native/raw raster/vector/DTM layers and 
+  native static-objects layers to MapCore-based client application
+- IMcNativeServer[Raster/Dtm/Vector/StaticObjects]MapLayer added to support HTTP streaming of map layers via MapCore's Map Layers Server (see above)
+- IMcOverlay: LoadObjectsFromRawVectorData() added to load (create) objects from raw vector data
+- IMcObject/IMcObjectScheme: GetEnumPropertyActualType() added to check the actual type of numeric-type properties that can contain enums instead of numbers
+- IMcMapProduction DXT compression: old Direct3DX Library (D3DX) replaced by new DirectX Texture Library (DirectXTex), 
+  IMcMapProduction::EDXTCompressMethod::EDCM_DIRECT_3DX renamed to EDCM_DIRECTX_TEX 
+- IMcMapDevice::SInitParams: strPrefixForPathsInResourceFile added (an optional prefix to be added to all paths in resources.cfg file)
+- Grid coordinate systems: IMcGridGARS and IMcGridIrish added
+- IMcMapDevice.GetVersion() added to check MapCore's version
+- Web version: IMcGeographicCalculations.Create()'s version added that receives magnetic data files as memory buffers
+- Web version: IMcMapDevice.GetHeapSize() added
+- Web version: virtual file system utilities added to IMcMapDevice: CreateFileSystemDirectory(), DeleteFileSystemEmptyDirectory(), 
+  CreateFileSystemFile(), DeleteFileSystemFile()
+
+MapCore 7.10.0.0:
+- Important in Windows, Android and Linux: contents of Media directory and resources.cfg files were changed, update you files accordingly
+- Breaking change in object scheme: EAPT_SCREEN_EQUIDISTANT attach point type is no longer supported for screen-coordinate-system items; if such 
+  an item is in screen coordinate system because of coordinate system conversion, EAPT_SCREEN_EQUIDISTANT attach point should be defined in its parent 
+  item in world coordinate system (it may require adding empty symbolic item as a parent)
+- MapUtils and CommonCalc modules were removed, new Codec_FreeImage module were added
+- IMcGridGeneric coordinate system (based on SRID or spatial reference ID, e.g. "epsg:4326") is now supported in all geographic calculations
+- Saving/loading objects and object schemes: support added for JSON format (both file-system files and memory-buffer files); options for suppression 
+  of saving user-data and property names are no longer supported
+- MCTester: default extensions for object files are now .mcobj (binary) and .mcobj.json (JSON), for object scheme files: .mcsch (binary) and .mcsch.json (JSON)
+- IMcSpatialQueries::IAreaOfSight: Save() and Load() added
+- IMcNativeVectorMapLayer::IsLiteVectorLayer() added
+- Vector layer production: progress messages added; MCVectorEditor displays them and saves into VectorLayerConvertLog.txt file
+- Web version: MapCore's main version is now WebAssembly version: MapCore.js/MapCore_Calculations.js/MapCore_StackDebug.js etc., each one with 2 additional files  
+  (.wasm and .data, loaded by .js asynchronously); WebAssembly versions support dynamic memory growth, most of the code is a binary .wasm file so the code size is 
+  much smaller; your server should support .wasm files as MIME type 'application/wasm' (as it is done in SimpleHTTPServerWasm.py); old technology (asm.js) 
+  versions are present as well, but the recommended version is WebAssembly; for its best performance new browsers are recommended (Chrome 72, FireFox 64)
+- IMcObjectScheme::SaveNodeInterface() renamed to SaveSchemeComponentInterface() and supports now all types of scheme-component interfaces
+- Web version: WMS raster layer is now supported
+- Web version: member functions of SDtmVisualizationParams, SMcVariantID are now static; member functions of SMcVariantString were removed and 
+  astrStrings and bIsUnicode fields were added instead
+- Android version C++ interface: all modules are now .so files instead of .a files
+
+MapCore 7.9.10.0:
+- IMcObjectScheme::SaveNodeInterface() added to save object scheme node's interface definition to JSON file or file buffer
+
+MapCore 7.9.9.0:
+- IMcSpatialQueries: all query functions except for GetRayIntersection()/GetRayIntersectionTargets() can now be asynchronous 
+  (via SQueryParams::pAsyncQueryCallback)
+- IMcImageCalc: IsWorldCoordVisible() can now be asynchronous (when pAsyncQueryCallback != NULL)
+- IMcSpatialQueries: GetEllipseAreaOfSightForMultipleScouters(), GetBestScoutersLocationsInEllipse() added
+- IMcSpatialQueries: CloneAreaOfSightMatrix(), SumAreaOfSightMatrices(), AreSameRectAreaOfSightMatrices() added
+- Android version for java users: Java namespaces were renamed; MapCore wrapper and utilities were united into the same namespace and one .aar file 
+  (for MapCore release version: only .aar file is needed for all the targets, for MapCore debug version: .aar (debug  version) and .so files of
+  the appropriate target should be used)
+- Web version: WebAssembly (wasm) versions (MapCore_Wasm.js/MapCore_WasmStackDebug.js and MapCore_Calculations_Wasm.js) were added, each one with 
+  2 additional files (.wasm and .data, loaded by MapCore_WasmXXX.js asynchronously); WebAssembly versions support dynamic memory growth, most of the code
+  is in binary .wasm file so the code size is much smaller. Currently, MapCore_Wasm.js performance is better then MapCore.js in CPU calculations, 
+  but worse in graphics, so meanwhile WabAssembly is recommended only in calculations.
+- Web version: MapCore_Calculations_XXX.js supports now IMcGridGeneric grid coordinate system 
+- Web version for NodeJS users: to use IMcGridGeneric, map "NodeJsFiles" directory to virtual "FS" directory by calling
+  IMcMapDevice.MapNodeJsDirectory("NodeJsFiles", "FS"))
+
+MapCore 7.9.8.0:
+- IMcErrors::GetLastStorageErrorDetailedString() added to provide additional information on I/O error (e.g. name of missing or invalid file)
+- IMcTextItem: text outline does not enlarge character spacing anymore
+- IMcSpatialQueries: GetTerrainHeight() and GetTerrainHeightsAlongLine() can now be asynchronous (via SQueryParams::pAsyncQueryCallback)
+- IMcImageCalc: WorldCoordToImagePixel() now returns one image pixel instead of array
+- IMcMapDevice: default of SInitParams::bAlignScreenSizeObjects is now true
+- IMcMapTerrain: SLayerParams::bNearestPixelMagFilter added allowing to change raster-layer magnification filtering to nearest-pixel (point) 
+  instead of bi-linear (anisotropic)
+- IMcSectionMapViewport: section height points can now be optionally specified by user instead of internally calculated
+  (call to IMcSpatialQueries::GetHeightsAlongLine() to calculate them)
+- IMcNativeVectorMapLayer: uNumTilesInFileEdge parameter can be specified in layer production
+- Native vector map layer and static-objects map layer produced from contours: optional clipping rectangle can be specified
+- Web version: 2 additional files (.js.mem and .data) were added, they are loaded by MapCore_XXX.js (much smaller) asynchronously; the user must wait 
+  until they are loaded before using MapCore API by defining callback function (that starts working with MapCore) and passing it to 
+  MapCore.SetStartCallbackFunction(); the files should be in the root path unless their path (ending with "/") is specified by including 
+  MapCoreSetFilesPath.js and calling MapCore.SetFilesPath() BEFORE including MapCore_XXX.js (see example in McJsTester-SetFilesPath.html)
+- Web version: IMcMapDevice::MapNodeJsDirectory()/UnMapNodeJsDirectory() added for file system mapping in node.js
+
+MapCore 7.9.7.0:
+- IMcVectorMapLayer::GetLayerAttributes() added
+- IMcMapProduction::SVectorConvertParams: options added to save layer attributes in converted layer
+- IMcGridCoordinateSystem: IsGeographic(), IsUtm() added
+- IMcGridGeneric added allowing to define any grid coordinate system based on SRID (spatial reference ID, e.g. "epsg:4326")
+- IMcObjectScheme: Set/GetIgnoreUpdatingNonExistentProperty() added
+- IMcObject::Set/GetSuppressSightPresentationMapTilesWebRequests() and IMcEditMode::SetAutoSuppressSightPresentationMapTilesWebRequests() added
+- IMcSpatialQueries: flag is now returned from GetTerrainHeight()/GetExtremeHeightPointsInPolygon() indicating whether height/points are found
+- IMcSpatialQueries: ScanInGeometry()/GetRayIntersectionTargets()/GetXXXAreaOfSight()can optionally calculate static-object contours (for static-object layers
+  produced from contours by MapCore version starting with 7.9.7.0)
+- IMcMapCamera::ScreenToWorldOnTerrain() in 2D: if intersection is not found, x,y coordinates are now calculated, z = MC_NO_DTM_VALUE
+- Web version: multithreading disabled and pthread-main.js removed; asynchronous WMTS support is restricted to the case of WMTS-compatible tiling scheme of map layers
+- Web version: IMcBitmapHandleTexture now supports HTML canvas or constant-size HTML image
+- Web version: IMcIconHandleTexture now supports scalable HTML image (e.g. SVG)
+- Windows version: most DLLs starting with Mc and tools now contain version information
+
+MapCore 7.9.6.0:
+- Native map layer format changed for better streaming: TilesXXX.dat file is now significantly smaller
+  (format upgrading function in MapProductionTool can be used to upgrade the previous format to the new one)
+- Native layer format upgrading function in IMcMapProduction renamed from ChangeRasterOrDtmLayerCompatibility() to ChangeLayerCompatibility()
+- Only native map layers of new format are now supported in http streaming
+
+MapCore 7.9.5.0:
+- IMcMapLayer::SRawParams: bIgnoreRasterPalette added
+- IMcEditMode::StartEditObject(): bEnableAddingNewPointsForMultiPointItem added to enable adding new points at the end of line/arrow/polygon
+- IMcGeographicCalculations::CalcMagneticElements() added
+- IMcMapCamera::SetCameraScale(): an actual zoom is now limited to 0.0005 - 200000 range
+- IMcMapCamera::Set/GetCameraScale() for 3D viewport: a valid point (to set/get scale at) must be specified
+- IMcMapLayer::IReadCallback parameter added to Create() method of all map layers
+- IMcMapLayer::IReadCallback::OnInitialized(): error code parameter added
+- Native raster and DTM map layers: support added for file-system HTTP streaming layers created with URL path instead of file-system folder
+- non-standard tiling scheme support added to map layers
+- Web version: support added for viewports opened on different canvases
+- Web version: IMcMapDevice.GetMaxMemoryUsage() added
+- Web version: property value in IMcObjectSchemeNode/Item.GetXXX() is now return-value instead of out-value
+
+MapCore 7.9.4.0:
+- IMcMapProduction::SVectorConvertParams::strMetaDataFormat (optional) added, the default is now "SQLite" instead of "ESRI Shapefile"
+- IMcImageFileTexture::SImageSource replaced by global SMcFileSource
+- IMcFileFont added
+
+MapCore 7.9.3.0:
+- IMcMapViewport: several viewports per window are now supported
+- IMcEditMode: second-finger touch events added
+- IMcRawVectorMapLayer::Create(): read callback added
+- gdal201.dll renamed to MCgdal201.dll to prevent conflicts with other libraries using GDAL
+
+MapCore 7.9.2.0:
+- IMcRawVectorMapLayer now supports OSM layers rendered by an external server based on Mapnik; in this case WorldLimit should be specified in Create()
+- IMcWMSRasterMapLayer: WMTS layer is now initialized aynchroniously;
+- IMcMaplayer::IsInitialized() and IMcMaplayer::IReadCallback::OnInitialized() added
+- local cache support added to all non-native layers
+- IMcVideoTexture::Set/GetManualUpdateMethod() added
+- IMcMapProduction::EVersionCompatibility: static-objects layer versions added
+
+MapCore 7.9.1.0:
+- IMcImageFileTexture: file name replaced by SImageSource to support either file-system file name or in-memory file buffer
+- IMcObjectScheme: GetNodesByPropertyID() added
+- Added IMcWMSDtmMapLayer, updated interface of WMS/SMTS map layers
+
+MapCore 7.9.0.0:
+- OSM service: support added for multi-state queries
+- IMcLocationConditionalSelector added
+- IMcObjectSchemeNode/IMcObject/IMcOverlay/IMcCollection: Set/GetActivityOption() removed
+- IMcObjectScheme::GetPropertyType(): an option added not to fail on non-existent ID, IMcObject:GetPropertyType() added
+
+MapCore 7.8.4.0:
+- IMcImageFileTexture: SVG files are now supported
+- Different-size variants of SVG textures and fonts are now automatically created according to picture/text size
+- IMcSpatialQueries::GetAreaOfSight() split to Get[Ellipse/Rectangle/Polygon]AreaOfSight()
+- GPU-based IMcSpatialQueries::GetXXXAreaOfSight(): seen and unseen polygons can be optionally calculated
+- Overlay manager's objects and vector items: size factors added for each type of object item
+- IMcEditMode::ICallback::RotateMapResults(): signature changed
+- IMcEditMode: Set/GetRotatePictureOffset() added
+- Grid coordinate systems: BNG (OSGB36) added
+- IMcImageCalc: ImageToWorldRay() and IsWorldCoordVisible() added
+- IMcImageCalc::ImagePixelToCoordWorldXXX(): optional peIntersectionStatus added to return intersection status without an error
+- Blocked conditional selector now works in 2D image viewport
+- IMcWMSRasterMapLayer::SWMTSParams: eCapabilitiesBoundingBoxAxesOrder added
+
+MapCore 7.8.3.0:
+- UserDefined and Frame ImageCalc: world local scale at object's world point is now taken into consideration in scale conditions
+- All functions and struct's members: Feature and VectorFeature renamed to VectorItem
+- IMcVectorMapLayer: GetScanExtendedDataSize() and LoadScanExtendedDataToMemory() renamed to 
+  GetExtendedGeometryDataSize() and LoadExtendedGeometryDataToMemory() accordingly
+- IMcVectorMapLayer: GetVectorItemPoints() added to retrieve points of vector item by its ID
+- IMcStaticObjectsMapLayer: SetDisplayingDtmVisualization() added
+
+MapCore 7.8.2.1:
+- IMcMapLayer: GetBackgroundThreadIndex() added
+- Overlay color overriding operation: ECCF_RGB / ECCF_ALPHA removed, replace operations added, 
+  post-process adding/subtracting operations added
+- Overlay color overriding property type: manual-geometry-item added
+
+MapCore 7.8.2.0:
+- IMcObjectScheme: SetObjectStateName(), GetObjectStateByName(), GetObjectStateName() added
+- IMcOverlay::Set/GetColorOverriding(): adding/subtracting operations added
+- IMcVectorMapLayer::Set/GetBrightness() added
+
+MapCore 7.8.1.0:
+- IMcMapLayer::SNonNativeParams: read-error callback added
+- IMcSightPresentationItemParams: Set/GetSightNoDTMResult() added
+
+MapCore 7.8.0.3:
+- non-native map layers: creation parameters are now within structs
+
+MapCore 7.8.0.2:
+- Static-objects layer: object ID can now be either 32, 64 or 128 bit
+- WMTS raster map layer added
+
+MapCore 7.8.0.1:
+- raw map layers creation: uMaxNumOpenFiles added
+
+MapCore 7.8.0.0:
+- IMcObject::Clone(): bCloneLocationPoints replaced by bClonePointsAndSubItems
+
+MapCore 7.7.11.0:
+- IMcObjectScheme, IMcObjectSchemeNode, IMcConditionalSelector: setting names and getting by name added
+- IMcWMSRasterMapLayer: additional parameters added
+- Raster production: ETC1 compression added
+
+MapCore 7.7.10.3:
+- IMcUserDefinedImageCalc::CameraModelChanged() added
+- IMcSightPresentationItemParams::ESightPresentationType: ESPT_MIXED added (CPU-based calculation of seen area, 
+  GPU-based calculation of seen static objects)
+
+MapCore 7.7.10.1:
+- Dynamic heat map viewport (IMcHeatMapViewport) added
+- IMcMapProduction::SConvertParams::bAllowRasterUpSampling added
+- IMcMapDevice::SInitParams::eStaticObjectsVisibilityQueryPrecision added to control precision of static-objects 
+  visibility calculation in sight query
+
+MapCore 7.7.10.0:
+- IMcMapProduction::SStaticObjectTexture: texture placement options added
+- IMcMapProduction: min/max thresholds added to heat map layer production
+- IMcOverlay/IMcOverlayMaager: Set/GetState() added to control effective states of objects
+- IMcVectorMapLayer::Set/GetOverlayState() added to control effective state of vector objects
+- Static-objects map layer: thread-safe spatial queries added, viewport/query cache control added
+- IMcImageCalc's descendants: optional creation added with array of terrains so that static-object layers can be used 
+  along with / instead of DTM layer
+
+MapCore 7.7.9.1:
+- IMcMapProduction::SStaticObjectsContoursParams: optional specific textures added
+- IMcEditMode::StartDistanceDirectionMeasure(): optional height measuring added
+- IMcMapViewport::SDtmVisualizationParams::uShadingDtmPrecision replaced by 
+  IMcMapDevice::SInitParams::uDtmVisualizationPrecision
+- IMcMapProduction::IsObjectSchemeValidForLiteVectorLayerConversion() added
+- IMcMapProduction: heat map layer of either circles, rectangles, polygons or lines can now be produced 
+  (with GPU only)
+- IMcStaticObjectsMapLayer::SetDisplayingItemsAttachedToTerrain() added
+
+MapCore 7.7.9.0:
+- Object states can now be optionally changed per viewport
+- IMcSpatialQueries::EPointVisibility: EPV_SEEN_STATIC_OBJECT added for coloring static objects by 
+  sight-presentation item
+- IMcProjectorItem::ETargetTypesFlags: ETTF_TERRAIN_OBJECTS added to control whether projector should project on 
+  items attached to terrain and lite-vector lines and polygons
+- IMcMapProduction::SStaticObjectsContoursParams: optional strObjectIDColumn added to take static object ID from 
+  the metadata instead of vector item ID
+
+MapCore 7.7.8.0:
+- IMcStaticObjectsMapLayer built from contours: user defined colors added
+- IMcObject: Set/GetSelected() upgraded to Set/GetState()
+- IMcObjectScheme: Set/GetObjectsState() added
+- Object properties: 2-state properties (regular/selection) upgraded to multi-state properties
+- IMcSelectionConditionalSelector upgraded to IMcObjectStateConditionalSelector
+- IMcObjectScheme: Set/GetObjectStateModifiers() added
+- IMcMapLayer: GetLevelsOfDetail() added, GetLeafTileDataByPoint() replaced by GetTileDataByPoint()
+- IMcDtmMapLayer: GetTileGeometryByKey() added
+
+MapCore 7.7.7.1:
+- IMcObjectScheme::SetTerrainObjectsConsideration() added
+- IMcNativeStaticObjectsLayer: resources are now loaded automatically
+
+MapCore 7.7.7.0:
+- An option added to projector item to use video metadata from the video texture (if exists)
+- An option added in device creation to use Direct3D 9Ex rendering system (on Windows Vista and newer)
+- IMcMapDevice::SInitParams::uMainMonitorIndex (optional) added
+- IMcPhysicalItem: scale parameter can now be private property
+- IMcMapProduction: added to vector layer XML - ECO_SUB_STRING comparison operator
+- IMcObjectScheme::Create(): uTerrainObjectsConsiderationBitField added
+
+MapCore 7.7.6.0:
+- IMcMapProduction: added to vector layer XML - boolean conditions and switch-case property definitions
+- Added to IMcMapProduction::SHeatMapConvertParams: fTargetLowestResolution and bCalcAveragePerPoint
+- IMcHeatMapLayer::GetMinMaxValues() now returns values for the specified scale
+- Saving-version-compatibility added to saving objects/schemes and vector layer production
+- An option added to projector item to use metadata from the video texture (if exists)
+
+MapCore 7.7.5.1:
+- gradient colors option added to heat maps
+- Added to IMcVectorMapLayer for Unicode strings: GetFieldUniqueValuesAsWString(), GetFeatureFieldValueAsWString()
+- IMcSharedMemoryVideoTextureStreamer added
+- IMcSharedMemoryVideoTexture added
+- IMcEditMode: EEMP_FINISH_TEXT_STRING_BY_KEY permission added so that finishing editing text by ENTER key can now 
+  be replaced by adding a new line
+- IMcWMSRasterMapLayer added
+- Added to supported datums list of grid coordinate systems: EDT_PULKOVO_KZ and EDT_PULKOVO_RU
+
+MapCore 7.7.5.0:
+- IMcMapLayersRenderServer added to API
+
+MapCore 7.7.4.2:
+- IMcMapProduction::SVectorConvertParams::bCreateMetaData added to control whether metadata DBF should be created
+- an optional language (locale) added to vector layers (raw layer creation and native layer production)
+- IMcFFMpegTexture added
+- map layers' local cache is now global and not per layer
+
+MapCore 7.7.4.1:
+- A support added for vector layer sources with multi-layers and mixed-geometry layers
+
+MapCore 7.7.4.0:
+- OSM service added (routing)
+- IMcMapViewport::EObjectDelayType::EODT_VIEWPORT_CHECK_HIDDEN_OBJECT_COLLISION added for vector-layer collision prevention
+- IMcOsmGeocoder::SearchForAddress() added
+
+MapCore 7.7.3.0:
+- Sight presentation: can now be enabled in line item, arrow item and all closed shapes with optional property of observer position
+- IMcNativeRasterMapLayer::Create(): an optional mode added for enhancing border quality in case of overlapping layers
+- OSM services added (geocoding and reverse geocoding)
+- Raster map production: an option added of SquishLib DXT compression
+- An option added to picture item to use geo-referencing data from the texture (if exists)
+
+MapCore 7.7.2.0:
+- IMcLogFont: added mapping to TTF file
+- Line and text items: outline color and width added
+- Recovery option added to raster production
+- IMcObject: SetEachObjectLocationPoint(), SetEachObjectProperty() added to update several objects
+
+MapCore 7.7.1.0:
+- GDB vector layer format supported
+
+MapCore 7.7.0.0:
+- SMcSubItemsData property converted to template-based IMcProperty::SArrayProperty<SMcSubItemData>
+- Added to IMcObjectScheme: SetPropertyDefault(), GetPropertyDefault(), SetPropertyDefaults(), GetPropertyDefaults()
+- IMcManualGeometryItem: points coords./texture coords./colors/indices are now can be private property
+- Map layer local cache added
+- IMcVLCVideoTexture added
+- Map production: multiple clipping rectangles added
+- Line-based items: outline added
+- IMcSpatialQueries::SQueryParams::uMaxNumTargetsToFind added
+
+MapCore 7.6.2.1:
+- IMcMapViewport::GetObjectsVisibleInWorldRectAndScale2D() added
+- IMcMapDevice::SInitParams::bPreferUseTerrainTileRenderTargets added
+- IMcObjectLocation::SetRelativeToDTM() added and can be private property
+
+MapCore 7.6.1.4:
+- OSM vector layer format supported
+
+MapCore 7.6.1.2:
+- Lite vector layer added
+
+MapCore 7.6.1.0:
+- IMcObject::Clone(): bCloneLocationPoints parameter added
+- IMcObjectSchemeItem::EEllipseDefinition: EED_CIRCLE_START_POINT_CENTER_END_POINT added
+- IMcSpatialQueries::GetAreaOfSight() in polygon: CPU mode added
+
+MapCore 7.6.0.0:
+- vector map layer: string encoding parameters removed
+- IMcGeometricCalculations: EG2DClipPolyInRect() added
+
+MapCore 7.5.0.4:
+- IMcLoropImageCalc is now  supports multiple DTM layers
+- IMcMapViewport::SCreateData: bEnableGLQuadBufferStereo added
+
+MapCore 7.5.0.3:
+- IMcMapProduction: RemoveBorders() added
+- IMcGeographicCalculations: CirclesIntersection() added
+- IMcSpatialQueries: LocationFromTwoDistancesAndAzimuth() added
+- IMcMapDevice::SInitParams: bAlignScreenSizeObjects added
+
+MapCore 7.5.0.2:
+- IMcGeographicCalculations: LocationFromTwoRays() added
+
+MapCore 7.5.0.1:
+- IMcImageProcessing: optional layer added to every function
+
+MapCore 7.4.10.0:
+- image correlator added
+- IMcViewportConditionalSelector::EViewportTypeFlags: EVT_2D_SECTION_VIEWPORT and EVT_NONE added
+- stereo viewport modes added
+- manual geometry item: 32-bit indices support added
+- IMcGeographicCalculations: BoundingRectAtAngle() added
+- IMcMapViewport::EPendingUpdateType: EPUT_IMAGEPROCESS added
+- IMcMapDevice::SInitParams: bMultiScreenDevice added
+- IMcMapProduction::SConvertParams: uNumTilesInFileEdge added
+
+MapCore 7.4.9.0:
+- IMcUserDefinedImageCalc added
+- IMcFileProductions added
+- DTM production from memory buffer added
+- added manual resource addition to device
+- jpeg-encoded raster layer now supports 1-bit transparency
+- .NET wrapper: DNMcGarbageCollector.SetImmediateMode() replaced by DisposeAll() 
+- map vector layer upgraded
+
+MapCore 7.4.8.4:
+- attach point type added: EAPT_SCREEN_EQUIDISTANT
+- vector-transform parent segment type added: EST_ATTACH_POINT_SEGMENTS
+- vector layer: advanced XML support added
+
+MapCore 7.4.8.3:
+- IMcTrackSmoother added
+
+MapCore 7.4.8.0:
+- IMcMapViewport::SCreateData::bShowGeoInMetricProportion is applicable now to 2D, too
+- EDPG_WORLD_WITH_TERRAIN draw priority group added (items behind grid and above terrain that participate 
+  in terrain image processing)
+
+MapCore 7.4.7.1:
+- IMcMapViewport::SCreateData::bTerrainObjectsCache added
+- IMcFrameIC::Set/GetQueryMaxDistance() added
+
+MapCore 7.4.7.0:
+- IMcMapViewport: CreateMono() -> Create(), SetOverlays/ObjectsVisibilityOption() added
+- IDNMCMapCamera: ScreenToWorldOnHorzPlane() -> ScreenToWorldOnPlane(); RotateCameraAroundWorldPoint() added
+- IMcObject/IMcOverlay: SetVisibilityOption() with array of viewports added
+- IMcObjectSchemeNode: GetWorldBoundingBox() added
+- IMcManualGeometryItem:
+	Parameters added to Create(): uItemSubTypeBitField and eProceduralGeometryCoordinateSystem
+	SetPointsWorldCoordinates() renamed to SetPointsCoordinates()
+- IMcRectangleItem: options added to define either by 2 points or by one point and dimensions, to be geometric or geographic
+- IMcEditMode:
+	Set/GetKeyboardNavigationOffset() replaced by SetKeyStep()
+	Set/GetIgnoreMouseMoveForMultipointsItem() replaced by Set/GetMouseMoveUsageForMultiPointItem()
+	Set/GetRectangleResizeRelativeToCenter() added
+
+MapCore 7.4.0:
+- IMcMapDevice: no-logging option added to ELoggingLevel
+- Added to IMcMapDevice::SInitParams:
+	fObjectsBatchGrowthRatio
+	uObjectsTexturesAtlasSize
+	bObjectsTexturesAtlas16bit
+	bDisableDepthBuffer
+- IMcMapViewport: look-at-only camera attachment support added
+- IMcMapCamera: ScreenToWorldOnHorzPlane() replaced by ScreenToWorldOnPlane() with plane normal added
+- IMcMapCamera: RotateCameraAroundWorldPoint() added
+- Added to IMcEditMode:
+	Physical items advanced editing
+	Set/GetUtility3DEditItem()
+	Set/Get3DEditParams()
+	Additional permissions in Set/GetHiddenIconsPerPermission() that replaced Set/GetMovementIconVisibility()
+	Set/GetKeyStep() that replaced Set/GetMoveStep() and Set/GetRotationStep()
+- IMcSymbolicItem: SetTextureFiltering() added
+- Mosaic creator interface added
+- GPU-based IMcSpatialQueries::GetAreaOfSight() added
+- Basic full-screen support added

@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.objects.fragments.properties_tabs.ObjectPropertiesTabsGeneralFragment">
+    <!-- <LinearLayoutCompat
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical" >-->
+    <Button
+        android:id="@+id/object_properties_tabs_general_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save General Changes" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Sub Type Bit Field:" />
+    <ListView
+        android:id="@+id/object_properties_item_sub_type_bit_field_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice"
+        />
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/object_properties_location_coord_sys_swl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="Location Coordinate System" />
+
+        <CheckBox
+            android:id="@+id/object_properties_location_relative_to_dtm_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location Relative To DTM" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+            android:id="@+id/object_properties_location_max_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            app:netl_labelText="Max Num Of Points:" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+            android:id="@+id/draw_priority_group_swl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:swl_labelText="Draw Priority Group" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Texture Height Range:" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/min_texture_height_range"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                app:netl_labelText="Min:" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/max_texture_height_range"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                app:netl_labelText="Max:" />
+        </LinearLayout>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Visibility"
+                android:id="@+id/visibility_option_swl"/>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Transform Option"
+                android:id="@+id/transform_option_swl"/>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:hint="Blocked Transparency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/object_general_blocked_transparency"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:hint="Sub Items Data IDs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/object_general_sub_items_data_ids"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:hint="Sub Items Data indexes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/object_general_sub_items_data_start_indexes"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/object_general_grid_Is_Using_Basic_Item_Properties_Only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grid Using Basic Item Properties Only"
+            android:checked="true"/>
+
+    </LinearLayout>
+</ScrollView>
+
+    <!-- </LinearLayoutCompat>-->
+
+</LinearLayout>

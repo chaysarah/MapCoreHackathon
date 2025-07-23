@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:padding="3dp">
+
+    <TextView
+        android:id="@+id/cv_color_picker_label_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="label:" />
+
+    <Button
+        android:id="@+id/cv_color_picker_bttn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Color" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cv_color_picker_alpha_til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        >
+
+        <EditText
+            android:id="@+id/cv_color_picker_alpha_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="Alpha"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

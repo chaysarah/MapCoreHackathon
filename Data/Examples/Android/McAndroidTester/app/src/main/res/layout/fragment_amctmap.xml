@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/amct_rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map.fragments.MapFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.9">
+
+        <com.elbit.mapcore.mcandroidtester.ui.map.AMcGLSurfaceView
+            android:id="@+id/amctmap_surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/fragment_amctmap_menu_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="vertical" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_amctmap_map_points_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.1"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp">
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X:"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/fragment_amctmap_world_coord_x_value"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y:"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/fragment_amctmap_world_coord_y_value"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z:"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/fragment_amctmap_world_coord_Z_value"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCALE:"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/fragment_amctmap_map_scale_value"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FPS:"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/fragment_amctmap_map_fpsavg_value"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,1 @@
+Replace http-server file after installation (should be in C:\Users\XXX\AppData\Roaming\npm\node_modules\http-server\bin\http-server)

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_tab_title">Create</string>
+    <string name="local_cache_tab_title">Local cache</string>
+    <string name="operations_tab_title">Operations</string>
+    <string name="logging_level">Logging Level</string>
+    <string name="terrain_object_quality">Terrain Object Quality</string>
+    <string name="rendering_system">Rendering System</string>
+    <string name="shader_based_rendering_system">Shader Based Rendering System</string>
+    <string name="viewport_anti_aliasing_level">Viewport Anti Aliasing Level</string>
+    <string name="terrain_object_anti_aliasing_level">Terrain Objects Anti Aliasing Level</string>
+    <string name="static_objects_visibility_query_precision">Static Objects Visibility Query Precision</string>
+    <string name="log_dir">Log Dir</string>
+    <string name="full_screen">Full Screen</string>
+    <string name="prefix_for_paths_in_resource_file">Prefix For Paths In Resource File</string>
+    <string name="config_dir">Config Dir</string>
+    <string name="open_config_window">Open Config Window</string>
+    <string name="objects_texture_atlas_16_bit">Objects Texture Atlas 16 bit</string>
+    <string name="disable_depth_buffer">Disable Depth Buffer</string>
+    <string name="enable_objects_batch_enlarging">Enable Objects Batch Enlarging</string>
+    <string name="enable_GL_quad_buffer_stereo">Enable GL Quad Buffer Stereo</string>
+    <string name="align_screen_size_objects">Align Screen Size Objects</string>
+    <string name="multi_threaded_device">Multi Threaded Device</string>
+    <string name="multi_screen_device">Multi Screen Device</string>
+    <string name="ignore_raster_layer_mipmaps">Ignore Raster Layer Mipmaps</string>
+    <string name="background_threads">Background Threads</string>
+    <string name="num_terrain_tile_render_targets">Num Terrain Tile Render Targets</string>
+    <string name="objects_batch_growth_ratio">Objects Batch Growth Ratio</string>
+    <string name="objects_texture_atlas_size">Objects Texture Atlas Size</string>
+    <string name="objects_batch_initial_num_vertices">Objects Batch Initial Num Vertices</string>
+    <string name="objects_batch_initial_num_indices">Objects Batch Initial Num Indices</string>
+    <string name="local_cache_folder">Local Cache Folder</string>
+    <string name="max_size_in_MB">Max Size In MB</string>
+    <string name="dtm_visualization_precision">DTM Visualization Precision (0, 1 or 2)</string>
+    <string name="main_monitor_index">Main Monitor Index</string>
+    <string name="create_device">Create Device</string>
+    <string name="prefer_use_terrain_tile_render_targets">Prefer Use Terrain Tile Render Targets</string>
+
+</resources>

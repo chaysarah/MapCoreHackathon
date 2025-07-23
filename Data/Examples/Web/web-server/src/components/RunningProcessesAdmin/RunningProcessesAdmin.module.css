@@ -1,0 +1,65 @@
+.Wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /*padding: 15px 20px;*/
+    background: var(--app-bg-color-alt);
+    border: 1px solid #333333;
+}
+
+.Process {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #333333;
+    border-left: 1px solid #333333;
+    padding: 12px 20px;
+    width: 33.3%;
+}
+
+.Process:first-child {
+    border-left: none;
+}
+.Process:last-child {
+    border-right: none;
+}
+
+.Process.Completed {
+    color:  var(--app-success-color);
+}
+
+.Process.InProcess {
+    color: var(--app-system-yellow);
+}
+.Process.AsyncProcess {
+    color: var(--app-system-cyan);
+}
+.Process.Failed {
+    color: var(--app-validation-color);
+}
+
+.Status {
+    font-size: 14px;
+    margin-left: 5px;
+}
+.Number {
+    font-size: 18px;
+}
+
+.ClearBtn {
+    background: none;
+	color: var(--button-clear-color);
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    outline: inherit;
+    font-size: 11px;
+    padding-left: 20px;
+}
+
+.ClearBtn.Hidden {
+    display: none;
+    pointer-events: none;
+    cursor: default;
+}

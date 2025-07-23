@@ -1,0 +1,362 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+    tools:context=".ui.objects.fragments.create_text_tabs.ObjectPropertiesTabsText">
+
+    <Button
+        android:id="@+id/object_properties_text_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Text Changes" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/text_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/text_is_unicode_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Is Text Contains Unicode Characters" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Font Parameters" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/text_add_font_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add" />
+
+                <Button
+                    android:id="@+id/text_update_font_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Update" />
+
+                <Button
+                    android:id="@+id/text_delete_font_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/text_font_details_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/text_log_font_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Log Font" />
+
+                    <RadioButton
+                        android:id="@+id/text_file_font_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="File Font" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/text_log_font_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/text_font_name_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Font Name" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/text_italic_cb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Italic" />
+
+                            <CheckBox
+                                android:id="@+id/text_bold_cb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bold" />
+
+                            <CheckBox
+                                android:id="@+id/text_underline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Underline" />
+
+                        </LinearLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                        android:id="@+id/text_font_size_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        app:netl_labelText="Font Size"
+                        app:netl_numeric_keyboard="true" />
+                    <CheckBox
+                        android:id="@+id/font_is_unicode_cb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Font Name Is Unicode" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/text_file_font_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.elbit.mapcore.mcandroidtester.utils.customviews.FileChooserEditTextLabel
+                        android:id="@+id/text_file_font_file_chooser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:fel_enable_file_choosing="true"
+                        app:fel_labelText="Font File" />
+
+                    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                        android:id="@+id/text_file_font_size_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:netl_labelText="Height"
+                        app:netl_numeric_keyboard="true" />
+
+                    <CheckBox
+                        android:id="@+id/text_file_font_memory_buffer_cb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Is Memory Buffer" />
+                </LinearLayout>
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:section_separator_text="Characters Range" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/text_char_range_from"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="start"
+                        android:layout_weight="1"
+                        android:hint="from"/>
+
+                    <EditText
+                        android:id="@+id/text_char_range_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="start"
+                        android:layout_weight="1"
+                        android:hint="val"/>
+
+                <EditText
+                    android:id="@+id/text_char_range_from_val"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:hint="from value"
+                    />
+
+                <EditText
+                    android:id="@+id/text_char_range_to_val"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:hint="to value"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/text_add_char_range_bttn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add" />
+                    <Button
+                        android:id="@+id/text_delete_char_range_bttn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delete" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="Characters Range List"/>
+
+                <ListView
+                    android:id="@+id/text_characters_range_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:section_separator_text=""/>
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/text_outline_width_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:netl_hint="1"
+                    app:netl_labelText="outline width"
+                    app:netl_numeric_keyboard="true" />
+
+                <CheckBox
+                    android:id="@+id/text_UseExisting_cb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Use Existing" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/text_font_list_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:section_separator_text="Fonts List" />
+
+                <ListView
+                    android:id="@+id/text_font_list_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="End Font Parameters" />
+
+            <LinearLayout
+                android:id="@+id/object_properties_text_parameters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:section_separator_text="Text Parameters" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                    android:id="@+id/object_properties_text_txt_alignment_swl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:swl_labelText="Alignment" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                    android:id="@+id/object_properties_text_never_upside_down_mode_swl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:swl_labelText="Never Upside Down Mode" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+                    android:id="@+id/text_scale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:two_d_f_vector_label="Text Scale" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/text_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:netl_labelText="Margin"
+                    app:netl_numeric_keyboard="true" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+                    android:id="@+id/text_color_sc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:color_picker_label_text="Text Color" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+                    android:id="@+id/text_background_color_sc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:color_picker_label_text="Background Color" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SelectColor
+                    android:id="@+id/text_outline_color_sc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:color_picker_label_text="Outline Color" />
+
+                <CheckBox
+                    android:id="@+id/text_rtl_reading_order_cb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RTL Reading order" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

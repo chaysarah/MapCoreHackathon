@@ -1,0 +1,84 @@
+.Dropdown {
+    position: relative;
+    display: inline-block;
+    width: 175px;
+    background-color: var(--button-primary-bg-color);
+    cursor: pointer;
+    user-select: none;          
+    padding: 10px 15px;
+    border-radius: var(--button-border-radius);    
+    color: var(--app-font-color);
+    transition: .2s;
+    font-weight: 400;
+}
+
+.Dropdown::before {
+    /*content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-image: url('../../assets/images/arrow.svg');
+    border: 7px solid;
+    border-color: var(--app-font-color) transparent transparent transparent;
+    right: 10px;
+    top: 18px;
+    transition: .2s;*/
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 9px;
+    background-image: url('../../assets/images/arrow.svg');
+    transition: .2s;
+    right: 15px;
+    top: 15px;
+}
+
+.Dropdown.DropDownActive, .Dropdown.DropDownActive:hover  {
+    color: var(--app-font-color);
+}
+.Dropdown.DropDownActive::before {
+    border-color: var(--app-font-color) transparent transparent transparent;
+}
+
+.Dropdown:hover {
+    background-color: #215FC7;    
+}
+.ListWrapper {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 40px;
+    right: 0px;
+    width: 175px;
+    background-color: #191919;
+    font-weight:bold;
+    position: absolute;    
+    z-index: 1;    
+    border-top: none;
+    border-radius: var(--button-border-radius);    
+}
+
+.ListElement {
+    padding: 13px 16px;
+    /*border-bottom: 1px solid #191919;*/
+}
+
+.ListElement:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: var(--button-border-radius);
+    border-bottom-right-radius: var(--button-border-radius);
+}
+
+.ListElement:hover {
+    background-color: #2b291e;
+}
+
+.ListElement.Active {    
+    background-color: #c5c5c5;
+}
+
+.ListElement a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}

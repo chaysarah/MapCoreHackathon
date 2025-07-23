@@ -1,0 +1,16 @@
+:root {
+    --select-existing-viewport-dialog-width: 350px;
+}
+/* dialog */
+.scroll-dialog-select-existing-viewport .p-dialog-content {
+    min-width: var(--select-existing-viewport-dialog-width) !important;
+}
+.scroll-dialog-select-existing-viewport .p-dialog-header {
+    min-width: var(--select-existing-viewport-dialog-width) !important;
+}
+.scroll-dialog-select-existing-viewport .p-dialog-footer {
+    min-width: var(--select-existing-viewport-dialog-width) !important;
+}
+.scroll-dialog-select-existing-viewport {
+    overflow-x: auto;
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:nestedScrollingEnabled="true">
+
+    <TextView
+        android:id="@+id/private_properties_id"
+        style="@style/private_properties_table_column"
+        android:layout_width="50dp"
+        android:hint="id" />
+
+    <TextView
+        android:id="@+id/private_properties_type"
+        style="@style/private_properties_table_column"
+        android:layout_width="100dp"
+        android:hint="type" />
+
+    <EditText
+        android:textSize="12sp"
+        android:nestedScrollingEnabled="true"
+        android:scrollbars="horizontal"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:id="@+id/private_properties_name"
+        style="@style/private_properties_table_column"
+        android:layout_width="200dp"
+        android:ellipsize="start"
+        android:hint="name"/>
+
+    <Button
+        android:id="@+id/private_properties_change_value_bttn"
+        android:layout_width="50dp"
+        android:text="set"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/private_properties_use_default"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:id="@+id/private_properties_property_value"
+        style="@style/private_properties_table_column"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/private_properties_is_changed"/>
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:id="@+id/private_properties_to_reset"/>
+
+</LinearLayout>

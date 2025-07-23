@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+	tools:context=".ui.map_actions.treeviews.overlay_manager_treeview.ObjectStateConditionalSelectorFragment">
+
+    <include
+        layout="@layout/fragment_base_conditional_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+<com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:netl_labelText="object state"
+    android:id="@+id/object_state_conditional_selector_object_state"/>
+</LinearLayout>

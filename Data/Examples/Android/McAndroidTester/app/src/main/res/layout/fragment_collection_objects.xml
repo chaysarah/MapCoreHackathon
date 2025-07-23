@@ -1,0 +1,243 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="?android:attr/windowBackground"
+	android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.collection_tabs.CollectionObjectsFragment">
+        <Button
+            android:id="@+id/collection_objects_clear_collection_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Collection" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Objects" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Collection Objects" />
+
+        <ListView
+            android:id="@+id/collection_objects_collection_objects_lv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:nestedScrollingEnabled="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/collection_objects_add_object_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="/\\" />
+
+            <Button
+                android:id="@+id/collection_objects_remove_object_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="\\/" />
+        </LinearLayout>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Object List" />
+
+            <ListView
+                android:id="@+id/collection_objects_all_objects_lv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:nestedScrollingEnabled="true" />
+
+        <Button
+            android:id="@+id/collection_objects_remove_objects_from_their_overlays_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove Objects From Their Overlays" />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/collection_objects_select_all_objects_cb"
+            android:text="Select All Objects"
+            />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Objects Operations" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/collection_objects_visibility_swl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:swl_labelText="visibility" />
+
+            <Button
+                android:id="@+id/collection_objects_visibility_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Apply" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/collection_objects_state_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="state" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/collection_objects_state_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Apply" />
+        </LinearLayout>
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+            android:id="@+id/collection_objects_vp_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="false"/>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+            android:id="@+id/collection_objects_move_all_objects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:three_d_vector_label="Move All Objects:" />
+
+        <Button
+            android:id="@+id/collection_objects_move_all_objects_bttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_vertical"
+            android:text="OK" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Overlays" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Collection Overlays" />
+
+        <ListView
+            android:id="@+id/collection_overlays_collection_overlays_lv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:nestedScrollingEnabled="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/collection_overlays_add_overlay_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="/\\" />
+
+            <Button
+                android:id="@+id/collection_overlays_remove_overlay_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="\\/" />
+        </LinearLayout>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Overlay List" />
+
+        <ListView
+            android:id="@+id/collection_overlays_all_overlays_lv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:nestedScrollingEnabled="true" />
+
+        <Button
+            android:id="@+id/collection_overlays_remove_overlays_from_om_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove Overlays From OM" />
+
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Objects Operations" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/collection_overlays_visibility_swl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:swl_labelText="visibility" />
+
+            <Button
+                android:id="@+id/collection_overlays_visibility_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:text="Apply" />
+        </LinearLayout>
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+            android:id="@+id/collection_overlays_vp_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

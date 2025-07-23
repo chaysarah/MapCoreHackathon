@@ -1,0 +1,23 @@
+const proxy = require('http-proxy-middleware');
+
+
+function onProxyReq(proxyReq, req, res) {
+    // add custom header to request
+    console.log(req);
+    proxyReq.setHeader('Host', 'localhost:6767');
+    proxyReq.setHeader('Lior', 'king');
+    // or log the req
+  }
+
+module.exports = function(app) {
+  app.use(
+    '/layers-info',
+    proxy({
+      target: 'http://localhost:6767',
+      changeOrigin: true,
+      headers: {
+          Host: 'localhost:6767'          
+      }
+    })
+  );
+};

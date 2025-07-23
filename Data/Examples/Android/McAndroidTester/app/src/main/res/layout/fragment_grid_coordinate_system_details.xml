@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
+	tools:context=".ui.map.fragments.GridCoordinateSystemDetailsFragment">
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.GridCoordinateSystemDetails
+        android:id="@+id/cv_grid_coordinate_system_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

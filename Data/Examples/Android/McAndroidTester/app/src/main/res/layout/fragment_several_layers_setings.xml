@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map.fragments.SeveralLayersSetingsFragment">
+    <Button
+        android:id="@+id/create_vp_with_several_layers_frag_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="create viewport with selected layers"
+        android:onClick="createVpWithLayers"
+        />
+
+    <CheckBox
+        android:id="@+id/sl_enhance_border_overlap_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enhance_border_overlap" />
+
+    <CheckBox
+        android:id="@+id/sl_show_geo_in_metric_proportion_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_geo_in_metric_proportion" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/sl_viewport_anti_aliasing_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/viewport_anti_aliasing_level" />
+
+    <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+        android:id="@+id/sl_terrain_object_anti_aliasing_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:swl_labelText="@string/terrain_object_anti_aliasing_level" />
+
+<!--    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/sls_map_type_rg"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="viewport type:"
+            />
+
+        <RadioButton
+            android:id="@+id/sls_2D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="2D" />
+
+        <RadioButton
+            android:id="@+id/sls_3D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3D" />
+    </RadioGroup>-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/sl_number_background_threads_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/number_background_threads"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/sl_terrain_precision_factor_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/terrain_precision_factor"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/sl_max_scal_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/max_scale"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

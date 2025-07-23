@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/create_new_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/create_coord_sys_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="create" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/coordinate_system_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="@string/coordinate_system" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/datum_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:swl_labelText="@string/datum" />
+
+            <View
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:focusableInTouchMode="true" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <EditText
+                    android:visibility="visible"
+                    android:id="@+id/zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Zone"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <include
+                android:id="@+id/coord_sys_xyz_vs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/coord_sys_xyz" />
+            <include
+                android:id="@+id/coord_sys_rt90_vs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/coord_sys_rt90" />
+            <include
+                android:id="@+id/coord_sys_tm_user_defined_vs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inflatedId="@+id/coord_sys_tm_user_defined"
+                layout="@layout/coord_sys_tm_user_defined" />
+        </LinearLayout>
+    </LinearLayout>

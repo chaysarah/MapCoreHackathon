@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="6">
+<TextView android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.4"
+    android:id="@+id/obj_location_point_row_object"
+    android:text="Object"/>
+    <TextView
+        android:layout_weight="1.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/obj_location_point_row_choose_point_bttn"
+        android:text="point"/>
+
+    <TextView android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:text="X"/>
+    <TextView android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:text="Y"/>
+    <TextView android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:text="Z"/>
+</LinearLayout>

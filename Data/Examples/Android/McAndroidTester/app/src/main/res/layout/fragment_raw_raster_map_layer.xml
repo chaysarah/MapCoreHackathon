@@ -1,0 +1,58 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/windowBackground">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.layers_tabs.RawRasterMapLayerFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/raw_raster_save_changes_bttn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="save changed" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Add Components" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/raw_raster_layer_params_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparatorEnd
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Get Components" />
+
+            <ListView
+                android:id="@+id/raw_layers_get_components_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/raw_layers_get_components_bttn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Components" />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparatorEnd
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

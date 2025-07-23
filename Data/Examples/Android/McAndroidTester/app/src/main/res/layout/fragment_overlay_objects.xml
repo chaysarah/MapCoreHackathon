@@ -1,0 +1,206 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.overlay_tabs.OverlayObjectsFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ListView
+                android:id="@+id/overlay_objects_lv"
+                android:layout_width="0dp"
+                android:layout_height="490dp"
+                android:layout_weight="0.7" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/overlay_objects_list_load_from_file_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Load From File" />
+
+                <Button
+                    android:id="@+id/overlay_objects_list_load_from_buffer_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Load From Buffer" />
+
+                <Button
+                    android:id="@+id/overlay_objects_list_save_all_to_file_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save All To File" />
+
+                <Button
+                    android:id="@+id/overlay_objects_list_save_all_to_buffer_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save All To Buffer" />
+
+                <Button
+                    android:id="@+id/overlay_objects_list_save_to_file_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save To File" />
+
+                <Button
+                    android:id="@+id/overlay_objects_list_save_to_buffer_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save To Buffer" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                    android:id="@+id/overlay_objects_list_storage_format_swl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:swl_labelText="format" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="size factor for vector map layer:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                        android:layout_weight="1"
+                        android:id="@+id/overlay_objects_size_factor_for_vector_min_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        app:netl_labelText="Min"
+                        />
+                    <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                        android:layout_weight="1"
+                        android:id="@+id/overlay_objects_size_factor_for_vector_max_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        app:netl_labelText="Max"
+                        />
+                </LinearLayout>
+                <Button
+                    android:id="@+id/overlay_objects_list_clear_bttn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clear" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <Button
+                android:id="@+id/overlay_objects_get_obj_by_id_bttn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Get Obj By Id" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/overlay_objects_get_obj_by_id_et"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                app:netl_labelText=""
+                />
+        </LinearLayout>
+        <Button
+            android:id="@+id/overlay_objects_save_as_native_vector_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save as native vector map layer" />
+
+        <Button
+            android:id="@+id/overlay_objects_save_all_as_native_vector_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save all as native vector map layer" />
+
+        <Button
+            android:id="@+id/overlay_objects_save_as_raw_vector_map_layer_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save As Raw Vector Map Layer" />
+
+        <Button
+            android:id="@+id/overlay_objects_save_all_as_raw_vector_map_layer_bttn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save All As Raw Vector Map Layer" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SaveParamsData
+            android:id="@+id/overlay_objects_save_params_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="sub items visibility" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sub items ids" />
+
+            <EditText
+                android:id="@+id/overlay_objects_sub_items_ids_et"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="separate input by spaces"
+                android:paddingLeft="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/overlay_object_sub_items_visibility_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visible" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get"
+                android:layout_weight="1"
+                android:id="@+id/overlay_object_sub_items_visibility_get_bttn"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set"
+                android:id="@+id/overlay_object_sub_items_visibility_set_bttn"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

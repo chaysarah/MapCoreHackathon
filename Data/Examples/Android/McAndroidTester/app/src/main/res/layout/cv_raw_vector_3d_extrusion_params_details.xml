@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/raw_vector_3d_extrusion_params_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/raw_vector_3d_extrusion_params_save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Save" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="source coordinate system" />
+
+            <FrameLayout
+                android:id="@+id/grid_coord_sys_source_container_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="target coordinate system" />
+
+            <FrameLayout
+                android:id="@+id/grid_coord_sys_target_container_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Parameters" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/str_height_column"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Str Height Column"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/str_object_ID_column"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Str Object ID Column"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/str_roof_texture_index_column"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Str Roof Texture Index Column"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/str_side_texture_index_column"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Str Side Texture Index Column"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clip Rect"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.WorldBoundingBox
+                android:id="@+id/raw_params_layers_clip_rect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Roof Default Texture" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ExtrusionTexture
+                android:id="@+id/roof_default_texture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"  />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Side Default Texture" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ExtrusionTexture
+                android:id="@+id/side_default_texture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"  />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiling Scheme"/>
+
+           <com.elbit.mapcore.mcandroidtester.utils.customviews.TilingScheme
+                android:id="@+id/raw_params_tiling_scheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"  />
+        </LinearLayout>
+    </LinearLayout>

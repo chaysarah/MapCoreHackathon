@@ -1,0 +1,20 @@
+:root {
+    --props-id-list-dialog-width: 300px;
+}
+
+/* dialog */
+.scroll-dialog-props-id-list .p-dialog-content {
+    min-width: var(--props-id-list-dialog-width) !important;
+}
+
+.scroll-dialog-props-id-list .p-dialog-header {
+    min-width: var(--props-id-list-dialog-width) !important;
+}
+
+.scroll-dialog-props-id-list .p-dialog-footer {
+    min-width: var(--props-id-list-dialog-width) !important;
+}
+
+.scroll-dialog-props-id-list {
+    overflow-x: auto;
+}

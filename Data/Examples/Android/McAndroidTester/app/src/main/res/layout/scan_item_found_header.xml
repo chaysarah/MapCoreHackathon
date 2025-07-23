@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:nestedScrollingEnabled="true">
+    <TextView android:layout_width="100dp"
+        android:text="Target Type"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_target_type"/>
+    <TextView
+        android:text="intersection Pt X"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_intersection_pt_x"/>
+    <TextView
+        android:text="intersection Pt Y"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_intersection_pt_y"/>
+    <TextView
+        android:text="intersection Pt Z"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_intersection_pt_z"/>
+    <TextView
+        android:text="intersection coord sys"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_intersection_coord_sys"/>
+    <TextView
+        android:text="terrain id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_terrain_id"/>
+    <TextView
+        android:text="layer id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_layer_id"/>
+    <TextView
+        android:text="target id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_target_id"/>
+    <TextView
+        android:text="object id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_object_id"/>
+    <TextView
+        android:text="item id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_item_id"/>
+    <TextView
+        android:text="sub item id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_sub_item_id"/>
+    <TextView
+        android:text="part found"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_part_found"/>
+    <TextView
+        android:text="item type"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_item_type"/>
+    <TextView
+        android:text="part index"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_part_index"/>
+    <TextView
+        android:text="item color"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_item_found_header_item_color"/>
+</LinearLayout>

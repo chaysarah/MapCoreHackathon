@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.private_properties.PropertiesIdListFragment">
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_container"/>
+<HorizontalScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ListView
+        android:id="@+id/properties_id_list_lv"
+        android:layout_width="wrap_content"
+        android:layout_height="290dp" />
+</HorizontalScrollView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <RadioGroup
+            android:layout_weight="3"
+            android:id="@+id/properties_set_rg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/properties_set_each_changed_property_as_type_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="set each changed property as type" />
+
+            <RadioButton
+                android:id="@+id/properties_set_each_changed_property_as_variant_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="set each changed property as variant" />
+
+            <RadioButton
+                android:id="@+id/properties_set_all_changed_properties_as_variant_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="set all changed properties as variant" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/properties_set_bttn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="15dp"
+            android:text="set" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <RadioGroup
+            android:id="@+id/properties_reset_rg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+            <RadioButton
+                android:id="@+id/properties_reset_each_selected_property_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset each selected property" />
+
+            <RadioButton
+                android:id="@+id/properties_reset_all_properties_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset all properties" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/properties_reset_bttn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="15dp"
+            android:text="reset" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/properties_set_names_bttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="15dp"
+        android:text="set names" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

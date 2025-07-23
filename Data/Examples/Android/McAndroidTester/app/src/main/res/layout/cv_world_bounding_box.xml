@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/world_bounding_box_min_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:paddingBottom="0dp"
+        android:weightSum="7">
+
+        <TextView
+            android:id="@+id/min_point_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Min Point" />
+
+        <EditText
+            android:id="@+id/min_point_x"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:hint="X:" />
+
+        <EditText
+            android:id="@+id/min_point_y"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:hint="Y:" />
+
+        <EditText
+            android:id="@+id/min_point_z"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:hint="Z:" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/world_bounding_box_max_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="7">
+
+        <TextView
+            android:id="@+id/max_point_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Max Point" />
+
+        <EditText
+            android:id="@+id/max_point_x"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:hint="X:" />
+
+        <EditText
+            android:id="@+id/max_point_y"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:hint="Y:" />
+
+        <EditText
+            android:id="@+id/max_point_z"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:hint="Z:" />
+    </LinearLayout>
+
+</LinearLayout>

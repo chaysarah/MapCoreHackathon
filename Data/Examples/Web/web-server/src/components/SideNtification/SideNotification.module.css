@@ -1,0 +1,48 @@
+.Wrapper {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    align-items: center;    
+}
+
+.SingleWrapper {
+    display: flex;
+    margin-top: 8px;
+    padding: 15px 20px;
+    align-items: center;
+    font-size: 14px;
+    background: #191919;
+    border-radius: 3px;
+    max-width: 80ch;
+}
+
+.Icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+}
+.Text {
+    margin-right: 20px;
+}
+.RemoveIcon {
+    width: 22px;
+    height: 22px;
+    -webkit-mask-image: url(../../assets/images/close1.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--button-clear-color);
+    display: inline-block;
+    position: absolute;
+    right: 9px;
+    cursor: pointer;
+  }
+
+  .RemoveAllIcon{    
+    display: inline-block;
+    position: absolute;
+    cursor: pointer; 
+    right: 10px;
+    top: -20px;
+    font-size: 15px;
+  }
+  

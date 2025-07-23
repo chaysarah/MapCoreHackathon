@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPFMapCoreExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF MapCore" Height="392" Width="525"
+        AllowsTransparency="False">
+    <Grid>
+        <Canvas HorizontalAlignment="Stretch" Margin="0,0,-114,-51" Name="MapCanvas" VerticalAlignment="Stretch" Background="#FFB72A2A" SizeChanged="MapCanvas_SizeChanged" MouseWheel="MapCanvas_MouseWheel" MouseUp="MapCanvas_MouseUp" MouseMove="MapCanvas_MouseMove" MouseDown="MapCanvas_MouseDown">
+            <TextBox Canvas.Left="0" Canvas.Top="333" Height="23" Name="textBox1" Width="178" Text="0 0 0" />
+        </Canvas>
+        <ToolBarPanel Height="32" HorizontalAlignment="Center" Name="toolBarPanel1" VerticalAlignment="Top" Width="503">
+            <ToolBar Height="35" Name="toolBar1">
+                <Button Name="btnOpenMap" Width="Auto" Height="Auto" Background="Green" Content="Open Map" Click="Button1_Click"></Button>
+                <Button Content="Drag Map" Height="23" Name="btnDragMap" Width="Auto" Background="Green" Click="btnDragMap_Click" />
+                <Button Content="Azimuth Dist" Height="23" Name="btnAzDist" Width="75" Background="Green" Click="btnAzDist_Click" />
+                <Button Content="Line" Height="23" Name="btnLine" Width="Auto" Background="Green" Click="btnLine_Click" />
+                <Button Content="Rect" Height="23" Name="btnRect" Width="Auto" Background="Green" Click="btnRect_Click" />
+                <Button Content="edit" Height="23" Name="btnEdit" Width="Auto" Background="Green" Click="btnEdit_Click" />
+                <Button Background="Green" Content="Line offset" Height="23" Name="LineOffset" Width="Auto" Click="LineOffset_Click" />
+           </ToolBar>
+        </ToolBarPanel>
+    </Grid>
+</Window>

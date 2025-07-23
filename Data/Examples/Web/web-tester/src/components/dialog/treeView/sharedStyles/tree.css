@@ -1,0 +1,89 @@
+:root {
+    --object-world-tree-dialog-width: 1000px;
+    --map-world-tree-dialog-width: 1000px;
+}
+
+.tree__container {
+    /* width: calc(100vh*var(--size-factor)); */
+    /* min-width: 1000px; */
+    /* overflow: auto; */
+    /* scroll-behavior: auto; */
+    width: calc(62vh*1.5*var(--size-factor));
+    display: flex;
+    justify-content: space-between;
+}
+
+.tree__tree {
+    overflow-y: auto !important;
+    min-height: calc(70vh*var(--size-factor));
+    max-height: calc(70vh*var(--size-factor));
+    height: 100%;
+    width: 25%;
+    left: calc(0vh*var(--size-factor));
+}
+
+.tree__form {
+    height: calc(70vh*var(--size-factor));
+    width: 75%;
+    right: calc(0vh*var(--size-factor));
+    padding-top: calc(0vh*var(--size-factor));
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+
+.tree__form-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.tree__form-content {
+    width: 74.5%;
+    border-bottom-right-radius: calc(0.9vh*var(--size-factor));
+    border-bottom-left-radius: calc(0.9vh*var(--size-factor));
+    background-color: rgb(244, 244, 244);
+    padding: calc(0.5vh*var(--size-factor));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+
+/* dialog */
+/* mapWorldTree */
+.scroll-dialog-8 .p-dialog-content {
+    min-width: var(--map-world-tree-dialog-width) !important;
+}
+
+.scroll-dialog-8 .p-dialog-header {
+    min-width: var(--map-world-tree-dialog-width) !important;
+}
+
+.scroll-dialog-8 .p-dialog-footer {
+    min-width: var(--map-world-tree-dialog-width) !important;
+}
+
+.scroll-dialog-8 {
+    overflow-x: auto;
+}
+
+/* objectWorldTree */
+.scroll-dialog-7 .p-dialog-content {
+    min-width: var(--object-world-tree-dialog-width) !important;
+}
+
+.scroll-dialog-7 .p-dialog-header {
+    min-width: var(--object-world-tree-dialog-width) !important;
+}
+
+.scroll-dialog-7 .p-dialog-footer {
+    min-width: var(--object-world-tree-dialog-width) !important;
+}
+
+.scroll-dialog-7 {
+    overflow-x: auto;
+}

@@ -1,0 +1,163 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.viewport_tabs.ViewPortRenderingFragment">
+
+    <Button
+        android:id="@+id/view_port_rendering_save_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Object Rendering" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Object Delay Type" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/view_port_rendering_object_delay_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/view_port_rendering_num_obj_to_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:netl_labelText="Num Object To Update" />
+
+            <CheckBox
+                android:id="@+id/view_port_rendering_delay_enabled_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Delay Enabled" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/view_port_rendering_min_num_item_for_overload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:netl_labelText="Min Num Items For Overload" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/view_port_rendering_static_object_visibility_max_scale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:netl_labelText="vector 3D extrusion visibility max scale" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/view_port_rendering_object_visibility_max_scale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="object visibility max scale" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/view_port_rendering_threshold_in_pixels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Threshold In Pixels" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/view_port_rendering_screen_size_terrain_obj_factor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Screen Size Terrain Object Factor (3D Map)" />
+
+            <CheckBox
+                android:id="@+id/view_port_rendering_overload_mode_enabled_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Overload Mode Enabled" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Render Screen Rect to Buffer" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDVector
+                android:id="@+id/view_port_rendering_top_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:two_d_vector_label="Top Left"
+
+                />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDVector
+                android:id="@+id/view_port_rendering_bottom_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:two_d_vector_label="Bottom Right"
+
+                />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/view_port_rendering_buffer_pixel_format"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Buffer Pixel Format" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/view_port_rendering_width_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="Width" />
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/view_port_rendering_bottom_height_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="Height" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:id="@+id/view_port_rendering_buffer_raw_pitch_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:netl_labelText="Buffer Raw Pitch" />
+            <CheckBox
+                android:id="@+id/view_port_rendering_render_screen_save_to_file_CB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Save to local file (png or jpeg)" />
+
+            <Button
+                android:id="@+id/view_port_rendering_render_screen_bttn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="render screen rect to buffer" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/view_port_rendering_render_screen_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

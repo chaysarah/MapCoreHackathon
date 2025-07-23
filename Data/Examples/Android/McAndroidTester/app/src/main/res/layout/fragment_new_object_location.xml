@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+	tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.overlay_manager_treeview.NewObjectLocationFragment">
+
+    <Button
+        android:id="@+id/new_object_location_save_changes_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save changed" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/new_object_location_coordinate_system"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="Coordinate system" />
+
+            <CheckBox
+                android:id="@+id/new_object_location_relative_to_dtm_cb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location relative to DTM" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:layout_weight="3"
+                android:id="@+id/new_object_location_insert_at_index"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                app:netl_labelText="Insert At Index:" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                android:layout_weight="3"
+                android:id="@+id/new_object_location_location_index"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                app:netl_enable_mode="false"
+                app:netl_labelText="Location Index:" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

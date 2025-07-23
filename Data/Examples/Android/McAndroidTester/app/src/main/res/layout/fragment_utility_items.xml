@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.edit_mode_properties.UtilityItemsFragment">
+
+   <ListView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/utility_items_lv"
+       />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/utility_picture_lv"
+        />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/utility_3D_edit_item_lv"
+        />
+
+</LinearLayout>

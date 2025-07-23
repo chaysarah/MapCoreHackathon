@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_grid_coordinate_title">Grid Coordinate System</string>
+    <string name="coordinate_system">Coordinate System</string>
+    <string name="datum">Datum</string>
+    <string name="datum_projection">Datum Projection</string>
+    <string name="utm_type">UTM Type</string>
+    <string name="utm_zone">Zone</string>
+    <string name="central_meridian">Central Meridian</string>
+    <string name="false_easting">False Easting</string>
+    <string name="false_northing">False Northing</string>
+    <string name="latitude_of_grid_origin">Latitude Of Grid Origin</string>
+    <string name="scale_factor">Scale Factor</string>
+    <string name="zone_width">Zone Width</string>
+    <string name="use_existing">Use Existing</string>
+    <string name="create_new">Create New</string>
+
+</resources>

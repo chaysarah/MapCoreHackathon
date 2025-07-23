@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:orientation="vertical"
+	android:background="?android:attr/windowBackground"
+    tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.terrain_tabs.TerrainDetailsFragment">
+
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="View Ports"/>
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+            android:id="@+id/terrain_details_viewports_lv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+        />
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Visibility"/>
+
+        <CheckBox
+            android:id="@+id/default_visibility_cb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Default Visibility"
+            android:textColor="@color/colorAccent" />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="Grid Coordinate System"/>
+
+        <ListView
+            android:id="@+id/gcs_lv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+             />
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:section_separator_text="World Bounding Box"/>
+
+        <com.elbit.mapcore.mcandroidtester.utils.customviews.WorldBoundingBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/terrain_details_world_bounding_box"/>
+    </LinearLayout>

@@ -1,0 +1,66 @@
+{
+  "name": "mapcore-lib",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.36",
+    "@types/react": "^18.2.12",
+    "@types/react-dom": "^18.2.5",
+    "lodash": "^4.17.21",
+    "mapcore-lib": "file:",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "tslib": "^2.8.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "watch": "rollup -c --watch",
+    "clean-cache": "if exist node_modules\\.cache ( rmdir /s /q node_modules\\.cache )",
+    "clean-cache-linux": "rm -rf node_modules/.cache",
+    "build-vs": "node scripts/smart_install.js && npm run clean-cache && npm run build",
+    "build-vs-linux": "node scripts/smart_install.js && npm run clean-cache-linux && npm run build",
+    "build": "rollup -c",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.16",
+    "nodemon": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.79.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.34.1"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./model/*": "./dist/model/*"
+  }
+}

@@ -1,0 +1,21 @@
+:root {
+    --local-map-footprint-dialog-width: 620px;
+}
+
+
+/* dialog */
+.scroll-dialog-local-map-footprint .p-dialog-content {
+    min-width: var(--local-map-footprint-dialog-width) !important;
+}
+
+.scroll-dialog-local-map-footprint .p-dialog-header {
+    min-width: var(--local-map-footprint-dialog-width) !important;
+}
+
+.scroll-dialog-local-map-footprint .p-dialog-footer {
+    min-width: var(--local-map-footprint-dialog-width) !important;
+}
+
+.scroll-dialog-local-map-footprint {
+    overflow-x: auto;
+}

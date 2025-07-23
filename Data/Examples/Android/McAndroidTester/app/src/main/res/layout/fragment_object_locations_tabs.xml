@@ -1,0 +1,389 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+	tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.object_tabs.ObjectLocationsTabsFragment">
+
+    <FrameLayout
+        android:id="@+id/object_locations_properties_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.elbit.mapcore.mcandroidtester.ui.map_actions.treeviews.object_tabs.ObjectLocationsTabsFragment">
+
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Object Location Points" />
+
+            <include
+                layout="@layout/location_point_row_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ListView
+                android:id="@+id/object_locations_points_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Location point-refer to one point only" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_index_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="index number (-1 refer to last position)" />
+
+                <Button
+                    android:id="@+id/object_locations_remove_location_point_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="remove" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_inserted_position_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_enable_mode="false"
+                    app:netl_labelText="inserted position" />
+
+                <Button
+                    android:id="@+id/object_locations_add_location_point_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="add" />
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_loc_index_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="location index" />
+
+                <Button
+                    android:id="@+id/object_locations_update_location_point_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="update pt" />
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.ThreeDVector
+                    android:id="@+id/object_locations_3d_location_point"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:three_d_vector_label="location point" />
+
+                <Button
+                    android:id="@+id/object_locations_move_all_points_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="move all" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="Location point-refer to all points" />
+
+            <include
+                layout="@layout/location_point_row_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ListView
+                android:id="@+id/object_locations_new_location_points_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_start_index_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="start index (only for update function)" />
+
+                <Button
+                    android:id="@+id/object_locations_update_location_points_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="update all" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_location_points_index_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_labelText="location index" />
+
+                <Button
+                    android:id="@+id/object_locations_get_location_points_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="get" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/object_locations_is_relative_to_dtm_cb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="is relative to dtm" />
+
+                <Button
+                    android:id="@+id/object_locations_set_location_points_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="set" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.SampleLocationPointsBttn
+                    android:id="@+id/object_locations_sample_location_points_custom_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="..."
+                    app:container_fragment_name="ObjectTabsFragment"
+                    app:point_in_overlay_manager_coord_sys="true"
+                    app:point_z_value="1.7976931348623157E+308"
+                    app:query_precision="EQP_DEFAULT"
+                    app:point_coord_system="EPCS_WORLD"
+                    app:list_view_id_to_update="@id/object_locations_new_location_points_lv"/>
+
+                <Button
+                    android:id="@+id/object_locations_clear_new_location_points_lv_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="clear" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="location index by id" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_node_id_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_enable_mode="true"
+                    app:netl_labelText="node id"
+                    app:netl_numeric_keyboard="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_location_index_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_enable_mode="false"
+                    app:netl_labelText="location index"
+                    app:netl_numeric_keyboard="true" />
+
+                <Button
+                    android:id="@+id/object_locations_get_location_index_by_id_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="OK" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="num location points" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_num_location_points_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_enable_mode="true"
+                    app:netl_labelText="num location points"
+                    app:netl_numeric_keyboard="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.elbit.mapcore.mcandroidtester.utils.customviews.NumericEditTextLabel
+                    android:id="@+id/object_locations_num_location_points_index_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:netl_enable_mode="true"
+                    app:netl_labelText="location index"
+                    app:netl_numeric_keyboard="true" />
+
+                <Button
+                    android:id="@+id/object_locations_set_num_location_points_ok_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="OK" />
+            </LinearLayout>
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:section_separator_text="screen arrangement offset" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.TwoDFVector
+                android:id="@+id/object_locations_screen_arrangement_offset_2dfvector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:two_d_f_vector_label="offset" />
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.ViewportsList
+                android:id="@+id/object_locations_screen_arrangement_offset_viewports_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/object_locations_get_screen_arrangement_offset_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="get" />
+
+                <Button
+                    android:id="@+id/object_locations_set_screen_arrangement_offset_bttn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="set" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/object_locations_object_properties_id_list_bttn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="object properties id list" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SectionSeparator
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:section_separator_text="calculated coordinates" />
+
+            <ListView
+                android:id="@+id/obj_scheme_node_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.elbit.mapcore.mcandroidtester.utils.customviews.SpinnerWithLabel
+                android:id="@+id/point_coord_sys_swl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:swl_labelText="convert to" />
+
+            <ListView
+                android:id="@+id/node_calc_coordinates_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:visibility="gone"
+                android:id="@+id/object_locations_calc_coord_ok_bttn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="calculate coordinates" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

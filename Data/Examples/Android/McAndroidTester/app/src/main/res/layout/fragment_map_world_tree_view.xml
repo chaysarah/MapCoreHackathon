@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.map_actions.treeviews.ViewportTerrainTreeViewFragment"
+    android:id="@+id/map_world_tree_view_container_fl"
+    android:background="?android:attr/windowBackground"
+    android:orientation="vertical">
+
+
+    <!-- TODO: Update blank fragment layout -->
+
+</LinearLayout>

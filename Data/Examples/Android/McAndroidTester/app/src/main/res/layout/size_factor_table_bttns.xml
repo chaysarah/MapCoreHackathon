@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<Button android:id="@+id/size_factor_table_bttns_apply_bttn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Apply"/>
+    <Button android:id="@+id/size_factor_table_bttns_select_all_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select All"/>
+    <Button android:id="@+id/size_factor_table_bttns_remove_selection_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove Selection"/>
+    <EditText android:id="@+id/size_factor_table_bttns_set_selected_size_factor_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="selected size factor"
+        android:textAlignment="center"
+        android:inputType="numberDecimal"/>
+    <Button android:id="@+id/size_factor_table_bttns_set_selected_size_factor_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Selected Size Factor"/>
+
+</LinearLayout>
