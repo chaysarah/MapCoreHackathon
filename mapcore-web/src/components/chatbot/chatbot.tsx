@@ -12,6 +12,46 @@ interface Message {
   timestamp: Date
 }
 
+function renderMessageText(text: string) {
+  // Regex to match ```lang\ncode\n```
+  const codeBlockRegex = /```(\w+)?\n([\s\S]*?)```/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = codeBlockRegex.exec(text)) !== null) {
+    // Push text before code block
+    if (match.index > lastIndex) {
+      parts.push(
+        <span key={lastIndex}>{text.slice(lastIndex, match.index)}</span>
+      );
+    }
+    // Push code block
+    const lang = match[1] || '';
+    let code = match[2];
+    // Remove leading Markdown headings from code block
+    code = code.replace(/^\s*#{2,6} .*\n/, '');
+    parts.push(
+      <div key={match.index} className="my-3">
+        <div className="flex items-center px-3 py-1 bg-slate-200 text-xs font-mono rounded-t-md border-b border-slate-300">
+          <span className="text-slate-600">{lang ? lang.toUpperCase() : 'CODE'}</span>
+        </div>
+        <pre className="bg-slate-900 text-slate-100 rounded-b-md rounded-tr-md p-3 overflow-x-auto text-sm">
+          <code>
+            {code}
+          </code>
+        </pre>
+      </div>
+    );
+    lastIndex = codeBlockRegex.lastIndex;
+  }
+  // Push remaining text
+  if (lastIndex < text.length) {
+    parts.push(<span key={lastIndex}>{text.slice(lastIndex)}</span>);
+  }
+  return <>{parts}</>;
+}
+
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
@@ -186,7 +226,9 @@ export function Chatbot() {
                         : 'bg-slate-100 text-slate-800 rounded-bl-sm'
                     }`}
                   >
-                    {message.text}
+                    {message.sender === 'bot'
+                      ? renderMessageText(message.text)
+                      : message.text}
                   </div>
                   {message.sender === 'user' && (
                     <div className="flex items-center justify-center w-8 h-8 bg-slate-300 rounded-full flex-shrink-0">

@@ -277,11 +277,117 @@ Please provide a helpful response:"""
                     dev_note = f"\n\n📧 Note: This bug has been automatically reported to our development team and an email notification has been sent to tova.barzel@mapcore.com (Report ID: bug_{report_num:04d})."
                 else:
                     dev_note = f"\n\n📝 Note: This feature request has been automatically reported to our development team (Report ID: {intent}_{report_num:04d})."
-                
-                return response.text + dev_note
-            
-            return response.text
-            
+            else:
+                dev_note = ""
+
+            # Detect languages in the user's message
+            language_examples = {
+                "react": {
+                    "label": "React",
+                    "title": "Example React Component",
+                    "code": (
+                        "```jsx\n"
+                        "import React from 'react';\n"
+                        "\n"
+                        "const ExampleComponent = () => (\n"
+                        "  <div>\n"
+                        "    <h2>Hello from React!</h2>\n"
+                        "    <p>This is a sample component.</p>\n"
+                        "  </div>\n"
+                        ");\n"
+                        "\n"
+                        "export default ExampleComponent;\n"
+                        "```"
+                    )
+                },
+                "c#": {
+                    "label": "C#",
+                    "title": "Example C# Component",
+                    "code": (
+                        "```csharp\n"
+                        "using System;\n"
+                        "\n"
+                        "public class ExampleComponent\n"
+                        "{\n"
+                        "    public void Render()\n"
+                        "    {\n"
+                        "        Console.WriteLine(\"Hello from C#!\");\n"
+                        "    }\n"
+                        "}\n"
+                        "```"
+                    )
+                },
+                "typescript": {
+                    "label": "TypeScript",
+                    "title": "Example TypeScript Component",
+                    "code": (
+                        "```tsx\n"
+                        "import React from 'react';\n"
+                        "\n"
+                        "type Props = { message: string };\n"
+                        "\n"
+                        "const ExampleComponent: React.FC<Props> = ({ message }) => (\n"
+                        "  <div>\n"
+                        "    <h2>{message}</h2>\n"
+                        "  </div>\n"
+                        ");\n"
+                        "\n"
+                        "export default ExampleComponent;\n"
+                        "```"
+                    )
+                },
+                "javascript": {
+                    "label": "JavaScript",
+                    "title": "Example JavaScript Function",
+                    "code": (
+                        "```js\n"
+                        "function example() {\n"
+                        "  console.log('Hello from JavaScript!');\n"
+                        "}\n"
+                        "example();\n"
+                        "```"
+                    )
+                },
+                "python": {
+                    "label": "Python",
+                    "title": "Example Python Function",
+                    "code": (
+                        "```python\n"
+                        "def example():\n"
+                        "    print('Hello from Python!')\n"
+                        "\n"
+                        "example()\n"
+                        "```"
+                    )
+                }
+            }
+
+            # Lowercase message for detection
+            msg_lower = message.lower()
+            detected = []
+            for key in language_examples:
+                if key in msg_lower or (key == "c#" and ("csharp" in msg_lower or "c sharp" in msg_lower)):
+                    detected.append(key)
+
+            # Default to React and C# if nothing detected
+            if not detected:
+                detected = ["react", "c#"]
+
+            # Build code examples array
+            code_examples = []
+            for lang in detected:
+                code_examples.append({
+                    "language": language_examples[lang]["label"],
+                    "example": language_examples[lang]["code"]
+                })
+
+            # Format code examples as a Markdown array
+            code_examples_md = "\n\n---\n\n**Example Code in Relevant Languages:**\n\n"
+            for ex in code_examples:
+                code_examples_md += f"**{ex['language']}**\n{ex['example']}\n\n"
+
+            return response.text + dev_note + code_examples_md
+
         except Exception as e:
             return f"Error generating response: {e}"
 
