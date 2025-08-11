@@ -75,8 +75,20 @@ class ChatService:
             if self.rag_service:
                 # Use both current message and recent conversation for better context
                 search_query = self._build_search_query(message, user_memory)
-                relevant_docs = self.rag_service.search_documents(search_query)
-                context = "\n".join(relevant_docs)
+                
+                # Prioritize API files for technical questions
+                relevant_docs, metadata = self.rag_service.search_documents(
+                    search_query, 
+                    n_results=5,
+                    prioritize_api=True  # Give more weight to API files
+                )
+                context = "\n".join(relevant_docs) if relevant_docs else ""
+                
+                # Log what types of files were found
+                if metadata:
+                    categories = [meta.get('category', 'Unknown') for meta in metadata]
+                    print(f"[CHAT] Context from: {set(categories)}")
+            
             
             # Create enhanced prompt based on intent and memory
             response = self._generate_response(intent, message, context, user_memory)
@@ -238,7 +250,7 @@ class ChatService:
             classification_prompt = f"""
 Analyze the following user message and classify it into one of these categories:
 - "bug": The user is reporting an error, crash, malfunction, or something not working as expected
-- "missing-feature": The user is requesting a new feature, enhancement, or functionality that doesn't exist
+- "missing-feature": The user is requesting a new feature, enhancement, or functionality not existing in mapcore API functions and should be implemented.
 - "question": A regular question about how to use existing functionality
 
 Previous conversation context:
@@ -247,9 +259,10 @@ Previous conversation context:
 Current user message: "{message}"
 
 Examples:
-- "The app crashes when I click submit" → bug
-- "Can you add dark mode?" → missing-feature  
-- "How do I create a new project?" → question
+- "I have sent all parameters properly, but creating a scheme returns invalid argument" → bug
+- "Can you create python app using MapCore API?" → missing-feature
+- "Is it possible to create 2 overlays in an overlay manager?" → question (as it is a regular question about existing functionality)
+- "How do I create a new device?" → question
 
 Consider the conversation context when classifying. If the user is following up on a previous topic, maintain consistency.
 

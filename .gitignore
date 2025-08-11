@@ -2,5 +2,7 @@
 /mapcore-chat-backend/flask-chat-backend/.env
 mapcore-web/.next/*
 /mapcore-web/node_modules
-/Data
-/DataOrigin
+/user_memory
+/chroma_db
+/developer_reports
+rag_cache.json
