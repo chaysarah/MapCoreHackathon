@@ -617,6 +617,198 @@ Provide a structured analysis:
         except Exception as e:
             print(f"[CHAT] Error logging to summary: {e}")
 
+    def _analyze_intent(self, message):
+        """Use AI to classify if message is bug, missing-feature, or regular question"""
+        try:
+            classification_prompt = f"""
+Analyze the following user message and classify it into one of these categories:
+- "bug": The user is reporting an error, crash, malfunction, or something not working as expected
+- "missing-feature": The user is requesting a new feature, enhancement, or functionality that doesn't exist
+- "question": A regular question about how to use existing functionality
+
+Examples:
+- "The app crashes when I click submit" → bug
+- "Can you add dark mode?" → missing-feature  
+- "How do I create a new project?" → question
+- "The login button doesn't work" → bug
+- "I need export to PDF feature" → missing-feature
+- "What's the keyboard shortcut for save?" → question
+
+User message: "{message}"
+
+Respond with only one word: bug, missing-feature, or question
+"""
+            
+            response = self.model.generate_content(classification_prompt)
+            intent = response.text.strip().lower()
+            
+            # Validate response
+            if intent not in ['bug', 'missing-feature', 'question']:
+                print(f"[CHAT] Invalid intent detected: {intent}, defaulting to 'question'")
+                return 'question'
+            
+            return intent
+            
+        except Exception as e:
+            print(f"[CHAT] Error analyzing intent: {e}")
+            return 'question'  # Default to question if classification fails
+
+    def _generate_response(self, intent, message, context):
+        """Generate appropriate response based on intent"""
+        try:
+            if intent == 'bug':
+                base_response = "I understand you've encountered an issue. I've reported this to our development team for investigation and sent an email notification to our developers."
+                
+            elif intent == 'missing-feature':
+                base_response = "Thank you for the feature suggestion! I've forwarded your request to our development team for consideration."
+                
+            else:  # regular question
+                base_response = ""
+            
+            # Create context-aware prompt
+            if context:
+                prompt = f"""Based on the following context, answer the user's question:
+
+Context:
+{context}
+
+User's {intent}: {message}
+
+{base_response}
+
+Please provide a helpful response:"""
+            else:
+                prompt = f"""User's {intent}: {message}
+
+{base_response}
+
+Please provide a helpful response:"""
+            
+            response = self.model.generate_content(prompt)
+            
+            # Add developer notification to response
+            if intent in ['bug', 'missing-feature']:
+                existing_reports = [f for f in os.listdir(self.reports_dir) if f.startswith(intent) and f.endswith('.json')]
+                report_num = len(existing_reports)
+                
+                if intent == 'bug':
+                    dev_note = f"\n\n📧 Note: This bug has been automatically reported to our development team and an email notification has been sent to tova.barzel@mapcore.com (Report ID: bug_{report_num:04d})."
+                else:
+                    dev_note = f"\n\n📝 Note: This feature request has been automatically reported to our development team (Report ID: {intent}_{report_num:04d})."
+            else:
+                dev_note = ""
+
+            # Detect languages in the user's message
+            language_examples = {
+                "react": {
+                    "label": "React",
+                    "title": "Example React Component",
+                    "code": (
+                        "```jsx\n"
+                        "import React from 'react';\n"
+                        "\n"
+                        "const ExampleComponent = () => (\n"
+                        "  <div>\n"
+                        "    <h2>Hello from React!</h2>\n"
+                        "    <p>This is a sample component.</p>\n"
+                        "  </div>\n"
+                        ");\n"
+                        "\n"
+                        "export default ExampleComponent;\n"
+                        "```"
+                    )
+                },
+                "c#": {
+                    "label": "C#",
+                    "title": "Example C# Component",
+                    "code": (
+                        "```csharp\n"
+                        "using System;\n"
+                        "\n"
+                        "public class ExampleComponent\n"
+                        "{\n"
+                        "    public void Render()\n"
+                        "    {\n"
+                        "        Console.WriteLine(\"Hello from C#!\");\n"
+                        "    }\n"
+                        "}\n"
+                        "```"
+                    )
+                },
+                "typescript": {
+                    "label": "TypeScript",
+                    "title": "Example TypeScript Component",
+                    "code": (
+                        "```tsx\n"
+                        "import React from 'react';\n"
+                        "\n"
+                        "type Props = { message: string };\n"
+                        "\n"
+                        "const ExampleComponent: React.FC<Props> = ({ message }) => (\n"
+                        "  <div>\n"
+                        "    <h2>{message}</h2>\n"
+                        "  </div>\n"
+                        ");\n"
+                        "\n"
+                        "export default ExampleComponent;\n"
+                        "```"
+                    )
+                },
+                "javascript": {
+                    "label": "JavaScript",
+                    "title": "Example JavaScript Function",
+                    "code": (
+                        "```js\n"
+                        "function example() {\n"
+                        "  console.log('Hello from JavaScript!');\n"
+                        "}\n"
+                        "example();\n"
+                        "```"
+                    )
+                },
+                "python": {
+                    "label": "Python",
+                    "title": "Example Python Function",
+                    "code": (
+                        "```python\n"
+                        "def example():\n"
+                        "    print('Hello from Python!')\n"
+                        "\n"
+                        "example()\n"
+                        "```"
+                    )
+                }
+            }
+
+            # Lowercase message for detection
+            msg_lower = message.lower()
+            detected = []
+            for key in language_examples:
+                if key in msg_lower or (key == "c#" and ("csharp" in msg_lower or "c sharp" in msg_lower)):
+                    detected.append(key)
+
+            # Default to React and C# if nothing detected
+            if not detected:
+                detected = ["react", "c#"]
+
+            # Build code examples array
+            code_examples = []
+            for lang in detected:
+                code_examples.append({
+                    "language": language_examples[lang]["label"],
+                    "example": language_examples[lang]["code"]
+                })
+
+            # Format code examples as a Markdown array
+            code_examples_md = "\n\n---\n\n**Example Code in Relevant Languages:**\n\n"
+            for ex in code_examples:
+                code_examples_md += f"**{ex['language']}**\n{ex['example']}\n\n"
+
+            return response.text + dev_note + code_examples_md
+
+        except Exception as e:
+            return f"Error generating response: {e}"
+
     def get_developer_reports(self, report_type=None):
         """Method for developers to retrieve reports"""
         try:
