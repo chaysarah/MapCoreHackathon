@@ -2,54 +2,16 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Send, Bot, User, MapPin } from 'lucide-react'
+import { MessageCircle, X, Send, Bot, User, MapPin, Copy, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface Message {
   id: string
   text: string
   sender: 'user' | 'bot'
   timestamp: Date
-}
-
-function renderMessageText(text: string) {
-  // Regex to match ```lang\ncode\n```
-  const codeBlockRegex = /```(\w+)?\n([\s\S]*?)```/g;
-  const parts: React.ReactNode[] = [];
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-
-  while ((match = codeBlockRegex.exec(text)) !== null) {
-    // Push text before code block
-    if (match.index > lastIndex) {
-      parts.push(
-        <span key={lastIndex}>{text.slice(lastIndex, match.index)}</span>
-      );
-    }
-    // Push code block
-    const lang = match[1] || '';
-    let code = match[2];
-    // Remove leading Markdown headings from code block
-    code = code.replace(/^\s*#{2,6} .*\n/, '');
-    parts.push(
-      <div key={match.index} className="my-3">
-        <div className="flex items-center px-3 py-1 bg-slate-200 text-xs font-mono rounded-t-md border-b border-slate-300">
-          <span className="text-slate-600">{lang ? lang.toUpperCase() : 'CODE'}</span>
-        </div>
-        <pre className="bg-slate-900 text-slate-100 rounded-b-md rounded-tr-md p-3 overflow-x-auto text-sm">
-          <code>
-            {code}
-          </code>
-        </pre>
-      </div>
-    );
-    lastIndex = codeBlockRegex.lastIndex;
-  }
-  // Push remaining text
-  if (lastIndex < text.length) {
-    parts.push(<span key={lastIndex}>{text.slice(lastIndex)}</span>);
-  }
-  return <>{parts}</>;
 }
 
 export function Chatbot() {
@@ -140,6 +102,89 @@ export function Chatbot() {
     }
   }
 
+  // Add this component for rendering message content with code support
+  const MessageContent = ({ text }: { text: string }) => {
+    const [copiedCode, setCopiedCode] = useState<string | null>(null)
+    
+    const copyToClipboard = async (code: string) => {
+      await navigator.clipboard.writeText(code)
+      setCopiedCode(code)
+      setTimeout(() => setCopiedCode(null), 2000)
+    }
+
+    // Split text by code blocks (```language or ```
+    const parts = text.split(/(```[\s\S]*?```)/g)
+    
+    return (
+      <>
+        {parts.map((part, index) => {
+          // Check if this part is a code block
+          if (part.startsWith('```') && part.endsWith('```')) {
+            const content = part.slice(3, -3)
+            const lines = content.split('\n')
+            const language = lines[0].trim() || 'text'
+            const code = lines.slice(1).join('\n')
+            
+            return (
+              <div key={index} className="my-2">
+                <div className="relative bg-gray-900 rounded-lg overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-2 bg-gray-800 text-gray-300 text-sm">
+                    <span className="font-mono">{language}</span>
+                    <button
+                      onClick={() => copyToClipboard(code)}
+                      className="flex items-center gap-1 hover:text-white transition-colors"
+                    >
+                      {copiedCode === code ? (
+                        <Check className="h-4 w-4" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
+                      {copiedCode === code ? 'Copied!' : 'Copy'}
+                    </button>
+                  </div>
+                  <SyntaxHighlighter
+                    language={language}
+                    style={oneDark}
+                    customStyle={{
+                      margin: 0,
+                      padding: '1rem',
+                      background: 'transparent',
+                      fontSize: '0.875rem'
+                    }}
+                  >
+                    {code}
+                  </SyntaxHighlighter>
+                </div>
+              </div>
+            )
+          }
+          
+          // Check for inline code (single backticks)
+          const inlineCodeRegex = /`([^`]+)`/g
+          const textParts = part.split(inlineCodeRegex)
+          
+          return (
+            <span key={index}>
+              {textParts.map((textPart, textIndex) => {
+                if (textIndex % 2 === 1) {
+                  return (
+                    <code
+                      key={textIndex}
+                      className="bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded text-sm font-mono border"
+                    >
+                      {textPart}
+                    </code>
+                  )
+                }
+                return <span key={textIndex} className="whitespace-pre-line">{textPart}</span>
+              })}
+            </span>
+          )
+        })}
+      </>
+    )
+  }
+
   return (
     <>
       {/* Chat Toggle Button */}
@@ -220,15 +265,13 @@ export function Chatbot() {
                     </div>
                   )}
                   <div
-                    className={`max-w-[80%] p-3 rounded-lg whitespace-pre-line ${
+                    className={`max-w-[80%] p-3 rounded-lg ${
                       message.sender === 'user'
                         ? 'bg-gradient-to-r from-indigo-600 to-sky-500 text-white rounded-br-sm'
                         : 'bg-slate-100 text-slate-800 rounded-bl-sm'
                     }`}
                   >
-                    {message.sender === 'bot'
-                      ? renderMessageText(message.text)
-                      : message.text}
+                    <MessageContent text={message.text} />
                   </div>
                   {message.sender === 'user' && (
                     <div className="flex items-center justify-center w-8 h-8 bg-slate-300 rounded-full flex-shrink-0">

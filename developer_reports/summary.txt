@@ -1,1 +1,3 @@
 [2025-07-23 14:33:16] BUG: create device not working ... (see bug_0001.json)
+[2025-08-12 08:38:26] BUG: polygin item... (see bug_0011.json)
+[2025-08-12 08:57:11] MISSING-FEATURE: create an overlay in java... (see missing-feature_0007.json)
